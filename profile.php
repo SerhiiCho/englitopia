@@ -148,7 +148,7 @@ if ($he_is_blocker == true) {
             require 'templates/profile.part2.php';
         ?>
 
-        <script>id("default_open").click();</script>
+        <script>document.getElementById("default_open").click();</script>
     </body>
     <?php require 'templates/footer.part.php';?>
 </html>
