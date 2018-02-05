@@ -75,7 +75,7 @@ foreach ($pods as $pod) {
                     <h4 class="headline1">'.$pod->subject.'</h4>
                     <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
 
-                    <p>'.$pod->intro.'.. 
+                    <p>'.nl2br($pod->intro).'.. 
                         <a href="podcast_page.php?id='.$pod->id.'">
                             <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                         </a>

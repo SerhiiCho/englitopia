@@ -32,7 +32,7 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
             <div class="wrapper-info">
                 <h2 class="headline1"><?php echo $info->subject;?></h2>
                 <hr>
-                <p><?php echo $info->content;?></p>
+                <p><?php echo nl2br($info->content);?></p>
             </div>
             <br /><hr>
             

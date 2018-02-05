@@ -23,7 +23,7 @@ foreach ($all_rows as $row) {
     $message_id = $row['id'];
     $message_id_from = $row['id_from'];
     $message_id_to = $row['id_to'];
-    $message_all = str_replace('\\','',$row['message']);
+    $message_all = str_replace('\\','',nl2br($row['message']));
     $message_date_time = facebook_time_ago($row['date_time']);
     $message_have_read = $row['have_read'];
     $message_id_chat = $row['id_chat'];

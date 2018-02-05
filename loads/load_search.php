@@ -9,18 +9,20 @@ $search = strtolower(preg_replace('#[^a-zA-Z- ]#i','',$_POST['post_search']));
 
 // Select stories
 $stories = R::getAll("SELECT * FROM stories
-                    WHERE subject LIKE '%$search%'
+                    WHERE approved = 2
+                    AND (subject LIKE '%$search%'
                     OR 'everything' LIKE '%$search%'
                     OR 'story' LIKE '%$search%'
-                    OR tags LIKE '%$search%'
+                    OR tags LIKE '%$search%')
                     LIMIT $search_new_count");
 
 // Select pods
 $pods =  R::getAll("SELECT * FROM pod
-                    WHERE subject LIKE '%$search%'
+                    WHERE approved = 2
+                    AND (subject LIKE '%$search%'
                     OR 'everything' LIKE '%$search%'
                     OR 'pod' LIKE '%$search%'
-                    OR tags LIKE '%$search%'
+                    OR tags LIKE '%$search%')
                     LIMIT $search_new_count");
 
 // Select info
@@ -44,11 +46,11 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
     // Echo how many results we got
     echo '  <div class="intro">
                 <p>';
-                    if ($st_rows==1) { echo $st_rows.' story '; }
-                    if ($st_rows>1) { echo $st_rows.' stories '; }
-                    if ($p_rows==1) { echo $p_rows.' podcast '; }
-                    if ($p_rows>1) { echo $p_rows.' podcasts '; }
-                    if ($i_rows>0) { echo $i_rows.' info'; }
+                    if ($st_rows==1) { echo $st_rows.' story ';}
+                    if ($st_rows>1) { echo $st_rows.' stories ';}
+                    if ($p_rows==1) { echo $p_rows.' podcast ';}
+                    if ($p_rows>1) { echo $p_rows.' podcasts ';}
+                    if ($i_rows>0) { echo $i_rows.' info';}
                     echo ' for query: <b>'.e($search).'</b>
                 </p>
             </div>';
@@ -58,7 +60,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
     foreach ((array) $stories as $st) {
         echo '  <div>
                     <a href="story_page.php?id='.$st['id'].'" title="'.$st['subject'].'">
-                        <img src="img/imgs/story'.$st['id'].'.jpg" class="favorites_pic" alt="'.$st['subject'].'">
+                        <img src="img/imgs/story'.$st['id'].'.jpg" class="favorites-pic" alt="'.$st['subject'].'">
                     </a>
                     <div>
                         <div class="conversations">
@@ -74,13 +76,13 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
     foreach ((array) $pods as $p) {
         echo '  <div>
                     <a href="podcast_page.php?id='.$p['id'].'" title="'.$p['subject'].'">
-                        <img src="img/imgs/pod'.$p['id'].'.jpg" class="favorites_pic" alt="'.$p['subject'].'">
+                        <img src="img/imgs/pod'.$p['id'].'.jpg" class="favorites-pic" alt="'.$p['subject'].'">
                     </a>
                     <div>
                         <div class="conversations">
                             <h4 id="conversations_date">Posted '.facebook_time_ago($p['date']).'</h4>
                             <p id="conversations_from"><b>Podcast '.$p['id'].'. '.$p['subject'].'</b></p>
-                            <p class="conversations_content">'.substr($p['intro'],0,40).'...</p>
+                            <p class="conversations_conteznt">'.substr($p['intro'],0,40).'...</p>
                         </div>
                     </div>
                 </div>';
@@ -90,7 +92,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
     foreach ((array) $info as $in) {
         echo '  <div>
                     <a href="info_page.php?id='.$in['id'].'" title="'.$in['subject'].'">
-                        <img src="img/info_pic.jpg" class="favorites_pic" alt="'.$in['subject'].'">
+                        <img src="img/info_pic.jpg" class="favorites-pic" alt="'.$in['subject'].'">
                     </a>
                     <div>
                         <div class="conversations">

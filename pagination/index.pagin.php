@@ -3,9 +3,12 @@
 require 'includes/check.inc.php';
 require 'functions/facebook_time_ago.php';
 
+$list_story = '';
+$list_pod = '';
+
 // Grabbing page
-$pod = R::findOne('pod', 'ORDER BY id DESC LIMIT 1');
-$story = R::findOne('stories', 'ORDER BY id DESC LIMIT 1');
+$pod = R::findOne('pod', 'approved = 2 ORDER BY id DESC LIMIT 1');
+$story = R::findOne('stories', 'approved = 2 ORDER BY id DESC LIMIT 1');
 
 
 if ($pod) {
@@ -13,7 +16,7 @@ if ($pod) {
                         <h2 class="headline1">'.$pod->subject.'</h2>
                         <h2 class="headline2">Podcast. Episode '.$pod->id.'</h2>
 
-                        <p>'.$pod->intro.'... 
+                        <p>'.nl2br($pod->intro).'... 
                             <a href="podcast_page.php?id='.$pod->id.'." title="Open '.$pod->subject.' podcast">
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                             </a>
@@ -32,7 +35,7 @@ if ($story) {
                         <h2 class="headline1">'.$story->subject.'</h2>
                         <h2 class="headline2">Story '.$story->id.'</h2>
 
-                        <p>'.$story->intro.'... 
+                        <p>'.nl2br($story->intro).'... 
                             <a href="story_page.php?id='.$story->id.'" title="Open '.$story->subject.' story">
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                             </a>

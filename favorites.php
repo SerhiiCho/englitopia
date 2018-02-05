@@ -52,7 +52,7 @@ check_member();
                     // Button show more stories
                     $(document).ready(function() {
                         var results_count = 20;
-                        $("#button_load_stories").click(function() {
+                        $("#button-load-stories").click(function() {
                             results_count = results_count + 20;
                             $("#load_more_stories").load("loads/load_favorite_stories.php", {
                                 post_results_count: results_count
@@ -63,7 +63,7 @@ check_member();
                     // Button show more pods
                     $(document).ready(function() {
                         var results_count = 20;
-                        $("#button_load_pods").click(function() {
+                        $("#button-load-pods").click(function() {
                             results_count = results_count + 20;
                             $("#load_more_pods").load("loads/load_favorite_pods.php", {
                                 post_results_count: results_count
@@ -79,7 +79,7 @@ check_member();
                     </div>
                     <?php
                     	if ($rows_st > $results_on_page) {
-                    		echo '<button class="close_notif center" id="button_load_stories">Show more</button>';
+                    		echo '<button class="close_notif center" id="button-load-stories">Show more</button>';
                     	}
                     ?>
                 </div>
@@ -92,7 +92,7 @@ check_member();
 
                     <?php
                         if ($rows_p > $results_on_page) {
-                            echo '<button class="close_notif center" id="button_load_pods">Show more</button>';
+                            echo '<button class="close_notif center" id="button-load-pods">Show more</button>';
                         }
                     ?>
 

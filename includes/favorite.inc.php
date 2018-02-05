@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_POST['check_box_st']) && isset($_POST['st_id'])) {
 
-    //Stories
+    // Stories
     $check_box = $_POST['check_box_st'];
     $came_from = $_POST['came_from'];
     $story_id = $_POST['st_id'];
@@ -25,12 +25,12 @@ if (isset($_POST['check_box_st']) && isset($_POST['st_id'])) {
         exit();
     } else {
 
-        /* Deleting favorite story from row called favorite_story
-        I'm fetching this row, deleting story id from it and put it back */
+        // Deleting favorite story from row called favorite_story
+        // I'm fetching this row, deleting story id from it and put it back
         $select_user = R::findOne('membersdata', 'user_id = ?', array($user_id));
         $favorite_st = str_replace($story_id.', ', '', $select_user->favorite_story);
 
-        //Putting back
+        // Putting back
         R::getAll("UPDATE membersdata
                     SET favorite_story = ?
                     WHERE user_id = '$user_id'",
@@ -46,7 +46,7 @@ if (isset($_POST['check_box_st']) && isset($_POST['st_id'])) {
     }
 } elseif (isset($_POST['check_box_pod']) && isset($_POST['p_id'])) {
 
-    //Podcast
+    // Podcast
     $check_box = $_POST['check_box_pod'];
     $came_from = $_POST['came_from'];
     $pod_id = $_POST['p_id'];
@@ -59,12 +59,12 @@ if (isset($_POST['check_box_st']) && isset($_POST['st_id'])) {
         exit();
     } else {
 
-        /*Deleting favorite pod from row called favorite_pod
-        I'm fetching this row, deleting pod id from it and put it back*/
+        // Deleting favorite pod from row called favorite_pod
+        // I'm fetching this row, deleting pod id from it and put it back
         $select_user = R::findOne('membersdata', 'user_id = ?', array($user_id));
         $favorite_p = str_replace($pod_id.', ', '', $select_user->favorite_pod);
 
-        //Putting back
+        // Putting back
         R::getAll("UPDATE membersdata
                     SET favorite_pod = ?
                     WHERE user_id = ?",
@@ -80,7 +80,6 @@ if (isset($_POST['check_box_st']) && isset($_POST['st_id'])) {
     }
 } else {
 
-    // Redirect
     if ($came_from == 'story') {
         header('Location: ../story_page.php?id='.$story_id.'&message=/error');
         exit();

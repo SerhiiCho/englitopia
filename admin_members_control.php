@@ -24,7 +24,7 @@ check_admin();
                 <h1>Members' control</h1>
             </div>
 
-            <div class="wrapper_member_table">
+            <div class="wrapper-member-table">
                 <h3>Members table</h3>
                 <ul class="members_table_info">
                     <li><i class="fa fa-exclamation-circle" aria-hidden="true"></i> - Reports</li>

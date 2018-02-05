@@ -78,7 +78,7 @@ if ($notifs) {
                         </h4>
 
                         <p id="conversations_from"><b>'.$notifs->title.'</b></p>
-                        <p class="conversations_content">'.$notifs->notification.'</p>
+                        <p class="conversations_content">'.nl2br($notifs->notification).'</p>
 
                         <div>
                             <form method="POST" action="includes/notifications.inc.php">

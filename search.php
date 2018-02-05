@@ -76,18 +76,19 @@ require 'functions/functions.php';
 
                             // Select stories
                             $stories = R::getAll("SELECT * FROM stories
-                                                WHERE subject LIKE '%$search%'
+                                                WHERE approved = 2
+                                                AND (subject LIKE '%$search%'
                                                 OR 'everything' LIKE '%$search%'
                                                 OR 'story' LIKE '%$search%'
-                                                OR tags LIKE '%$search%'
+                                                OR tags LIKE '%$search%')
                                                 LIMIT 10");
 
                             // Select pods
                             $pods = R::getAll("SELECT * FROM pod
-                                                WHERE subject LIKE '%$search%'
+                                                WHERE approved = 2
+                                                AND (subject LIKE '%$search%'
                                                 OR 'everything' LIKE '%$search%'
-                                                OR 'pod' LIKE '%$search%'
-                                                OR tags LIKE '%$search%'
+                                                OR tags LIKE '%$search%')
                                                 LIMIT 10");
 
                             // Select info

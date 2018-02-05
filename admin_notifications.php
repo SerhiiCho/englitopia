@@ -57,7 +57,7 @@ check_admin();
                     <div id="message_title"></div>
                     
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                    <textarea name="message" onkeyup="counter(this, 2000,'message_text');" placeholder="Type a message for all members..."></textarea>
+                    <textarea name="message" onkeyup="counter(this, 2000,'message_text');" placeholder="Type a message for all members..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                     <div id="message_text"></div>
                     
                     <span class="span-form">Don't type anything if notification doesn't have a link</span>

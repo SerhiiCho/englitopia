@@ -77,7 +77,7 @@ foreach ($stories as $story) {
                         <h4 class="headline1">'.$story->subject.'</h4>
                         <h3 class="headline2">Story '.$story->id.'</h3>
 
-                        <p>'.$story->intro.'.. 
+                        <p>'.nl2br($story->intro).'.. 
                             <a href="story_page.php?id='.$story->id.'">
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                             </a>
@@ -101,7 +101,7 @@ foreach ($stories as $story) {
                         <h4 class="headline1">'.$story->subject.'</h4>
                         <h3 class="headline2">Story '.$story->id.'</h3>
 
-                        <p>'.$story->intro.'.. 
+                        <p>'.nl2br($story->intro).'.. 
                             <a href="story_page.php?id='.$story->id.'">
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                             </a>

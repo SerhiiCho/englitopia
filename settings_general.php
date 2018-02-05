@@ -3,18 +3,12 @@
 require 'includes/check.inc.php';
 require "functions/functions.php";
 check_member();
-
-$users = R::findOne('members', 'username =? AND active = ?',
-                                    array($log_username, 1));
-
-if ($users || (strcmp($users->cookie_password, $_SESSION['cookie_password']) === 0)) {
-    $country = $users->country;
-    $first = $users->first;
-    $last = $users->last;
-    $gender = $users->gender;
-    $status = $users->status;
-    $about = $users->about;
-}
+$country = $user->country;
+$first = $user->first;
+$last = $user->last;
+$gender = $user->gender;
+$status = $user->status;
+$about = $user->about;
 ?>
 
 <!DOCTYPE html>

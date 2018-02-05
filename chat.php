@@ -97,7 +97,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
                 <input  type="hidden" name="id_chat" value="<?php echo $message_id_chat;?>">
                 <input  type="hidden" name="to" value="<?php if($message_id_to == $user_id){echo $message_id_from;} elseif ($message_id_from == $user_id){echo $message_id_to;}?>">
                 <input type="hidden" name="came_from" value="message">
-                <textarea name="message" placeholder="Type a message" maxlength="3000" autofocus required spellcheck="false" autocomplete="off"></textarea>
+                <textarea name="message" placeholder="Type a message" maxlength="3000" autofocus required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
 
                 <button type="submit" name="send" id="submit-chat-form"></button>
             </form>
@@ -106,16 +106,6 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
         <?php require 'templates/script_bottom.part.php';?>
 
         <script>
-            // Expands textarea
-            $('textarea').on('paste input', function () {
-                if ($(this).outerHeight() > this.scrollHeight){
-                    $(this).height(1)
-                }
-                while ($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
-                    $(this).height($(this).height() + 1)
-                }
-            });
-
             // Submit form by enter
             $("textarea").keypress(function(e) {
                 if(e.which == 13 && !e.shiftKey) {        
@@ -147,7 +137,5 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
              	$('html,body').animate({scrollTop: document.body.scrollHeight},"fast");
             });
         </script>
-
-        <a href="#" class="back-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
     </body>
 </html>

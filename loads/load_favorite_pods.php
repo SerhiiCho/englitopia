@@ -27,7 +27,7 @@ if ($rows_p > 0) {
         $i++;
         $favs_p = R::load("pod", $piece);
 
-        $img = '<img src="img/imgs/pod'.$favs_p->id.'.jpg" alt="'.$favs_p->subject.'" class="favorites_pic">';
+        $img = '<img src="img/imgs/pod'.$favs_p->id.'.jpg" alt="'.$favs_p->subject.'" class="favorites-pic">';
 
         $list_p .= '<a href="podcast_page.php?id='.$favs_p->id.'" title="'.$favs_p->subject.'">'.$img.'</a>
                     <a href="podcast_page.php?id='.$favs_p->id.'" title="'.$favs_p->subject.'">

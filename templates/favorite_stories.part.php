@@ -24,7 +24,7 @@ if ($rows_st > 0) {
 
         $img = '<img src="media/img/imgs/story'.$favs->id.'.jpg"
                     alt="'.$favs->subject.'"
-                    class="favorites_pic">';
+                    class="favorites-pic">';
 
         $list_st .= '<a href="story_page.php?id='.$favs->id.'" 
                         title="'.$favs->subject.'">'.$img.'

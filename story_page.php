@@ -46,36 +46,35 @@ if ($story->approved != 2 && $admin_ok === false && $writer_ok === false) {
     <body>
         <!-- FOR ADMINS AND WRITERS -->
         <?php if ($story->approved != 2):?>
-            <div class="wrapper" style="min-height: 100px;">
-                <div class="wrapper-small2">
-                    <div class="intro">
-                        <h1>Votes: <?php echo $story->approved;?> / 2</h1>
-                        <h2>Story from: <?php echo ucfirst($story->writer);?></h2>
-                        <p> This story is not approved yet. It needs <?php echo $story->approved;?> more vote. Choose approve or reject.</p>
+            <div class="approving-material">
+                <div class="intro">
+                    <h1>Votes: <?php echo $story->approved;?> / 2</h1>
+                    <h2>Story from: <?php echo ucfirst($story->writer);?></h2>
+                    <p> This story is not approved yet. It needs <?php echo $story->approved;?> more vote. Choose approve or reject.</p>
 
-                        <!-- Approve story -->
-                        <form action="includes/approve.inc.php" method="post">
-                            <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                            <input type="hidden" name="story_id" value="<?php echo $id;?>">
-                            <button type="submit" class="button" name="approve">Approve</button>
-                        </form>
+                    <!-- Approve story -->
+                    <form action="includes/approve.inc.php" method="post">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="story_id" value="<?php echo $id;?>">
+                        <button type="submit" class="button" name="approve">Approve</button>
+                    </form>
 
-                        <!-- Reject story -->
-                        <form action="includes/approve.inc.php" method="post">
-                            <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                            <input type="hidden" name="story_id" value="<?php echo $id;?>">
-                            <button type="submit" class="button" name="reject">Reject</button>
-                        </form>
-                    </div>
+                    <!-- Reject story -->
+                    <form action="includes/approve.inc.php" method="post">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="story_id" value="<?php echo $id;?>">
+                        <button type="submit" class="button" name="reject">Reject</button>
+                    </form>
                 </div>
             </div>
         <?php endif;?>
 
         <div class="wrapper">
             <div class="wrapper-stories">
-                <h2 class="headline1"><?php echo $story->subject;?></h2>
+                <h2 class="headline1"><?php echo ucfirst($story->subject);?></h2>
                 <h2 class="headline2">Story <?php echo $story->id;?></h2>
 
+                <!-- Star Icon add to favorites -->
                 <form action="includes/favorite.inc.php" method="POST">
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
                 	<input type="hidden" name="st_id" value="<?php echo $id;?>">
@@ -101,7 +100,7 @@ if ($story->approved != 2 && $admin_ok === false && $writer_ok === false) {
 
                 <hr>
                 <p><img src="media/img/imgs/story<?php echo $story->id;?>.jpg" class="img-title" alt="story <?php echo $story->id;?>"></p>
-                <p><?php echo $story->content;?></p>
+                <p><?php echo nl2br($story->content);?></p>
             </div>
 
             <br /><hr>
@@ -116,7 +115,9 @@ if ($story->approved != 2 && $admin_ok === false && $writer_ok === false) {
                     if (isset($_SESSION['username'])) {
                         if ($admin_ok === true || $writer_ok === true ) {
                             echo '  <div class="date">
-                                        <hr><h4><i>tags: '.$story->tags.'</i></h4>
+                                        <hr>
+                                        <h4><i>Writer: '.ucfirst($story->writer).'</i></h4>
+                                        <h4><i>Tags: '.$story->tags.'</i></h4>
                                         <h4><i>Approved by: '.$story->approved_by.'</i></h4>
                                     </div>';
                         }

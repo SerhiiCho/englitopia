@@ -35,11 +35,11 @@ if ($writer_ok === false){
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
 
                     <!-- Intro -->
-                    <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..."></textarea>
+                    <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                     <div id="intro_text"></div>
 
                     <!-- Text -->
-                    <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..."></textarea>
+                    <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                     <div id="message_status"></div>
 
                     <!-- Tags -->

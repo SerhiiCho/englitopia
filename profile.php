@@ -51,7 +51,7 @@ if ($he_is_blocker == true) {
 
 	            <!-- Buttons Message & Friendship -->
 	            <?php if ($page_owner === "no"):?>
-                    <div class="message_wrapper">
+                    <div class="message-wrapper">
                         <span id="friend_btn" style="margin-left:2%;">
                             <?php echo $friend_button;?>
                         </span>

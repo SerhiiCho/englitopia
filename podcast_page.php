@@ -68,7 +68,7 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
                 <hr>
                 <img src="media/img/imgs/pod<?php echo $pod->id;?>.jpg" alt="podcast <?php echo $pod->id;?>">
 
-                <p><?php echo $pod->content;?></p>
+                <p><?php echo nl2br($pod->content);?></p>
             </div>
             <div class="floating-download-button">
 
@@ -96,11 +96,13 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
                     <?php
                         //Only for Admins
                         if (isset($_SESSION['username'])) {
-                            if ($admin_ok === true) {
-                                echo '
-                                <div class="date">
-                                    <hr><h4><i>tags: '.$pod->tags.'</i></h4>
-                                </div>';
+                            if ($admin_ok === true || $writer_ok === true ) {
+                                echo '  <div class="date">
+                                            <hr>
+                                            <h4><i>Writer: '.ucfirst($pod->writer).'</i></h4>
+                                            <h4><i>Tags: '.$pod->tags.'</i></h4>
+                                            <h4><i>Approved by: '.$pod->approved_by.'</i></h4>
+                                        </div>';
                             }
                         }
                     ?>
