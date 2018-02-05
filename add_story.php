@@ -73,7 +73,7 @@ if ($writer_ok === false){
 
                     <!-- Tags -->
                     <span class="span-form">Tags</span>
-                    <input type="name" name="tags" onkeyup="counter(this, 1000,'story_tags');" placeholder="example 1, example 2, etc..">
+                    <input type="name" name="tags" onkeyup="counter(this, 1000,'story_tags');" value="story, ">
                     <div id="story_tags"></div>
 
                     <!-- Author -->

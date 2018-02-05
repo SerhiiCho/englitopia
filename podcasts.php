@@ -8,9 +8,16 @@
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>
-        <div class="wrapper">    
- 
-            <?php echo $list;?>
+        <div class="wrapper">
+        <?php
+            $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
+            switch($message) {
+                case '/podcast_deleted':
+                    echo '<h4 class="success">Podcast has been deleted.</h4>'; 
+                    break;
+            }
+
+            echo $list;?>
 
             <?php if ($host_ok === true):?>
                 <a href="add_podcast.php" class="add-material"></a>

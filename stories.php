@@ -9,8 +9,15 @@
         <?php require 'templates/nav.part.php';?>
     <body>
         <div class="wrapper">
+            <?php
+                $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
+                switch($message) {
+                    case '/story_deleted':
+                        echo '<h4 class="success">Story has been deleted.</h4>'; 
+                        break;
+                }
 
-            <?php echo $list;?>
+                echo $list;?>
 
             <?php if ($writer_ok === true):?>
                 <a href="add_story.php" class="add-material"></a>

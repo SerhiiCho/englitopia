@@ -27,6 +27,11 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
     R::store($cookie);
     setcookie($subject_for_cookie, $id, time()+60, "/", null, null, TRUE);
 }
+
+// Check if this story is aproved
+if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
+    header("location: podcast.php?message=/not_aproved");
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +42,31 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>
+        <!-- FOR ADMINS AND WRITERS -->
+        <?php if ($pod->approved != 2):?>
+            <div class="approving-material">
+                <div class="intro">
+                    <h1>Votes: <?php echo $pod->approved;?> / 2</h1>
+                    <h2>Podcast from: <?php echo ucfirst($pod->host);?></h2>
+                    <p> This podcast is not approved yet. It needs <?php echo $pod->approved;?> more vote. Choose approve or reject.</p>
+
+                    <!-- Approve pod -->
+                    <form action="includes/approve.inc.php" method="post">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="pod_id" value="<?php echo $id;?>">
+                        <button type="submit" class="button" name="approve">Approve</button>
+                    </form>
+
+                    <!-- Reject pod -->
+                    <form action="includes/approve.inc.php" method="post">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="pod_id" value="<?php echo $id;?>">
+                        <button type="submit" class="button" name="reject">Reject</button>
+                    </form>
+                </div>
+            </div>
+        <?php endif;?>
+
         <div class="wrapper">
             <div class="wrapper-stories">
                 <h2 class="headline1"><?php echo $pod->subject;?></h2>
@@ -99,7 +129,7 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
                             if ($admin_ok === true || $writer_ok === true ) {
                                 echo '  <div class="date">
                                             <hr>
-                                            <h4><i>Writer: '.ucfirst($pod->writer).'</i></h4>
+                                            <h4><i>Host: '.ucfirst($pod->host).'</i></h4>
                                             <h4><i>Tags: '.$pod->tags.'</i></h4>
                                             <h4><i>Approved by: '.$pod->approved_by.'</i></h4>
                                         </div>';

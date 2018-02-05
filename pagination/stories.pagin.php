@@ -65,13 +65,19 @@ if ($last != 1) {
 
 $list = '';
 
+if (isset($_COOKIE['rejected_story'])) {
+    $if_has_cookie = rand();
+} else {
+    $if_has_cookie = '';
+}
+
 foreach ($stories as $story) {
     // For all users
     if ($story->approved == 2) {
         $list .= '  <div class="stories">
                         <hr>
                         <a href="story_page.php?id='.$story->id.'">
-                            <img src="media/img/imgs/story'.$story->id.'.jpg" class="stories-img" alt="Story '.$story->id.'" title="Open '.$story->subject.'">
+                            <img src="media/img/imgs/story'.$story->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Story '.$story->id.'" title="Open '.$story->subject.'">
                         </a>
 
                         <h4 class="headline1">'.$story->subject.'</h4>
@@ -95,7 +101,7 @@ foreach ($stories as $story) {
         $list .= '  <div class="stories">
                         <hr>
                         <a href="story_page.php?id='.$story->id.'">
-                            <img src="media/img/imgs/story'.$story->id.'.jpg" class="stories-img" alt="Story '.$story->id.'" title="Open '.$story->subject.'">
+                            <img src="media/img/imgs/story'.$story->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Story '.$story->id.'" title="Open '.$story->subject.'">
                         </a>
 
                         <h4 class="headline1">'.$story->subject.'</h4>

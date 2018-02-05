@@ -65,25 +65,58 @@ if ($last != 1) {
 
 $list = '';
 
+if (isset($_COOKIE['rejected_pod'])) {
+    $if_has_cookie = rand();
+} else {
+    $if_has_cookie = '';
+}
+
 foreach ($pods as $pod) {
-    $list .= '  <div class="stories">
-                    <hr>
-                    <a href="podcast_page.php?id='.$pod->id.'">
-                        <img src="media/img/imgs/pod'.$pod->id.'.jpg" class="stories-img" alt="Podcast '.$pod->id.'" title="Open '.$pod->subject.'">
-                    </a>
-
-                    <h4 class="headline1">'.$pod->subject.'</h4>
-                    <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
-
-                    <p>'.nl2br($pod->intro).'.. 
+    // For all users
+    if ($pod->approved == 2) {
+        $list .= '  <div class="stories">
+                        <hr>
                         <a href="podcast_page.php?id='.$pod->id.'">
-                            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            <img src="media/img/imgs/pod'.$pod->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Podcast '.$pod->id.'" title="Open '.$pod->subject.'">
                         </a>
-                    </p>
 
-                    <div class="date">
-                        <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$pod->author.'</h4>
-                        <span>'.facebook_time_ago($pod->date).'</span>
-                    </div>
-                </div>';
+                        <h4 class="headline1">'.$pod->subject.'</h4>
+                        <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
+
+                        <p>'.nl2br($pod->intro).'.. 
+                            <a href="podcast_page.php?id='.$pod->id.'">
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            </a>
+                        </p>
+
+                        <div class="date">
+                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$pod->author.'</h4>
+                            <span>'.facebook_time_ago($pod->date).'</span>
+                        </div>
+                    </div>';
+    }
+
+    // For admins and writers only
+    if ($pod->approved != 2 && ($admin_ok === true || $writer_ok === true)) {
+        $list .= '  <div class="stories">
+                        <hr>
+                        <a href="podcast_page.php?id='.$pod->id.'">
+                            <img src="media/img/imgs/pod'.$pod->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Podcast '.$pod->id.'" title="Open '.$pod->subject.'">
+                        </a>
+
+                        <h4 class="headline1">'.$pod->subject.'</h4>
+                        <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
+
+                        <p>'.nl2br($pod->intro).'.. 
+                            <a href="podcast_page.php?id='.$pod->id.'">
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            </a>
+                        </p>
+
+                        <div class="date">
+                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$pod->author.'</h4>
+                            <span>'.facebook_time_ago($pod->date).'</span>
+                        </div>
+                    </div>';
+    }
 }

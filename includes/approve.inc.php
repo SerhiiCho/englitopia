@@ -12,10 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $story_id = $_POST['story_id'];
+$pod_id = $_POST['pod_id'];
+
+$pod = R::findOne('pod', 'id = ?', array($pod_id));
 $story = R::findOne('stories', 'id = ?', array($story_id));
 
-// Approve
-if (isset($_POST['approve'])) {
+// Approve story
+if (isset($_POST['approve']) && isset($_POST['story_id'])) {
     if (strpos($story->approved_by, $log_username.', ') !== false) {
         // If user already approved this story
         header("location: ../story_page.php?id=".$story_id.'&message=/you_already_approved_this_story');
@@ -32,15 +35,51 @@ if (isset($_POST['approve'])) {
     }
 }
 
-// Reject
-if (isset($_POST['reject'])) {
-    // Delete row
+// Reject story
+if (isset($_POST['reject']) && isset($_POST['story_id'])) {
+
+    setcookie('rejected_story', '1', time()+800, "/", null, null, TRUE);
     R::trash($story);
-    // Delete image
+
     unlink("../media/img/imgs/story".$story_id.".jpg");
-    // Bring back auto incrament
+
     R::getAll("ALTER TABLE stories AUTO_INCREMENT = $story_id");
-    // Send message to all admins
+
+    // @TODO: Send message to all admins
 
     header("location: ../stories.php?message=/story_deleted");
+}
+
+// Approve podcast
+if (isset($_POST['approve']) && isset($_POST['pod_id'])) {
+    if (strpos($pod->approved_by, $log_username.', ') !== false) {
+        // If user already approved this story
+        header("location: ../podcast_page.php?id=".$pod_id.'&message=/you_already_approved_this_podcast');
+    } else {
+        R::getAll( "UPDATE pod
+                    SET approved_by = concat(approved_by, '$log_username, ')
+                    WHERE id = ? AND approved != ?",
+                    array($pod_id, 2));
+        R::getAll( "UPDATE pod
+                    SET approved = approved + 1
+                    WHERE approved != '2'");
+        header("location: ../podcast_page.php?id=".$pod_id.'&message=/success');
+        exit();
+    }
+}
+
+// Reject podcast
+if (isset($_POST['reject']) && isset($_POST['pod_id'])) {
+
+    setcookie('rejected_pod', '1', time()+800, "/", null, null, TRUE);
+    R::trash($pod);
+
+    unlink("../media/img/imgs/pod".$pod_id.".jpg");
+    unlink("../media/audio/podcast".$pod_id.".mp3");
+
+    R::getAll("ALTER TABLE pod AUTO_INCREMENT = $pod_id");
+
+    // @TODO: Send message to all admins
+
+    header("location: ../podcasts.php?message=/podcast_deleted");
 }

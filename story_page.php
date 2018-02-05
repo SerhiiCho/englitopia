@@ -29,10 +29,8 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
 }
 
 // Check if this story is aproved
-$approve_button = '';
-$reject_button = '';
 if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
-    header("location: stories.php?message=/this_story_is_not_aproved");
+    header("location: stories.php?message=/not_aproved");
 }
 ?>
 
