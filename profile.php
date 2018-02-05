@@ -14,7 +14,7 @@ if ($he_is_blocker == true) {
 <html lang="en">
     <head>
         <?php require 'templates/head.part.php';?>
-        <title><?php echo e(ucfirst($m_username));?></title>
+        <title><?php echo escapeChars(ucfirst($m_username));?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid 2px gray;}</style>
@@ -32,7 +32,7 @@ if ($he_is_blocker == true) {
 		            <div class="name">
 		            	<h3>
 		           			<?php
-		           				echo e($m_username);
+		           				echo escapeChars($m_username);
 	
 		           				if ($page_owner === 'no') {
 		           					echo $m_last_login_icon;
@@ -41,10 +41,10 @@ if ($he_is_blocker == true) {
 		           			
 		            	</h3>
 		            	<h5 style="color:gray;">
-		            		<?php echo e($m_first).' '.e($m_last);?>
+		            		<?php echo escapeChars($m_first).' '.escapeChars($m_last);?>
 		            	</h5>
 		            	<h5 style="color:gray;">
-		            		<?php echo e($m_country);?>
+		            		<?php echo escapeChars($m_country);?>
 		            	</h5>
 		            </div>
 	            </div>

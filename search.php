@@ -127,7 +127,7 @@ require 'functions/functions.php';
                                     if ($p_rows==1) { echo $p_rows.' podcast '; }
                                     if ($p_rows>1) { echo $p_rows.' podcasts '; }
                                     if ($i_rows>0) { echo $i_rows.' info'; }
-                                    echo ' for query: <b>'.e($search).'</b>
+                                    echo ' for query: <b>'.escapeChars($search).'</b>
                                 </p>
                             </div>';
                             }
@@ -140,7 +140,7 @@ require 'functions/functions.php';
                                 foreach ((array) $stories as $st) {
                                     echo '  <div>
                                                 <a href="story_page.php?id='.$st['id'].'" title="'.$st['subject'].'">
-                                                    <img src="media/img/imgs/story'.$st['id'].'.jpg" class="favorites_pic" alt="'.$st['subject'].'">
+                                                    <img src="media/img/imgs/story'.$st['id'].'.jpg" class="favorites-pic" alt="'.$st['subject'].'">
                                                 </a>
                                                 <div>
                                                     <div class="conversations">
@@ -156,7 +156,7 @@ require 'functions/functions.php';
                                 foreach ((array) $pods as $p) {
                                     echo '  <div>
                                                 <a href="podcast_page.php?id='.$p['id'].'" title="'.$p['subject'].'">
-                                                    <img src="media/img/imgs/pod'.$p['id'].'.jpg" class="favorites_pic" alt="'.$p['subject'].'">
+                                                    <img src="media/img/imgs/pod'.$p['id'].'.jpg" class="favorites-pic" alt="'.$p['subject'].'">
                                                 </a>
                                                 <div>
                                                     <div class="conversations">
@@ -172,7 +172,7 @@ require 'functions/functions.php';
                                 foreach ((array) $info as $in) {
                                     echo '  <div>
                                                 <a href="info_page.php?id='.$in['id'].'" title="'.$in['subject'].'">
-                                                    <img src="media/img/info_pic.jpg" class="favorites_pic" alt="'.$in['subject'].'">
+                                                    <img src="media/img/info_pic.jpg" class="favorites-pic" alt="'.$in['subject'].'">
                                                 </a>
                                                 <div>
                                                     <div class="conversations">

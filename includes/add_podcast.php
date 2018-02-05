@@ -6,7 +6,7 @@ check_member();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['_token']) || ($_POST['_token'] !== $_SESSION['_token'])) {
-        file_put_contents('../my_log/errors.txt', trim($date." ||    add_story.inc.php   ||      Token is incorect    || IP: ".$ip."\r\n ").PHP_EOL, FILE_APPEND);
+        file_put_contents('../my_log/errors.txt', trim($date." ||  add_podcast.inc.php   ||      Token is incorect    || IP: ".$ip."\r\n ").PHP_EOL, FILE_APPEND);
         die('<h2>Invalid CSRF! We have beed notify about this error.</h2>');
     }
 }

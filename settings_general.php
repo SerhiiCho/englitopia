@@ -55,7 +55,7 @@ $about = $user->about;
                         	type="name"
                             name="first"
                             placeholder="First name"
-                            value="<?php echo e($first);?>"
+                            value="<?php echo escapeChars($first);?>"
                             id="firstname"
                             onkeyup="counter(firstname,15,'message_first');"
                         >
@@ -69,7 +69,7 @@ $about = $user->about;
                             placeholder="Last name"
                             id="lastname"
                             onkeyup="counter(lastname,15,'message_last');"
-                            value="<?php echo e($last);?>"
+                            value="<?php echo escapeChars($last);?>"
                         >
                         <div id="message_last"></div>
 
@@ -80,7 +80,7 @@ $about = $user->about;
                             placeholder="Describe yourself..."
                             id="textarea"
                             onkeyup="counter(textarea,230,'message_text');"
-                            ><?php echo e($about);?></textarea>
+                            ><?php echo escapeChars($about);?></textarea>
                         <div id="message_text"></div>
 
                         <!--TOKEN-->
@@ -119,12 +119,12 @@ $about = $user->about;
                     <form method="post" action="includes/general.inc.php" class="form">
                         <span class="span-form">Country</span>
                         <select class="country-form" name="country">
-                            <option value="<?php if (!empty($country)) echo e($country);?>" id="select-country">
+                            <option value="<?php if (!empty($country)) echo escapeChars($country);?>" id="select-country">
 
                             <!-- Text -->
                             <?php
                                 if (!empty($country)) {
-                                    echo e($country);
+                                    echo escapeChars($country);
                                 } else {
                                     echo '---- Select country ----';
                                 }
@@ -141,9 +141,9 @@ $about = $user->about;
 
                         <span class="span-form">Gender</span>
                         <select class="gender-form" name="gender">
-                            <option value="<?php if (!empty($gender)) {echo e($gender);}?>">
+                            <option value="<?php if (!empty($gender)) {echo escapeChars($gender);}?>">
                             <?php
-                                if (!empty($gender)) {echo e($gender);}
+                                if (!empty($gender)) {echo escapeChars($gender);}
                                 else { echo '-- Select --';}
                             ?>
                             </option>

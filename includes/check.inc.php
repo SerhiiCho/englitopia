@@ -9,6 +9,7 @@ $log_username = '';
 $member_ok = false;
 $admin_ok = false;
 $writer_ok = false;
+$host_ok = false;
 $date = date("Y-m-d H:i:s");
 $ip = preg_replace('#[^0-9.]#','',getenv('REMOTE_ADDR'));
 $url_member_false = 'login.php?message=/you_should_be_logged_in';
@@ -29,7 +30,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["_token"]) && isset($_SESSIO
     $member_ok = check_if_logged($log_username, $cookie_password);
 
     // Check username and password are matching
-    if ($member_ok === true) {
+    if ($member_ok == true) {
         $user = R::findOne('members', 'username = ? AND cookie_password = ?', array($log_username, $cookie_password));
 
         if ($user) {
@@ -70,7 +71,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["_token"]) && isset($_SESSIO
 function check_member() {
 	global $member_ok;
 	global $url_member_false;
-	if ($member_ok === false){
+	if ($member_ok == false){
 		header('Location: '.$url_member_false);
 		exit();
 	}
@@ -82,16 +83,21 @@ if (isset($user)) {
         $admin_ok = true;
     }
 
-    // Verify if user is Admin
+    // Verify if user is Writer
     if (strpos($user->status, 'writer') !== false) {
         $writer_ok = true;
+    }
+
+    // Verify if user is Host
+    if (strpos($user->status, 'host') !== false) {
+        $host_ok = true;
     }
 }
 
 function check_admin() {
 	global $admin_ok;
 	global $url_admin_false;
-	if ($admin_ok === false){
+	if ($admin_ok == false){
 		header('Location: '.$url_admin_false);
 		exit();
 	}

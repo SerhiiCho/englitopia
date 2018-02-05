@@ -12,6 +12,10 @@
  
             <?php echo $list;?>
 
+            <?php if ($host_ok === true):?>
+                <a href="add_podcast.php" class="add-material"></a>
+            <?php endif;?>
+
             <!-- Pagination -->
             <div  class="pagination">
                 <div id="pagination_controls">

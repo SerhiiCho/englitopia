@@ -10,14 +10,14 @@
 
     <!--Profile menu info-->
     <div class="about">
-        <p><?php echo e($m_about);?></p>
+        <p><?php echo escapeChars($m_about);?></p>
     </div>
 
     <ul class="profile-member-info">
         <li>
             <p>
                 <span>Status:</span>
-                <span style="float:right;"><?php echo e($m_status);?></span>
+                <span style="float:right;"><?php echo escapeChars($m_status);?></span>
             </p>
         </li>
         <li>
