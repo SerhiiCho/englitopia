@@ -1,0 +1,248 @@
+.wrapper {
+    width: 98%;
+    margin: 54px 1% 0 1%;
+}
+
+.wrapper-stories,
+.wrapper-info {
+    width: 94%;
+    margin: 9px 3%;
+}
+
+.wrapper-small {
+    width: 60%;
+    margin: 60px 20% 0 20%;
+}
+
+.wrapper-small2 {
+    width: 80%;
+    margin: 1px 8%;
+    padding: 2px 2%;
+}
+
+.wrapper-stories li,
+.wrapper-info li {
+    margin: 18px 0 18px 7%;
+}
+
+/*--news events--*/
+
+.event>h4 {
+    margin: 7px 0px 3px 2px;
+    font-size: 16px;
+}
+
+.event>h5 {
+    margin: 2px 7px 0 4px;
+    font-size: 15px;
+}
+
+.event>a>img {
+    margin: 7px 4%;
+    width: 92%;
+    border-radius: 2px;
+}
+
+/*--navigation bar--*/
+
+.logo-section {
+    width: 130px;
+    height: 0;
+    margin: 0 auto;
+    float: none;
+}
+
+#logo {
+    background-size: 130px;
+    height: 57px;
+    margin: 0;
+}
+
+.hb-button-left {
+    padding: 15px 19px 12px 21px;
+    float: left;
+    border: none;
+    background: inherit;
+    display: inline-block;
+}
+
+.hb-button-right {
+    padding: 13px 20px 12px 19px;
+}
+
+#nav-menu>ul {
+    max-height: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin-top: 49px;
+}
+
+#nav-menu>ul.show {
+    max-height: 40em;
+}
+
+#nav-menu>ul>li {
+    width: 100%;
+}
+
+#hide-search-box {
+    display: block !important;
+}
+
+#hide-search-box input {
+    width: 90%;
+    height: 33px;
+    border-radius: 3px;
+    border: none;
+    margin: 10px 3% 5px 3%;
+    padding: 2px 2%;
+    background: #484848;
+    color: white;
+}
+
+#hide-search-button {
+    display: none !important;
+}
+
+#nav-menu>ul>li>a,
+.logged-in-button {
+    font-size: 17px;
+    margin: 0;
+}
+
+.li-nav-last {
+    margin-bottom: 40px;
+}
+
+/*--search on page search.php--*/
+
+.search-form {
+    width: 80%;
+    max-width: 641px;
+    margin: 16px 10% 0 10%;
+}
+
+/*--myprofile profile.php--*/
+
+.profile-buttons a,
+.profile-buttons button {
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+/*--settings--*/
+
+.settings-general {
+    width: 45.5%;
+    padding: 0 1%;
+}
+
+/*--chat--*/
+
+.wrapper-chat {
+    width: 80%;
+    margin: 55px 8% 0 8%;
+}
+
+#button-load-chat {
+    width: 30%;
+    left: 36%;
+}
+
+/*------*/
+
+.wrapper_member_table {
+    width: 96%;
+    margin: 17px 2%;
+}
+
+.members_table_info {
+    font-size: 12px;
+}
+
+/*--login system--*/
+
+.buttons-section a {
+    letter-spacing: 1px;
+}
+
+.buttons-section button {
+    padding: 1px 6px;
+    letter-spacing: 1px;
+}
+
+.header,
+.header2 {
+    width: 98%;
+    margin: 0 1%;
+    padding: 0;
+    border: none;
+}
+
+/*--admin page--*/
+
+.admin-table {
+    font-size: 10px;
+}
+
+.admin-table,
+th,
+td {
+    padding: 5px 0px;
+}
+
+/*--pods and stories--*/
+
+.stories {
+    width: 46%;
+    margin: 4px 2% 8px 2%;
+}
+
+.audio {
+    margin: 10px 5%;
+    width: 90%;
+}
+
+.popup_window {
+    left: 2%;
+    width: 96%;
+}
+
+/*--footer--*/
+
+.hr-mobile {
+    display: inline-block;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+.nav-footer {
+    width: 96%;
+    margin: 7px 2%;
+}
+
+.footer-col-first {
+    width: 96%;
+    float: left;
+    margin: 5px 1% 5px 1%;
+}
+
+.footer-col-first>div {
+    width: 79%;
+    margin-right: 3%;
+}
+
+.footer-col {
+    width: 32%;
+    margin: 5px 3% 5px 0;
+    text-align: center;
+}
+
+.footer-col-last {
+    width: 30%;
+    margin: 5px 0;
+    text-align: center;
+}
