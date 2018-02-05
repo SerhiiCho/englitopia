@@ -59,9 +59,6 @@ switch($posts) {
         $picture = 'logo.png';
 }
 ?>
-<a href="#" class="back-to-top">
-    <i class="fa fa-arrow-up" aria-hidden="true"></i>
-</a>
     <footer>
         <nav class="nav-footer">
             <div class="footer-col-first">

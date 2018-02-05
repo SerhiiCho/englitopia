@@ -9,59 +9,56 @@ if (!isset($data['submit'])) {
 	exit();
 }
 
-// Vars
 $username = $data['username'];
 $email = $data['email'];
 $password = $data['password'];
-$password_2 = $data['password_2'];
+$password2 = $data['password_2'];
 $errors = array();
 
-// Check for empty fields
-if (empty($username) || empty($email) || empty($password) || empty($password_2)) {
+if (empty($username) || empty($email) || empty($password) || empty($password2)) {
     $errors[] = 'empty';
 }
 
-// Prevent space and other stuff
 if (!ctype_alnum($username) || !preg_match('%^[A-Za-z0-9]{3,15}$%',stripslashes(trim($username)))) {
     $errors[] = 'only_letters_and_numbers';
 }
 
-// Check if characters are allowed for password
-if (!preg_match('%^[A-Za-z0-9]{5,50}$%', stripslashes(trim($password))) || !preg_match('%^[A-Za-z0-9]{5,50}$%',stripslashes(trim($password_2)))) {
+if (!preg_match('%^[A-Za-z0-9]{5,50}$%', stripslashes(trim($password)))) {
     $errors[] = 'only_letters_and_numbers';
 }
 
-// Check if email is valid
-if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('%^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$%',stripslashes(trim($email)))) {
+if (!preg_match('%^[A-Za-z0-9]{5,50}$%',stripslashes(trim($password2)))) {
+    $errors[] = 'only_letters_and_numbers';
+}
+
+if (!filter_var(trim($email), FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'incorrect_email';
 }
 
-// Check password length
-if (strlen($password)<5 || strlen($password)>50){
+if (strlen($password) < 5 || strlen($password) > 50){
     $errors[] = 'password_min_5_max_50';
 }
 
 // Check for banned words
-if (preg_match("/fuck|slut|admin|englitopia|anal|bitch|blowjob|shit|dick|faggot|nigga|nigger|porno|pussy|putain|racista|sh!t|sh1't|sh1t|sh1te|pizda|blyat/i", $username)) {
+$bannedWordsList = file_get_contents('../my_log/banned_words.txt', FILE_USE_INCLUDE_PATH);
+if (preg_match($bannedWordsList, $username)) {
     $errors[] = 'banned_words';
 }
 
-// Check Username length
-if (strlen($username)>15 || strlen($username)<3) {
+if (strlen($username) > 15 || strlen($username) < 3) {
     $errors[] = 'username_max_12_and_min_3';
 }
 
-// Check if Two Password Are Matching
-if ($password !== $password_2) {
+if ($password !== $password2) {
     $errors[] = 'password_do_not_match';
 }
 
-// Check if member is taken
+// If member is taken
 if (R::count('members', 'username = ? OR email = ?', array($username, $email)) > 0) {
     $errors[] = 'member_taken';
 }
 
-// Insert the member into the database
+// Insert the member
 if (empty($errors)) {
     $user = R::dispense('members');
 
@@ -81,7 +78,7 @@ if (empty($errors)) {
 
     R::store($user);
 
-    // Now insert data to membersdata table
+    // Insert membersdata
     $user_2 = R::dispense('membersdata');
 
     $user_2->user_id = $user->id;
@@ -98,7 +95,6 @@ if (empty($errors)) {
     R::store($user_2);
     R::close();
 
-    // Redirect
     header("Location: ../login.php?message=/success");
     echo "signup_success";
 } else {

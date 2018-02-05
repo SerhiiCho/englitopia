@@ -129,25 +129,6 @@ hr {
     color: #c1ccdd;
 }
 
-.back-to-top {
-    width: 40px;
-    height: 40px;
-    font-size: 35px;
-    line-height: 39px;
-    text-align: center;
-    color: black;
-    position: fixed;
-    bottom: 80px;
-    right: 27px;
-    display: none;
-    opacity: 0.4;
-    border-radius: 300px;
-    border: solid 1px black;
-    background: white;
-    padding: 3px;
-    z-index: 10;
-}
-
 .error,
 .success,
 .original {
@@ -771,6 +752,7 @@ hr {
     color: #4d4d4d;
     line-height: 18px;
     resize: none;
+    overflow: hidden;
 }
 
 #submit-chat-form {
@@ -1000,7 +982,7 @@ hr {
 
 .under-form {
     text-align: center;
-    font-size: 13px;
+    font-size: .7rem;
 }
 
 .form input {
@@ -1008,12 +990,12 @@ hr {
     height: 20px;
     padding: 5px 3%;
     margin-top: 6px;
-    border: inset 1px #bfbfbf;
+    border: 0;
     background: #fff;
-    font-size: 17px;
+    font-size: 1rem;
     color: #4d4d4d;
     line-height: 19px;
-    border-radius: 4px;
+    border-radius: 7px;
 }
 
 .country-form {
@@ -1022,11 +1004,11 @@ hr {
     height: 32px;
     padding: 0px 2%;
     margin: 0 1% 6px 1%;
-    border: outset 1px #bfbfbf;
+    border: 0;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 7px;
     color: #4d4d4d;
-    font-size: 17px;
+    font-size: 1rem;
     line-height: 33px;
 }
 
@@ -1036,27 +1018,29 @@ hr {
     height: 32px;
     padding: 0px 2%;
     margin: 0 1% 6px 1%;
-    border: outset 1px #bfbfbf;
+    border: 0;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 7px;
     color: #4d4d4d;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 33px;
 }
 
 .form textarea,
-.report_form>textarea {
-    height: 100px;
+.report_form > textarea {
+    height: 38px;
     width: 97%;
     padding: 4px 1.5%;
     margin-top: 6px;
-    border: inset 1px #bfbfbf;
-    border-radius: 2px;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
     background: #fff;
-    font-size: 15px;
+    font-size: 1rem;
     color: #4d4d4d;
     line-height: 19px;
     resize: none;
+    overflow: hidden;
 }
 
 .form input:focus,
@@ -1064,7 +1048,7 @@ hr {
 .gender-form:focus,
 .country-form:focus,
 .search-form>input:focus {
-    border: solid 1px blue;
+    border: solid 1px gray;
 }
 
 .cb {

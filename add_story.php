@@ -39,7 +39,7 @@ if ($writer_ok === false){
                     <div id="intro_text"></div>
 
                     <!-- Text -->
-                    <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..." style="height: 400px;"></textarea>
+                    <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..."></textarea>
                     <div id="message_status"></div>
 
                     <!-- Tags -->
