@@ -31,7 +31,7 @@ if (isset($_POST['subject']) && isset($_POST['intro'])) {
     $img_ext = explode('.',$img_name);
     $img_actual_ext = strtolower(end($img_ext));
     // mp3
-    $audio = $_FILES['file'];
+    $audio = $_FILES['audio'];
     $audio_name = $audio['name'];
     $audio_tmp_name = $audio['tmp_name'];
     $audio_size = $audio['size'];

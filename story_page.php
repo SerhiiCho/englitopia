@@ -20,6 +20,12 @@ if ($member_ok == true) {
     }
 }
 
+if (isset($_COOKIE['rejected_pod'])) {
+    $if_has_cookie = rand();
+} else {
+    $if_has_cookie = '';
+}
+
 // Page views count
 if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id) {
     $cookie = R::findOne('stories', 'id = ?', array($id));
@@ -72,32 +78,41 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
                 <h2 class="headline1"><?php echo ucfirst($story->subject);?></h2>
                 <h2 class="headline2">Story <?php echo $story->id;?></h2>
 
-                <!-- Star Icon add to favorites -->
-                <form action="includes/favorite.inc.php" method="POST">
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                	<input type="hidden" name="st_id" value="<?php echo $id;?>">
-                	<input type="hidden" name="came_from" value="story">
-                	
-                	<?php if (isset($_SESSION['username']) && $favorite == 1):?>
+                <!-- Add to favorites -->
+                <div class="page-icons">
+                    <form action="includes/favorite.inc.php" method="POST">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="st_id" value="<?php echo $id;?>">
+                        <input type="hidden" name="came_from" value="story">
+                        
+                        <?php if (isset($_SESSION['username']) && $favorite == 1):?>
 
-	                	<input type="checkbox" style="display:none;" name="check_box_st" id="check_box" onchange="this.form.submit()" value="0">
-	                	<label class="favorite center" for="check_box">
-	                		<i class="fa fa-star" aria-hidden="true"></i>
-	                	</label>
+                            <input type="checkbox" style="display:none;" name="check_box_st" id="check_box" onchange="this.form.submit()" value="0">
+                            <label class="favorite center" for="check_box">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </label>
 
-	                <?php elseif (isset($_SESSION['username']) && $favorite == 0):?>
+                        <?php elseif (isset($_SESSION['username']) && $favorite == 0):?>
 
-	                	<input type="checkbox" style="display:none;" name="check_box_st" id="check_box" onchange="this.form.submit()" value="1">
-	                	<label class="favorite center" for="check_box">
-	                		<i class="fa fa-star-o" aria-hidden="true"></i>
-	                	</label>
+                            <input type="checkbox" style="display:none;" name="check_box_st" id="check_box" onchange="this.form.submit()" value="1">
+                            <label class="favorite center" for="check_box">
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </label>
 
-	                <?php endif;?>
+                        <?php endif;?>
+                    </form>
 
-                </form>
+                    <!-- Delete button -->
+                    <?php if ($admin_ok == true):?>
+                        <div id="delete-post">
+                            <button class="icon delete-icon" onclick="deleteStory('deleteStory',<?php echo "'".$id."'";?>,'delete-post')"></button>
+                        </div>
+                    <?php endif;?>
+                </div>
+                <div id="status"></div>
 
                 <hr>
-                <p><img src="media/img/imgs/story<?php echo $story->id;?>.jpg" class="img-title" alt="story <?php echo $story->id;?>"></p>
+                <p><img src="media/img/imgs/story<?php echo $story->id.'.jpg?'.$if_has_cookie;?>" class="img-title" alt="story <?php echo $story->id;?>"></p>
                 <p><?php echo nl2br($story->content);?></p>
             </div>
 
@@ -123,6 +138,7 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
                 ?>
 
             </div>
+            <script src="js/story_page.js"></script>
         </div>
         <?php require 'templates/script_bottom.part.php';?>
     </body>

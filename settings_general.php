@@ -59,7 +59,7 @@ $about = $user->about;
                             id="firstname"
                             onkeyup="counter(firstname,15,'message_first');"
                         >
-                        <div id="message_first"></div>
+                        <div id="message_first" class="original"></div>
 
                         <!--LASTNAME-->
                         <span class="span-form">Last name</span>
@@ -71,7 +71,7 @@ $about = $user->about;
                             onkeyup="counter(lastname,15,'message_last');"
                             value="<?php echo escapeChars($last);?>"
                         >
-                        <div id="message_last"></div>
+                        <div id="message_last" class="original"></div>
 
                         <!--ABOUT YOURSELF-->
                         <span class="span-form">About yourself</span>
@@ -81,7 +81,7 @@ $about = $user->about;
                             id="textarea"
                             onkeyup="counter(textarea,230,'message_text');"
                             ><?php echo escapeChars($about);?></textarea>
-                        <div id="message_text"></div>
+                        <div id="message_text" class="original"></div>
 
                         <!--TOKEN-->
                         <input

@@ -97,7 +97,7 @@ foreach ($pods as $pod) {
     }
 
     // For admins and writers only
-    if ($pod->approved != 2 && ($admin_ok === true || $writer_ok === true)) {
+    if ($pod->approved != 2 && ($admin_ok === true || $host_ok === true)) {
         $list .= '  <div class="stories">
                         <hr>
                         <a href="podcast_page.php?id='.$pod->id.'">

@@ -20,6 +20,12 @@ if ($member_ok == true) {
     }
 }
 
+if (isset($_COOKIE['rejected_pod'])) {
+    $if_has_cookie = rand();
+} else {
+    $if_has_cookie = '';
+}
+
 // Page views count
 if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id) {
     $cookie = R::findOne('pod', 'id = ?', array($id));
@@ -72,31 +78,41 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                 <h2 class="headline1"><?php echo $pod->subject;?></h2>
                 <h2 class="headline2">Podcast <?php echo $pod->id;?></h2>
                 
-                <form action="includes/favorite.inc.php" method="POST">
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                	<input type="hidden" name="p_id" value="<?php echo $id;?>">
-                	<input type="hidden" name="came_from" value="pod">
-                	
-                	<?php if (isset($_SESSION['username']) && $favorite == 1):?>
+                <!-- Add to favorites -->
+                <div class="page-icons">
+                    <form action="includes/favorite.inc.php" method="POST">
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="p_id" value="<?php echo $id;?>">
+                        <input type="hidden" name="came_from" value="pod">
+                        
+                        <?php if (isset($_SESSION['username']) && $favorite == 1):?>
 
-	                	<input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="0">
-	                	<label class="favorite center" for="check_box">
-	                		<i class="fa fa-star" aria-hidden="true"></i>
-	                	</label>
+                            <input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="0">
+                            <label class="favorite" for="check_box">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </label>
 
-	                <?php elseif (isset($_SESSION['username']) && $favorite == 0):?>
+                        <?php elseif (isset($_SESSION['username']) && $favorite == 0):?>
 
-	                	<input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="1">
-	                	<label class="favorite center" for="check_box">
-	                		<i class="fa fa-star-o" aria-hidden="true"></i>
-	                	</label>
+                            <input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="1">
+                            <label class="favorite" for="check_box">
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </label>
 
-	                <?php endif;?>
+                        <?php endif;?>
+                    </form>
 
-                </form>
+                    <!-- Delete button -->
+                    <?php if ($admin_ok == true):?>
+                        <div id="delete-post">
+                            <button class="delete-icon icon" onclick="deletePodcast('deletePod',<?php echo $id;?>,'delete-post')"></button>
+                        </div>
+                    <?php endif;?>
+                </div>
+                <div id="status"></div>
                 
                 <hr>
-                <img src="media/img/imgs/pod<?php echo $pod->id;?>.jpg" alt="podcast <?php echo $pod->id;?>">
+                <img src="media/img/imgs/pod<?php echo $pod->id.'.jpg?'.$if_has_cookie;?>" alt="podcast <?php echo $pod->id;?>">
 
                 <p><?php echo nl2br($pod->content);?></p>
             </div>
@@ -139,6 +155,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 
                 </div>
             </div>
+            <script src="js/podcast_page.js"></script>
         </div>
         <?php require 'templates/script_bottom.part.php';?>
     </body>

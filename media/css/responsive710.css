@@ -123,7 +123,7 @@
     margin: 1rem 10% 0 10%;
 }
 
-/*--myprofile profile.php--*/
+/*-- My profile profile.php --*/
 
 .profile-buttons a,
 .profile-buttons button {
@@ -131,23 +131,28 @@
     padding: 0 .31rem;
 }
 
-/*--settings--*/
+/*-- Settings --*/
 
 .settings-general {
     width: 45.5%;
     padding: 0 1%;
 }
 
-/*--chat--*/
+/*-- Chat --*/
 
 .wrapper-chat {
     width: 80%;
     margin: 3.43rem 8% 0 8%;
+    border-radius: 0;
 }
 
 #button-load-chat {
     width: 30%;
     left: 36%;
+}
+
+.chat-form textarea {
+    border-radius: 0;
 }
 
 /*------*/
@@ -161,7 +166,7 @@
     font-size: .75rem;
 }
 
-/*--login system--*/
+/*-- Login system --*/
 
 .buttons-section a {
     letter-spacing: .06rem;

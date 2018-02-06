@@ -7,9 +7,9 @@
     --blue: #4285f4;
     --red: #a52a2a;
     --green: #006147;
-    --gray: #727272;
+    --gray: #505050;
     --lightGray: #d1d1d1;
-    --darkGray: #333;
+    --darkGray: #2e2e2e;
 }
 
 @keyframes shake {
@@ -128,13 +128,14 @@ hr {
 }
 
 .error, .success, .original {
-    width: 96%;
+    width: 90%;
     margin-bottom: .31rem;
-    padding: .31rem 2%;
+    padding: .4rem 4%;
+    margin: 0 1%;
     display: block;
     color: #eee;
     border-radius: 0 0 .43rem .43rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .error {
@@ -143,7 +144,6 @@ hr {
 
 .original {
     color: #444444;
-    padding: .62rem 2%;
 }
 
 .success {
@@ -214,7 +214,7 @@ hr {
     transition: 1s ease all;
 }
 
-/*-- Font awesome icons --*/
+/*-- Icons --*/
 
 .fa {
     transition: opacity 200ms ease;
@@ -248,6 +248,53 @@ hr {
     line-height: 1rem;
     border-radius: 50%;
     border: solid .06rem #eee;
+}
+
+.page-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-icon {
+    background: url("../img/icons/delete.png");
+}
+
+.check-mark-icon {
+    background: url("../img/icons/check-mark.png");
+}
+
+.star-icon {
+    background: url("../img/icons/star.png");
+}
+
+.star-empty-icon {
+    background: url("../img/icons/star-empty.png");
+}
+
+.icon {
+    background-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    padding: 0 .3rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.favorite {
+    color: var(--gray);
+    cursor: pointer;
+    padding: 0 .3rem;
+}
+
+.favorite:hover,
+.delete-icon:hover {
+    opacity: 0.8;
+}
+
+.favorite i {
+    font-size: 1.25rem;
 }
 
 /*-- Navigation menu --*/
@@ -371,7 +418,7 @@ hr {
     height: 2.56rem;
     padding: 0 1%;
     text-align: center;
-    border-bottom: solid .06rem #eee;
+    border-bottom: solid .06rem var(--lightGray);
 }
 
 .profile-menu-line ul {
@@ -390,7 +437,7 @@ hr {
 }
 
 .profile-menu-line a:hover {
-    background: #eee;
+    opacity: 0.85;
 }
 
 .name {
@@ -491,7 +538,7 @@ hr {
 
 .profile-member-info li {
     height: 1.25rem;
-    border-bottom: solid .06rem #eee;
+    border-bottom: solid .06rem var(--lightGray);
     color: var(--gray);
 }
 
@@ -558,7 +605,7 @@ hr {
     width: 32%;
     height: 1.68rem;
     text-align: center;
-    color: var(--lightGray);
+    color: var(--gray);
     font-size: .75rem;
     font-weight: bold;
     text-decoration: none;
@@ -568,7 +615,7 @@ hr {
 }
 
 .tablinks:hover {
-    color: #000;
+    color: var(--darkGray);
 }
 
 .tablinks.active {
@@ -655,30 +702,28 @@ hr {
     padding: .06rem .37rem;
     margin: -2rem 0 0 -1.56rem;
     font-size: 1.12rem;
-    color: #000;
+    color: var(--gray);
     background: none;
     border: none;
 }
 
 .delete_conversations button:hover,
 .delete_conversations label:hover {
-    color: var(--red);
+    color: var(--darkGray);
 }
 
 /*-- Chat messages --*/
 
 .wrapper-chat {
-    width: 46%;
-    margin: 3.43rem 27%;
-    padding: 0 3% 1.25rem 3%;
-    background: #ced3fff1
-                linear-gradient(to bottom, #cfcfcff1, #d3d7fff1);
+    width: 50%;
+    margin: 3.5rem 25%;
+    background: #ced3fff1 linear-gradient(to bottom, #cfcfcff1, #d3d7fff1);
     border-radius: 0 0 .31rem .31rem;
     box-shadow: 0 .06rem .31rem .12rem var(--darkGray);
 }
 
 .message-chat {
-    margin: 0 0 .75rem;
+    margin-bottom: .75rem;
     border-radius: 1em;
     padding: .12rem .62rem .31rem .62rem;
     max-width: 75%;
@@ -688,7 +733,8 @@ hr {
 
 .message-chat-his {
     float: left;
-    background: #eee;
+    background: #fff;
+    margin-left: 1rem;
 }
 
 .message-chat-his::after {
@@ -698,7 +744,7 @@ hr {
     bottom: 0;
     width: 0.5em;
     height: 1em;
-    border-right: 0.5em solid #eee;
+    border-right: 0.5em solid #fff;
     border-bottom-right-radius: 1em 0.5em;
 }
 
@@ -706,6 +752,7 @@ hr {
     float: right;
     background: #ecffda;
     color: #eee;
+    margin-right: 1rem;
 }
 
 .message-chat-my::after {
@@ -715,7 +762,7 @@ hr {
     bottom: 0;
     width: 0.5em;
     height: 1em;
-    border-left: 0.5em solid #eee;
+    border-left: 0.5em solid #ecffda;
     border-bottom-left-radius: 1em 0.5em;
 }
 
@@ -737,16 +784,18 @@ hr {
 
 .chat-form textarea {
     width: 96%;
-    height: 2.25rem;
-    padding: .62rem 2%;
+    height: 1.9rem;
+    padding: .5rem 2% 1rem 2%;
     margin-top: 1.9rem;
-    border-radius: .37rem;
+    border: none;
+    border-radius: 0 0 .4rem .4rem;
     background: #eee;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--gray);
     line-height: 1.12rem;
     resize: none;
     overflow: hidden;
+    margin-bottom: -.5rem;
 }
 
 #submit-chat-form {
@@ -983,11 +1032,11 @@ hr {
     width: 94%;
     height: 1.25rem;
     padding: .31rem 3%;
-    margin-top: .37rem;
+    margin-top: .15rem;
     border: none;
-    border-bottom: solid .06rem var(--gray);
-    border-right: solid .06rem var(--gray);
-    background: #eee;
+    border-bottom: solid .06rem var(--lightGray);
+    border-right: solid .06rem var(--lightGray);
+    background: #fff;
     font-size: 1rem;
     color: #4d4d4d;
     line-height: 1.18rem;
@@ -999,15 +1048,15 @@ hr {
     max-width: 37.5rem;
     height: 2rem;
     padding: 0 2%;
-    margin: 0 1% .37rem 1%;
+    margin: 0 1% .15rem 1%;
     border: 0;
-    background: #eee;
+    background: #fff;
     border-radius: .43rem;
     color: var(--gray);
     font-size: 1rem;
     line-height: 2rem;
-    border-bottom: solid .06rem var(--gray);
-    border-right: solid .06rem var(--gray);
+    border-bottom: solid .06rem var(--lightGray);
+    border-right: solid .06rem var(--lightGray);
 }
 
 .gender-form {
@@ -1015,15 +1064,15 @@ hr {
     max-width: 37.5rem;
     height: 2rem;
     padding: 0 2%;
-    margin: 0 1% .37rem 1%;
+    margin: 0 1% .15rem 1%;
     border: 0;
-    background: #eee;
+    background: #fff;
     border-radius: .43rem;
     color: var(--darkGray);
     font-size: 1rem;
     line-height: 2rem;
-    border-bottom: solid .06rem var(--gray);
-    border-right: solid .06rem var(--gray);
+    border-bottom: solid .06rem var(--lightGray);
+    border-right: solid .06rem var(--lightGray);
 }
 
 .form textarea,
@@ -1031,18 +1080,18 @@ hr {
     height: 2.37rem;
     width: 97%;
     padding: .25rem 1.5%;
-    margin-top: .37rem;
+    margin: .15rem 0;
     border: 0;
     outline: 0;
     border-radius: .5rem;
-    background: #eee;
+    background: #fff;
     font-size: 1rem;
     color: #4d4d4d;
     line-height: 1.18rem;
     resize: none;
     overflow: hidden;
-    border-bottom: solid .06rem var(--gray);
-    border-right: solid .06rem var(--gray);
+    border-bottom: solid .06rem var(--lightGray);
+    border-right: solid .06rem var(--lightGray);
 }
 
 #check-box {
@@ -1053,12 +1102,12 @@ hr {
     text-align: center;
     display: block;
     position: relative;
-    color: #eee;
+    color: #fff;
     border: none;
     font-weight: bold;
     border-radius: .25rem;
     cursor: pointer;
-    transition: background 0.3s linear;
+    transition: background-color 0.3s linear;
     background: var(--green);
     line-height: 1.25rem;
     font-size: 0.87rem;
@@ -1070,7 +1119,7 @@ hr {
 
 .span-form {
     display: block;
-    margin: .75rem auto .12rem .62rem;
+    margin: .3rem auto .12rem .62rem;
     text-align: left;
     opacity: 0.7;
     font-size: 1rem;
@@ -1084,13 +1133,12 @@ hr {
     padding: 0 .5rem;
 }
 
-.intro h1,
-.intro h2,
-.intro h3 {
+.intro h1, .intro h2, .intro h3 {
     font-weight: 600;
     color: var(--gray);
     font-family: 'comfortaa', Arial, sans-serif;
     margin: .31rem 0;
+    font-size: 1.3rem;
 }
 
 .intro p {
@@ -1209,7 +1257,7 @@ h1,h2,h3,h4,h5,h6 {
 .stories-img {
     max-width: 100%;
     height: auto;
-    border-radius: .12rem;
+    border-radius: .1rem;
     margin-bottom: .56rem;
 }
 
@@ -1249,6 +1297,7 @@ h1,h2,h3,h4,h5,h6 {
     background-size: 45%;
     box-shadow: 0 .12rem .31rem .12rem var(--darkGray);
     cursor: pointer;
+    transition: background-size 80ms linear;  
 }
 
 .add-material:hover {
@@ -1257,19 +1306,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /*-- Favorites --*/
-
-.favorite {
-    color: var(--gray);
-    cursor: pointer;
-}
-
-.favorite:hover {
-    color: var(--darkGray);
-}
-
-.favorite i {
-    font-size: 1.25rem;
-}
 
 .favorites-pic {
     width: 4.06rem;
@@ -1365,8 +1401,8 @@ td {
     width: 80%;
     margin: 0 8%;
     padding: 0 2%;
-    border-right: solid .06rem #dddddd;
-    border-left: solid .06rem #dddddd;
+    border-right: solid .06rem var(--lightGray);
+    border-left: solid .06rem var(--lightGray);
 }
 
 .wrapper-member-table {

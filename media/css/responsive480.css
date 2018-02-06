@@ -67,14 +67,8 @@
 /*-- chat --*/
 
 .wrapper-chat {
-    width: 92%;
-    padding: 0 4% 1.25rem 4%;
+    width: 100%;
     margin: 3.43rem 0 0 0;
-}
-
-.chat-form textarea {
-    width: 96%;
-    padding: .62rem 2%;
 }
 
 #button-load-chat {
@@ -114,7 +108,7 @@
     width: 90%;
     height: 1.87rem;
     line-height: 1.81rem;
-    margin: .37rem 3% 0 3%;
+    margin: .25rem 3%;
     display: list-item;
     padding: 0 2%;
     font-size: 0.87rem;
@@ -133,9 +127,8 @@
 }
 
 .form textarea {
-    height: 7.5rem;
     width: 90%;
-    margin: .37rem 3% 0 3%;
+    margin: .37rem 3% .37rem 3%;
     display: list-item;
     padding: .31rem 2%;
     font-size: 0.87rem;

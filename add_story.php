@@ -59,27 +59,27 @@ if ($writer_ok === false){
                     <!-- Subject -->
                     <span class="span-form">Subject</span>
                     <input type="name" name="subject" onkeyup="counter(this,40,'message_title');" placeholder="Subject ...">
-                    <div id="message_title"></div>
+                    <div id="message_title" class="original"></div>
 
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
 
                     <!-- Intro -->
                     <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
-                    <div id="intro_text"></div>
+                    <div id="intro_text" class="original"></div>
 
                     <!-- Text -->
                     <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
-                    <div id="message_status"></div>
+                    <div id="message_status" class="original"></div>
 
                     <!-- Tags -->
                     <span class="span-form">Tags</span>
                     <input type="name" name="tags" onkeyup="counter(this, 1000,'story_tags');" value="story, ">
-                    <div id="story_tags"></div>
+                    <div id="story_tags" class="original"></div>
 
                     <!-- Author -->
                     <span class="span-form">Author</span>
                     <input type="name" name="author" onkeyup="counter(this,128,'story_author');" placeholder="John Doe">
-                    <div id="story_author"></div>
+                    <div id="story_author" class="original"></div>
 
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
