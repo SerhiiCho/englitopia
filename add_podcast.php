@@ -28,40 +28,40 @@ if ($host_ok === false){
                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
                 switch($message) {
                     case '/there_is_an_unproved_podcast':
-                        echo '<h4 class="error">There is already one unpproved podcast, you can\'t add another one.</h4>'; 
+                        echo '<h4 class="error">There is already one unpproved podcast, you can\'t add another one.</h4>';
                         break;
                     case '/the_only_field_that_can_be_empty_is_tags':
-                        echo '<h4 class="error">The only field that can be empty is "tags".</h4>'; 
+                        echo '<h4 class="error">The only field that can be empty is "tags".</h4>';
                         break;
                     case '/subject_max_40_intro_max_207_author_max_128_charecters':
-                        echo '<h4 class="error">Subject should be maximum 40 charecters, intro 207 charecters and athor 128.</h4>'; 
+                        echo '<h4 class="error">Subject should be maximum 40 charecters, intro 207 charecters and athor 128.</h4>';
                         break;
                     case '/text_max_5000_charecters':
-                        echo '<h4 class="error">Text should be maximum 5000 charecters.</h4>'; 
+                        echo '<h4 class="error">Text should be maximum 5000 charecters.</h4>';
                         break;
                     case '/duration_max_8_charecters':
-                        echo '<h4 class="error">Audio duration should be maximum 8 charecters.</h4>'; 
+                        echo '<h4 class="error">Audio duration should be maximum 8 charecters.</h4>';
                         break;
                     case '/image_error':
-                        echo '<h4 class="error">There is an error with the image you uploaded.</h4>'; 
+                        echo '<h4 class="error">There is an error with the image you uploaded.</h4>';
                         break;
                     case '/audio_error':
-                        echo '<h4 class="error">There is an error with the audio you uploaded.</h4>'; 
+                        echo '<h4 class="error">There is an error with the audio you uploaded.</h4>';
                         break;
                     case '/only_jpg_allowed':
-                        echo '<h4 class="error">Only jpg allowed.</h4>'; 
+                        echo '<h4 class="error">Only jpg allowed.</h4>';
                         break;
                     case '/only_mp3_allowed':
-                        echo '<h4 class="error">Only mp3 allowed.</h4>'; 
+                        echo '<h4 class="error">Only mp3 allowed.</h4>';
                         break;
                     case '/image_is_to_big':
-                        echo '<h4 class="error">Image is too big, 1 Mb maximum.</h4>'; 
+                        echo '<h4 class="error">Image is too big, 1 Mb maximum.</h4>';
                         break;
                     case '/audio_is_to_big':
-                        echo '<h4 class="error">Audio file is too big, 30 Mb maximum.</h4>'; 
+                        echo '<h4 class="error">Audio file is too big, 30 Mb maximum.</h4>';
                         break;
                     case '/success':
-                        echo '<h4 class="success">Thank you for adding podcast. Now go to podcast and "approve" this if you don\'t see any mistakes, or "reject" if you want to cancel posting that. Anyway, in order to make it available for all users, it needs to be approved by 2 admins or hosts.</h4>'; 
+                        echo '<h4 class="success">Thank you for adding podcast. Now go to podcast and "approve" this if you don\'t see any mistakes, or "reject" if you want to cancel posting that. Anyway, in order to make it available for all users, it needs to be approved by 2 admins or hosts.</h4>';
                         break;
                 }
             ?>
@@ -96,14 +96,14 @@ if ($host_ok === false){
                     <!-- Audio duration -->
                     <span class="span-form">Audio duration</span>
                     <input type="name" name="duration" value="00:00:00">
+                    
+                    <!-- Audio -->
+                    <span class="span-form">Choose mp3</span>
+                    <input type='file' name='audio' id="notif_upload_img" accept=".mp3">
 
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
-                    <input type='file' name='img' id="notif_upload_img">
-
-                    <!-- Audio -->
-                    <span class="span-form">Choose mp3</span>
-                    <input type='file' name='file' id="notif_upload_img">
+                    <input type='file' name='img' id="notif_upload_img" accept=".jpg">
                     
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>

@@ -1,31 +1,29 @@
 .wrapper-small {
     width: 94%;
-    margin: 65px 3% 10px 3%;
+    margin: 4.06rem 3% .62rem 3%;
 }
 
 .wrapper-small2 {
     width: 96%;
-    margin: 1px 2%;
-    padding: 2px 0;
+    margin: .06rem 2%;
+    padding: 0.12rem 0;
 }
 
-.error,
-.success,
-.original {
+.error, .success, .original {
     width: 88%;
-    margin: 0 3% 6px 3%;
-    padding: 5px 3%;
+    margin: 0 3% .37rem 3%;
+    padding: .31rem 3%;
 }
 
 /*--search on page search.php--*/
 
 .search-form {
     width: 94%;
-    margin: 11px 3% 18px 3%;
+    margin: .68rem 3% 1.12rem 3%;
 }
 
 .profile-member-info li span {
-    font-size: 13px;
+    font-size: .81rem;
 }
 
 /*--Upload picture photo form--*/
@@ -33,36 +31,36 @@
 .upload-pic-form,
 .delete-pic-form {
     width: 97%;
-    height: 35px;
+    height: 2.18rem;
 }
 
 .upload-pic-form input {
-    line-height: 29px;
-    font-size: 12px;
+    line-height: 1.81rem;
+    font-size: .75rem;
 }
 
 .upload-pic-form button {
     width: 24%;
-    height: 35px;
-    font-size: 13px;
+    height: 2.18rem;
+    font-size: .81rem;
 }
 
 .delete-pic-form button {
     width: 24%;
-    height: 33px;
+    height: 2.06rem;
     margin-left: 74%;
-    font-size: 13px;
+    font-size: .81rem;
 }
 
 .profile-buttons a,
 .profile-buttons button {
-    font-size: 14px;
-    padding: 0 4px;
+    font-size: 0.87rem;
+    padding: 0 .25rem;
 }
 
 .settings-general {
     width: 96%;
-    margin: 5px 2%;
+    margin: .31rem 2%;
     padding: 0;
 }
 
@@ -70,13 +68,13 @@
 
 .wrapper-chat {
     width: 92%;
-    padding: 0 4% 20px 4%;
-    margin: 55px 0 0 0;
+    padding: 0 4% 1.25rem 4%;
+    margin: 3.43rem 0 0 0;
 }
 
 .chat-form textarea {
     width: 96%;
-    padding: 10px 2%;
+    padding: .62rem 2%;
 }
 
 #button-load-chat {
@@ -87,198 +85,196 @@
 /*--notifications--*/
 
 #notif_upload_img {
-    height: 34px;
-    font-size: 10px;
+    height: 2.12rem;
+    font-size: .62rem;
 }
 
 /*--login system--*/
 
 .buttons-section a {
-    font-size: 14px;
+    font-size: 0.87rem;
 }
 
 .buttons-section button {
-    padding: 2px 3px;
-    font-size: 14px;
+    padding: 0.12rem .18rem;
+    font-size: 0.87rem;
 }
 
-.close>p {
-    font-size: 30px;
-    margin-top: -6px;
+.close > p {
+    font-size: 1.87rem;
+    margin-top: -.37rem;
 }
 
 .close-hover {
-    font-size: 15px;
-    padding: 3px;
+    font-size: 1rem;
+    padding: .18rem;
 }
 
 .form input {
     width: 90%;
-    height: 30px;
-    line-height: 29px;
-    margin: 6px 3% 0 3%;
+    height: 1.87rem;
+    line-height: 1.81rem;
+    margin: .37rem 3% 0 3%;
     display: list-item;
     padding: 0 2%;
-    font-size: 14px;
+    font-size: 0.87rem;
 }
 
 .country-form {
     width: 95%;
     margin: 0 3%;
-    font-size: 14px;
+    font-size: 0.87rem;
 }
 
 .gender-form {
     width: 95%;
-    margin: 3px 3%;
-    font-size: 13px;
+    margin: .18rem 3%;
+    font-size: .81rem;
 }
 
 .form textarea {
-    height: 120px;
+    height: 7.5rem;
     width: 90%;
-    margin: 6px 3% 0 3%;
+    margin: .37rem 3% 0 3%;
     display: list-item;
-    padding: 5px 2%;
-    font-size: 14px;
+    padding: .31rem 2%;
+    font-size: 0.87rem;
 }
 
 /*--admin page--*/
 
 .admin-table {
-    font-size: 11px;
+    font-size: .68rem;
 }
 
-.admin-table,
-th,
-td {
-    padding: 4px 1px;
+.admin-table, th, td {
+    padding: .25rem .06rem;
 }
 
 /*--news events--*/
 
 .news {
     width: 100%;
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
-.news>h2 {
-    margin: 8px auto -7px auto;
+.news > h2 {
+    margin: .5rem auto -.43rem auto;
 }
 
 .event {
     width: 96%;
     margin: 0 2%;
-    border-bottom: 1px solid gray;
+    border-bottom: .06rem solid gray;
 }
 
 /*--pods and stories--*/
 
 .date {
-    font-size: 11px;
+    font-size: .68rem;
 }
 
 .stories {
     width: 96%;
     height: auto;
-    max-width: 433px;
+    max-width: 27.06rem;
     float: none;
-    margin: 0 2% 12px 2%;
+    margin: 0 2% .75rem 2%;
 }
 
 .img-title,
 .stories-img,
 .wrapper-stories img {
     max-width: 94%;
-    margin: 2px 2% 10px 2%;
+    margin: 0.12rem 2% .62rem 2%;
 }
 
 .stories-img {
     max-width: 100%;
-    margin: 2px 0 10px 0;
+    margin: 0.12rem 0 .62rem 0;
 }
 
 .wrapper-stories,
 .wrapper-info {
     width: 96%;
-    margin: 17px 2%;
+    margin: 1rem 2%;
 }
 
 .wrapper-stories h6,
 .wrapper-info h6 {
-    line-height: 15px;
-    font-size: 18px;
+    line-height: 1rem;
+    font-size: 1.12rem;
 }
 
 .wrapper-stories ul li,
 .wrapper-info ul li {
-    font-size: 14px;
-    margin: 10px 0 14px 20px;
+    font-size: 0.87rem;
+    margin: .62rem 0 0.87rem 1.25rem;
 }
 
 .wrapper-stories ol li,
 .wrapper-info ol li {
-    font-size: 14px;
+    font-size: 0.87rem;
 }
 
 /*--information--*/
 
 .info-wrapper {
     width: 94%;
-    margin: 10px 3%;
+    margin: .62rem 3%;
 }
 
 /*--Error page--*/
 
-.wrapper-big>img {
+.wrapper-big > img {
     width: 50%;
-    margin: 10px 25%;
+    margin: .62rem 25%;
 }
 
 /*--footer--*/
 
-.footer-col>li>a,
-.footer-col-last>li>a {
-    font-size: 14px;
-    line-height: 24px;
+.footer-col > li > a,
+.footer-col-last > li > a {
+    font-size: 0.87rem;
+    line-height: 1.5rem;
 }
 
 .footer h3 {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .nav-footer {
     width: 98%;
-    margin: 2px 1% 4px 1%;
+    margin: 0.12rem 1% .25rem 1%;
 }
 
 .footer-col-first {
     width: 97%;
-    margin: 5px 0% 5px 3%;
+    margin: .31rem 0% .31rem 3%;
     text-align: center;
 }
 
-.footer-col-first>img {
+.footer-col-first > img {
     width: 32%;
 }
 
-.footer-col-first>div {
+.footer-col-first > div {
     width: 61%;
     margin-right: 5%;
 }
 
-.footer-col-first>div span {
-    font-size: 14px;
+.footer-col-first > div span {
+    font-size: 0.87rem;
 }
 
 .footer-col {
     width: 48%;
-    margin: 5px 1%;
+    margin: .31rem 1%;
     text-align: center;
 }
 
 .footer-col-last {
     width: 96%;
-    margin: 11px 2%;
+    margin: .68rem 2%;
     text-align: center;
 }

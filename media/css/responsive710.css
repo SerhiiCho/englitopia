@@ -1,65 +1,65 @@
 .wrapper {
     width: 98%;
-    margin: 54px 1% 0 1%;
+    margin: 3.37rem 1% 0 1%;
 }
 
 .wrapper-stories,
 .wrapper-info {
     width: 94%;
-    margin: 9px 3%;
+    margin: .56rem 3%;
 }
 
 .wrapper-small {
     width: 60%;
-    margin: 60px 20% 0 20%;
+    margin: 3.75rem 20% 0 20%;
 }
 
 .wrapper-small2 {
     width: 80%;
-    margin: 1px 8%;
-    padding: 2px 2%;
+    margin: .06rem 8%;
+    padding: 0.12rem 2%;
 }
 
 .wrapper-stories li,
 .wrapper-info li {
-    margin: 18px 0 18px 7%;
+    margin: 1.12rem 0 1.12rem 7%;
 }
 
 /*--news events--*/
 
 .event>h4 {
-    margin: 7px 0px 3px 2px;
-    font-size: 16px;
+    margin: .43rem 0 .18rem 0.12rem;
+    font-size: 1rem;
 }
 
 .event>h5 {
-    margin: 2px 7px 0 4px;
-    font-size: 15px;
+    margin: 0.12rem .43rem 0 .25rem;
+    font-size: 1rem;
 }
 
 .event>a>img {
-    margin: 7px 4%;
+    margin: .43rem 4%;
     width: 92%;
-    border-radius: 2px;
+    border-radius: 0.12rem;
 }
 
 /*--navigation bar--*/
 
 .logo-section {
-    width: 130px;
+    width: 8.12rem;
     height: 0;
     margin: 0 auto;
     float: none;
 }
 
 #logo {
-    background-size: 130px;
-    height: 57px;
+    background-size: 8.12rem;
+    height: 3.56rem;
     margin: 0;
 }
 
 .hb-button-left {
-    padding: 15px 19px 12px 21px;
+    padding: 1rem 1.18rem .75rem 1.31rem;
     float: left;
     border: none;
     background: inherit;
@@ -67,15 +67,15 @@
 }
 
 .hb-button-right {
-    padding: 13px 20px 12px 19px;
+    padding: .81rem 1.25rem .75rem 1.18rem;
 }
 
-#nav-menu>ul {
+#nav-menu > ul {
     max-height: 0;
     width: 100%;
-    color: #fff;
+    color: #eee;
     text-align: center;
-    margin-top: 49px;
+    margin-top: 3.06rem;
 }
 
 #nav-menu>ul.show {
@@ -92,13 +92,13 @@
 
 #hide-search-box input {
     width: 90%;
-    height: 33px;
-    border-radius: 3px;
+    height: 2.06rem;
+    border-radius: .18rem;
     border: none;
-    margin: 10px 3% 5px 3%;
-    padding: 2px 2%;
+    margin: .62rem 3% .31rem 3%;
+    padding: 0.12rem 2%;
     background: #484848;
-    color: white;
+    color: #eee;
 }
 
 #hide-search-button {
@@ -107,28 +107,28 @@
 
 #nav-menu>ul>li>a,
 .logged-in-button {
-    font-size: 17px;
+    font-size: 1rem;
     margin: 0;
 }
 
 .li-nav-last {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 /*--search on page search.php--*/
 
 .search-form {
     width: 80%;
-    max-width: 641px;
-    margin: 16px 10% 0 10%;
+    max-width: 40.06rem;
+    margin: 1rem 10% 0 10%;
 }
 
 /*--myprofile profile.php--*/
 
 .profile-buttons a,
 .profile-buttons button {
-    font-size: 13px;
-    padding: 0 5px;
+    font-size: .81rem;
+    padding: 0 .31rem;
 }
 
 /*--settings--*/
@@ -142,7 +142,7 @@
 
 .wrapper-chat {
     width: 80%;
-    margin: 55px 8% 0 8%;
+    margin: 3.43rem 8% 0 8%;
 }
 
 #button-load-chat {
@@ -154,22 +154,22 @@
 
 .wrapper-member-table {
     width: 96%;
-    margin: 17px 2%;
+    margin: 1rem 2%;
 }
 
 .members_table_info {
-    font-size: 12px;
+    font-size: .75rem;
 }
 
 /*--login system--*/
 
 .buttons-section a {
-    letter-spacing: 1px;
+    letter-spacing: .06rem;
 }
 
 .buttons-section button {
-    padding: 1px 6px;
-    letter-spacing: 1px;
+    padding: .06rem .37rem;
+    letter-spacing: .06rem;
 }
 
 .header,
@@ -183,24 +183,24 @@
 /*--admin page--*/
 
 .admin-table {
-    font-size: 10px;
+    font-size: .62rem;
 }
 
 .admin-table,
 th,
 td {
-    padding: 5px 0px;
+    padding: .31rem 0;
 }
 
 /*--pods and stories--*/
 
 .stories {
     width: 46%;
-    margin: 4px 2% 8px 2%;
+    margin: .25rem 2% .5rem 2%;
 }
 
 .audio {
-    margin: 10px 5%;
+    margin: .62rem 5%;
     width: 90%;
 }
 
@@ -221,13 +221,13 @@ footer h3 {
 
 .nav-footer {
     width: 96%;
-    margin: 7px 2%;
+    margin: .43rem 2%;
 }
 
 .footer-col-first {
     width: 96%;
     float: left;
-    margin: 5px 1% 5px 1%;
+    margin: .31rem 1% .31rem 1%;
 }
 
 .footer-col-first>div {
@@ -237,12 +237,12 @@ footer h3 {
 
 .footer-col {
     width: 32%;
-    margin: 5px 3% 5px 0;
+    margin: .31rem 3% .31rem 0;
     text-align: center;
 }
 
 .footer-col-last {
     width: 30%;
-    margin: 5px 0;
+    margin: .31rem 0;
     text-align: center;
 }

@@ -13,7 +13,7 @@ if (!isset($data['submit'])) {
 $email = $data['email'];
 $username = $data['email'];
 $password = $data['password'];
-$checkbox = $data['check_box_hidden'];
+$checkbox = $data['check-box-hidden'];
 $date = date("Y-m-d H:i:s");
 $ip = preg_replace('#[^0-9.]#','', getenv('REMOTE_ADDR'));
 $cookie_username = password_hash(rand(), PASSWORD_DEFAULT);
@@ -32,9 +32,7 @@ if (!preg_match('%^[A-Za-z0-9]{8,50}$%', stripslashes(trim($password)))) {
 
 // Check if email is valid
 if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    if (!preg_match('%^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$%', stripslashes(trim($email)))) {
-        $errors[] = 'error_name_or_password';
-    }
+    $errors[] = 'error_name_or_password';
 }
 
 

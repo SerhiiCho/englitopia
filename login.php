@@ -66,13 +66,12 @@ if ($member_ok == true) {
                             placeholder="Password"
                             maxlength="50" />
                     <input  type="hidden"
-                            name="check_box_hidden"
-                            id="check_box_hidden1"
+                            name="check-box-hidden"
+                            id="check-box-hidden1"
                             value="1" />
                     
                     <div
-                        class="cb"
-                        id="check_box"
+                        id="check-box"
                         data-checked="1" 
                         onclick="toggleRememberMe(this)">
                         Remember me
@@ -94,19 +93,19 @@ if ($member_ok == true) {
         </div>
 
         <script>
-            let checkBox = document.getElementById("check_box");
+            let checkBox = document.getElementById("check-box");
 
-            function toggleRememberMe(e) {
-                if (e.dataset.checked == 0) {
-                    e.style.background = "#007a59";
-                    e.dataset.checked = 1;
+            function toggleRememberMe(event) {
+                if (event.dataset.checked == 0) {
+                    event.style.background = "#007a59";
+                    event.dataset.checked = 1;
                     checkBox.innerHTML = "Remember me";
                 } else {
-                    e.style.background = "#ab3030";
-                    e.dataset.checked = 0;
+                    event.style.background = "#ab3030";
+                    event.dataset.checked = 0;
                     checkBox.innerHTML = "Don't remember me";
                 }
-                e.previousElementSibling.value = e.dataset.checked;
+                event.previousElementSibling.value = event.dataset.checked;
             }
         </script>
 
