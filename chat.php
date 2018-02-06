@@ -34,7 +34,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
         <?php require 'templates/head.part.php';?>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-messages{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-messages{border-bottom:solid .12rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>

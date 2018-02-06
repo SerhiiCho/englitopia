@@ -85,7 +85,7 @@ if (isset($_POST['delete'])) {
 }
 
 // Establish member picture
-$mem_pic = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic" style="float:none;width:200px;">';
+$mem_pic = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic" style="float:none;width:12.5rem;">';
 
 $pic = R::findOne("membersdata", "user_id = ?", array($user_id));
 
@@ -94,7 +94,7 @@ if ($pic) {
         $pic_info = glob('media/img/uploads/profile'.$user_id.'*');
         $pic_ext = explode('.', $pic_info[0]);
         $pic_actual_ext = $pic_ext[1];
-        $mem_pic = '<img src="media/img/uploads/profile'.$user_id.'.'.$pic_actual_ext.'?'.rand().'" class="member-pic" style="float:none;width:200px;">';
+        $mem_pic = '<img src="media/img/uploads/profile'.$user_id.'.'.$pic_actual_ext.'?'.rand().'" class="member-pic" style="float:none;width:12.5rem;">';
     }
 }
 ?>
@@ -106,7 +106,7 @@ if ($pic) {
         <?php require 'templates/head.part.php';?>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-settings{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>

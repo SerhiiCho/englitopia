@@ -227,7 +227,7 @@ if ($friends) {
                                         <a href="profile.php?member=/'.$fr->user1.'" title="'.$fr->user1.'">'.$img.'</a>
                                         <div>
                                             <div class="conversations">
-                                                <p id="conversations_from" style="margin-top:14px;">
+                                                <p id="conversations_from" style="margin-top:.87rem;">
                                                     <b>'.ucfirst($fr->user1).$friend_last_login.'</b>
                                                 </p>
                                                 <p class="conversations_content">

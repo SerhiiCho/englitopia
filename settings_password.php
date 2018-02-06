@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php require 'templates/head.part.php';?>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-settings{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>

@@ -122,7 +122,7 @@ if ($friend) {
                                     <a href="profile.php?member=/'.$user1.'" title="'.$user1.'">'.$img.'</a>
                                     <div>
                                         <div class="conversations">
-                                            <p id="conversations_from" style="margin-top:14px;"><b>'.ucfirst($his_name).$last_login.'</b></p>
+                                            <p id="conversations_from" style="margin-top:.87rem;"><b>'.ucfirst($his_name).$last_login.'</b></p>
                                             <p class="conversations_content">
                                                 <a href="profile.php?member=/'.$user1.'" title="View profile" style="color:#4a4a4a;">
                                                     View profile

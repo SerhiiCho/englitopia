@@ -11,7 +11,7 @@ check_member();
         <?php require 'templates/head.part.php';?>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-notifications{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-notifications{border-bottom:solid .125rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>

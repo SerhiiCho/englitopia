@@ -14,7 +14,7 @@ check_admin();
         <title><?php echo e($username);?></title>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-profile{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>

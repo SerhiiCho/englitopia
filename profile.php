@@ -17,7 +17,7 @@ if ($he_is_blocker == true) {
         <title><?php echo escapeChars(ucfirst($m_username));?></title>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-profile{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>
@@ -64,7 +64,7 @@ if ($he_is_blocker == true) {
 
                         <!-- Messages Status -->
                         <div>
-                            <span id="status_friendship" style="margin-top:-9px;"></span>
+                            <span id="status_friendship" style="margin-top:-.56rem;"></span>
 
                             <?php
                                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;

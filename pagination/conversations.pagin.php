@@ -189,11 +189,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 									<div class="conversations_unread">
 
-										<p id="conversations_from" style="margin-top:14px;">
+										<p id="conversations_from" style="margin-top:.87rem;">
 											<b>'.ucfirst($from_username).$last_login.'</b>
 										</p>
 
-										<p class="conversations_content" style="margin:3px 33px 0 70px;">
+										<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
 											'.$message.'...
 										</p>
 
@@ -222,11 +222,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 									<div class="conversations">
 
-										<p id="conversations_from" style="margin-top:14px;">
+										<p id="conversations_from" style="margin-top:.87rem;">
 											<b>'.ucfirst($from_username).$last_login.'</b>
 										</p>
 
-										<p class="conversations_content" style="margin:3px 33px 0 70px;">
+										<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
 											'.$message.'...
 										</p>
 										
@@ -252,11 +252,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 										<div class="conversations">
 
-											<p id="conversations_from" style="margin-top:14px;">
+											<p id="conversations_from" style="margin-top:.87rem;">
 												<b>'.ucfirst($from_username).$last_login.'</b>
 											</p>
 
-											<p class="conversations_content" style="margin:3px 33px 0 70px;">
+											<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
 											
@@ -280,11 +280,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 										<div class="conversations">
 
-											<p id="conversations_from" style="margin-top:14px;">
+											<p id="conversations_from" style="margin-top:.87rem;">
 												<b>'.ucfirst($from_username).$last_login.'</b>
 											</p>
 
-											<p class="conversations_content" style="margin:3px 33px 0 70px;">
+											<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
 											

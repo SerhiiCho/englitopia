@@ -47,7 +47,7 @@ if ($rows_st > 0) {
                                     <b>'.$favs->id.'. '.$favs->subject.'</b>
                                 </p>
 
-                                <p class="conversations_content" style="margin:3px 33px 0 70px;">
+                                <p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
                                     '.substr($favs->intro,0,40).'...
                                 </p>
 

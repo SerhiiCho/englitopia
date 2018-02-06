@@ -73,7 +73,7 @@ if (isset($_POST['cancel'])) {
         <?php require 'templates/head.part.php';?>
 
         <!-- Emphasize menu button -->
-        <style>#profile-menu-line-settings{border-bottom:solid 2px gray;}</style>
+        <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
         <title>Notification Preview</title>
     </head>
         <?php require 'templates/nav.part.php';?>

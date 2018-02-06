@@ -15,15 +15,15 @@
             <div class="imgbanbtn imgbanbtn-prev"></div>
 
             <picture class="bannerImg">
-                <source media="(min-width: 460px)" srcset="media/img/banner1.jpg">
+                <source media="(min-width: 28.75rem)" srcset="media/img/banner1.jpg">
                 <img src="media/img/banner1_min.jpg" alt="banner">
             </picture>
             <picture class="bannerImg">
-                <source media="(min-width: 460px)" srcset="media/img/banner2.jpg">
+                <source media="(min-width: 28.75rem)" srcset="media/img/banner2.jpg">
                 <img src="media/img/banner2_min.jpg" alt="banner">
             </picture>
             <picture class="bannerImg">
-                <source media="(min-width: 460px)" srcset="media/img/banner3.jpg">
+                <source media="(min-width: 28.75rem)" srcset="media/img/banner3.jpg">
                 <img src="media/img/banner3_min.jpg" alt="banner">
             </picture>
 
