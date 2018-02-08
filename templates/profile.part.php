@@ -244,5 +244,4 @@ if ($friends) {
 } else {
     $friends_tab .= '<div class="intro"><p>There are no any friends yet</p></div>';
 }
-
 ?>

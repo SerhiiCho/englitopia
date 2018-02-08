@@ -89,7 +89,7 @@ foreach ($stories as $story) {
                             </a>
                         </p>
 
-                        <div class="date">
+                        <div class="date" style="text-align:center;">
                             <h4><i><i class="fas fa-user"></i></i> '.$story->author.'</h4>
                             <span>'.facebook_time_ago($story->date).'</span>
                         </div>
@@ -113,7 +113,7 @@ foreach ($stories as $story) {
                             </a>
                         </p>
 
-                        <div class="date">
+                        <div class="date" style="text-align:center;">
                             <h4><i><i class="fas fa-user"></i></i> '.$story->author.'</h4>
                             <span>'.facebook_time_ago($story->date).'</span>
                         </div>

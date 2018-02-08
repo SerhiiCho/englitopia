@@ -4,8 +4,8 @@
 }
 
 :root {
-    --blue: #4285f4;
-    --red: #a52a2a;
+    --blue: #337AB7;
+    --red: #B75B5B;
     --green: #006147;
     --gray: #505050;
     --lightGray: #dadada;
@@ -167,9 +167,9 @@ hr {
     display: block;
     line-height: 1.9rem;
     position: relative;
-    background: var(--blue);
+    background: var(--red);
     color: #eee;
-    border: none;
+    border: 0.08rem solid #a55252;
     font-size: 1rem;
     font-weight: bold;
     border-radius: .18rem;
@@ -179,39 +179,10 @@ hr {
 
 .button:hover,
 .chat-form button:hover {
-    background: #eee;
-    color: var(--blue);
+    border: 0.08rem solid #914949;
+    background: #a55252;
+    color: #eee;
     font-weight: bold;
-}
-
-.button:before,
-.button:after,
-.chat-form button:before,
-.chat-form button:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: .12rem;
-    width: 0;
-    background: var(--blue);
-    transition: 400ms ease all;
-}
-
-.button:after,
-.chat-form button:after {
-    right: inherit;
-    top: inherit;
-    left: 0;
-    bottom: 0;
-}
-
-.button:hover:before,
-.button:hover:after,
-.chat-form button:hover:before,
-.chat-form button:hover:after {
-    width: 100%;
-    transition: 1s ease all;
 }
 
 /* -- Icons -- */

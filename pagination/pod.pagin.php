@@ -89,7 +89,7 @@ foreach ($pods as $pod) {
                             </a>
                         </p>
 
-                        <div class="date">
+                        <div class="date" style="text-align:center;">
                             <h4><i><i class="fas fa-user"></i></i> '.$pod->author.'</h4>
                             <span>'.facebook_time_ago($pod->date).'</span>
                         </div>
@@ -113,7 +113,7 @@ foreach ($pods as $pod) {
                             </a>
                         </p>
 
-                        <div class="date">
+                        <div class="date" style="text-align:center;">
                             <h4><i><i class="fas fa-user"></i></i> '.$pod->author.'</h4>
                             <span>'.facebook_time_ago($pod->date).'</span>
                         </div>
