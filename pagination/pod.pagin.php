@@ -85,12 +85,12 @@ foreach ($pods as $pod) {
 
                         <p>'.nl2br($pod->intro).'.. 
                             <a href="podcast_page.php?id='.$pod->id.'">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 
                         <div class="date">
-                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$pod->author.'</h4>
+                            <h4><i><i class="fas fa-user"></i></i> '.$pod->author.'</h4>
                             <span>'.facebook_time_ago($pod->date).'</span>
                         </div>
                     </div>';
@@ -109,12 +109,12 @@ foreach ($pods as $pod) {
 
                         <p>'.nl2br($pod->intro).'.. 
                             <a href="podcast_page.php?id='.$pod->id.'">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 
                         <div class="date">
-                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$pod->author.'</h4>
+                            <h4><i><i class="fas fa-user"></i></i> '.$pod->author.'</h4>
                             <span>'.facebook_time_ago($pod->date).'</span>
                         </div>
                     </div>';

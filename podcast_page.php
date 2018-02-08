@@ -20,9 +20,9 @@ if ($member_ok == true) {
     }
     
 	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<button class="icon star-icon" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></button>';
+		$favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<button class="icon star-empty-icon" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></button>';
+		$favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} else {
 		$favorites_button = '';
 	}
@@ -96,7 +96,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                     <!-- Delete button -->
                     <?php if ($admin_ok == true):?>
                         <div id="delete-post">
-                            <button class="delete-icon icon" onclick="deletePodcast('deletePod',<?php echo $id;?>,'delete-post')"></button>
+                            <i class="fas fa-trash-alt" onclick="deletePodcast('deletePod',<?php echo $id;?>,'delete-post')"></i>
                         </div>
                     <?php endif;?>
                 </div>
@@ -157,10 +157,10 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				        return false;
 				    }
 				
-				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
-				            elem.innerHTML = '<button class="check-mark-icon icon"></button>';
+				            elem.innerHTML = '<i class="far fa-check-circle"></i>';
 				            status.innerHTML = ajax.responseText;
 				        }
 				    }
@@ -172,15 +172,15 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				    var status = document.getElementById("status");
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
 				
-				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    elem.innerHTML = '<i class="fas fa-star-half"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_pod") {
 				        		status.innerHTML = '<span class="success">This podcast has been added to your list.</span>';
-				        		elem.innerHTML = '<button class="icon star-icon" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_pod") {
 				        		status.innerHTML = '<span class="success">This podcast has been deleted from your list.</span>';
-				        		elem.innerHTML = '<button class="icon star-empty-icon" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
 				        	}

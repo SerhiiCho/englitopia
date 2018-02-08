@@ -18,7 +18,7 @@ if ($pod) {
 
                         <p>'.nl2br($pod->intro).'... 
                             <a href="podcast_page.php?id='.$pod->id.'." title="Open '.$pod->subject.' podcast">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 
@@ -37,7 +37,7 @@ if ($story) {
 
                         <p>'.nl2br($story->intro).'... 
                             <a href="story_page.php?id='.$story->id.'" title="Open '.$story->subject.' story">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 

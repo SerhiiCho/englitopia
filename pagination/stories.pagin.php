@@ -85,12 +85,12 @@ foreach ($stories as $story) {
 
                         <p>'.nl2br($story->intro).'.. 
                             <a href="story_page.php?id='.$story->id.'">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 
                         <div class="date">
-                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$story->author.'</h4>
+                            <h4><i><i class="fas fa-user"></i></i> '.$story->author.'</h4>
                             <span>'.facebook_time_ago($story->date).'</span>
                         </div>
                     </div>';
@@ -109,12 +109,12 @@ foreach ($stories as $story) {
 
                         <p>'.nl2br($story->intro).'.. 
                             <a href="story_page.php?id='.$story->id.'">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </p>
 
                         <div class="date">
-                            <h4><i><i class="fa fa-user" aria-hidden="true"></i></i> '.$story->author.'</h4>
+                            <h4><i><i class="fas fa-user"></i></i> '.$story->author.'</h4>
                             <span>'.facebook_time_ago($story->date).'</span>
                         </div>
                     </div>';

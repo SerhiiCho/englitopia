@@ -20,7 +20,7 @@
                 echo $list;?>
 
             <?php if ($writer_ok === true):?>
-                <a href="add_story.php" class="add-material"></a>
+                <a href="add_story.php" class="fas fa-plus-circle add-material"></a>
             <?php endif;?>
             
             <!-- Pagination -->

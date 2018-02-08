@@ -119,7 +119,7 @@ if ($u_get != $log_username && $member_ok == true) {
 
 // LOGIC FOR FRIEND BUTTON
 if ($is_friend == true) {
-    $friend_button = '  <button onclick="friend_toggle(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
+    $friend_button = '  <button onclick="sendFriendRequest(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
                             <i class="fa fa-check" aria-hidden="true"></i> 
                             FRIENDS
                         </button>';
@@ -129,7 +129,7 @@ if ($is_friend == true) {
         $not_is_friend_yet == false
        ) {
 
-    $friend_button = '  <button onclick="friend_toggle(\'friend\',\''.$u_get.'\',\'friend_btn\')">
+    $friend_button = '  <button onclick="sendFriendRequest(\'friend\',\''.$u_get.'\',\'friend_btn\')">
                             + FRIEND
                         </button>';
 } elseif ($member_ok == true &&
@@ -139,7 +139,7 @@ if ($is_friend == true) {
         $my_request == true
        ) {
 
-    $friend_button = '  <button onclick="friend_toggle(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
+    $friend_button = '  <button onclick="sendFriendRequest(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
                             <i class="fa fa-ban" aria-hidden="true"></i> 
                             CANCEL
                         </button>';
@@ -150,19 +150,19 @@ if ($is_friend == true) {
         $my_request == false
        ) {
 
-    $friend_button = '  <button onclick="friend_toggle(\'friend\',\''.$u_get.'\',\'friend_btn\')">
+    $friend_button = '  <button onclick="sendFriendRequest(\'friend\',\''.$u_get.'\',\'friend_btn\')">
                             ACCEPT
                         </button>';
 }
 
 // LOGIC FOR BLOCK BUTTON
 if ($i_am_blocker == true) {
-    $block_button = '   <button onclick="block_toggle(\'unblock\',\''.$u_get.'\',\'block_btn\')">
+    $block_button = '   <button onclick="blockUser(\'unblock\',\''.$u_get.'\',\'block_btn\')">
                             <i class="fa fa-unlock-alt" aria-hidden="true"></i> 
                             Unblock
                         </button>';
 } elseif ($member_ok == true && $u_get != $log_username) {
-    $block_button = '   <button onclick="block_toggle(\'block\',\''.$u_get.'\',\'block_btn\')">
+    $block_button = '   <button onclick="blockUser(\'block\',\''.$u_get.'\',\'block_btn\')">
                             <i class="fa fa-lock" aria-hidden="true"></i> 
                             Block
                         </button>';

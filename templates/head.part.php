@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="media/css/responsive480.css?v=1" media="screen and (max-width: 480px)" type="text/css">
 
 <!-- Links to fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 <!-- Links to icons -->
 <link rel="shortcut icon" type="image/png" href="media/img/favicon.png">

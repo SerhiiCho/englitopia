@@ -7,6 +7,7 @@ require "functions/functions.php";
 $id = $_GET["id"];
 $story = R::findOne('stories', 'id = ?', array($id));
 $subject_for_cookie = str_replace(" ","_",$story->subject);
+$favorites_button = '';
 $favorite = 0;
 
 //Favorite
@@ -18,13 +19,11 @@ if ($member_ok == true) {
     } else {
         $favorite = 0;
     }
-    
+
 	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<button class="icon star-icon" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></button>';
+		$favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<button class="icon star-empty-icon" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></button>';
-	} else {
-		$favorites_button = '';
+		$favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	}
 }
 
@@ -95,7 +94,7 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
                     <!-- Delete button -->
                     <?php if ($admin_ok == true):?>
                         <div id="delete-post">
-                            <button class="icon delete-icon" onclick="deleteStory('deleteStory',<?php echo "'".$id."'";?>,'delete-post')"></button>
+                            <i class="fas fa-trash-alt" onclick="deleteStory('deleteStory',<?php echo "'".$id."'";?>,'delete-post')"></i>
                         </div>
                     <?php endif;?>
                 </div>
@@ -139,10 +138,10 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 				        return false;
 				    }
 				
-				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
-				            elem.innerHTML = '<button class="check-mark-icon icon"></button>';
+				            elem.innerHTML = '<i class="far fa-check-circle"></i>';
 				            status.innerHTML = ajax.responseText;
 				        }
 				    }
@@ -154,15 +153,15 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 				    var status = document.getElementById("status");
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
 				
-				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    elem.innerHTML = '<i class="fas fa-star-half"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_story") {
 				        		status.innerHTML = '<span class="success">This story has been added to your list.</span>';
-				        		elem.innerHTML = '<button class="icon star-icon" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_story") {
 				        		status.innerHTML = '<span class="success">This story has been deleted from your list.</span>';
-				        		elem.innerHTML = '<button class="icon star-empty-icon" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
 				        	}

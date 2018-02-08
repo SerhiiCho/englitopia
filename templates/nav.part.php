@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
 
 	    <?php if (isset($_SESSION['username'])):?>
 		    <a href="conversations.php" title="Conversations" class="hb-button hb-button-right">
-		    	<i class="fa fa-envelope-o" aria-hidden="true" <?php if (isset($_SESSION['username']) && $unreaded !== 0) { echo 'data-badge="'.$unreaded.'"';}?>></i>
+            <i class="far fa-envelope" <?php if (isset($_SESSION['username']) && $unreaded !== 0) { echo 'data-badge="'.$unreaded.'"';}?>></i>
 		    </a>
 		<?php endif;?>
 
@@ -63,7 +63,7 @@ if (isset($_SESSION['username'])) {
 
         <li id="hide-search-button">
             <a href="search.php" title="Search">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fas fa-search"></i>
             </a>
         </li>
         <li><a href="index.php" title="Englitopia">HOME</a></li>
@@ -78,7 +78,7 @@ if (isset($_SESSION['username'])) {
 
                         <button type="submit" name="submit" class="logged-in-button"
                                 title="<?php echo $_SESSION['username'];?> Profile">
-                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                    <i class="far fa-user"></i>
                                     <?php echo $_SESSION['username'];?>
                         </button>
 
