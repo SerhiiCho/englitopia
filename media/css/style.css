@@ -873,19 +873,19 @@ hr {
 
 .report {
     width: 10rem;
-    min-height: 11.9rem;
+    min-height: 11rem;
     margin: .31rem;
     padding: .37rem;
     border-radius: .12rem;
-    background: var(--darkGray);
+    background: var(--lightGray);
 }
 
 .report > p {
+    min-height: 4rem;
     font-size: 0.87rem;
-    margin: .43rem .12rem;
+    margin: .5rem .12rem;
     padding: .31rem;
-    border-bottom: solid .06rem var(--gray);
-    border-top: solid .06rem var(--gray);
+    text-align: left;
 }
 
 .report > span {

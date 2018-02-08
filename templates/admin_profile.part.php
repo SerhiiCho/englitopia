@@ -73,18 +73,25 @@ if ($reports) {
         $report_date = date("M j, Y", strtotime($report->report_date));
         $report_time = date("g:i a", strtotime($report->report_time));
 
-        $reports_list .= '<li class="report">
-                            <h5>Report from '.$report->from_user.':</h5>
-                            <h5>'.$report->type.'</h5>
-                            <p>Message: <br />'.$report->message.'</p>
-                            <span>'.$report_date.' / '.$report_time.'</span>
-                        </li>';
+        $report->type = str_replace("_", " ", $report->type);
+        $report->type = ucfirst($report->type);
+
+        $reports_list .= '  <li class="report">
+                                <h5>From '.$report->from_user.':</h5>
+                                <hr />
+                                <h5>'.$report->type.'</h5>
+                                <hr />
+                                <p>'.$report->message.'</p>
+                                <hr />
+                                <span>'.$report_date.' / '.$report_time.'</span>
+                            </li>';
     }
 } else {
     $reports_list .= '  <div class="intro">
                             <p>This member does\'t have any reports</p>
                         </div>';
 }
+
 // Count members' reports
 $total_reports = R::count("reports", "to_user = ?", array($username));
 

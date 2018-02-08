@@ -11,7 +11,7 @@ check_admin();
 <html lang="en">
     <head>
         <?php require 'templates/head.part.php';?>
-        <title><?php echo e($username);?></title>
+        <title><?php echo $username;?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
@@ -32,7 +32,7 @@ check_admin();
 
                     <!-- Profile menu info -->
                     <div class="about">
-                        <p><?php echo e($about);?></p>
+                        <p><?php echo $about;?></p>
                     </div>
 
                     <ul class="profile-member-info">
@@ -42,31 +42,31 @@ check_admin();
                         <li>
                             <p>
                                 <span>Username:</span>
-                                <span style="float:right;"><?php echo e($username);?></span>
+                                <span style="float:right;"><?php echo $username;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Firstname:</span>
-                                <span style="float:right;"><?php echo e($first);?></span>
+                                <span style="float:right;"><?php echo $first;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Lastname:</span>
-                                <span style="float:right;"><?php echo e($last);?></span>
+                                <span style="float:right;"><?php echo $last;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Country from profile:</span>
-                                <span style="float:right;"><?php echo e($country);?></span>
+                                <span style="float:right;"><?php echo $country;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Status:</span>
-                                <span style="float:right;"><?php echo e($status);?></span>
+                                <span style="float:right;"><?php echo $status;?></span>
                             </p>
                         </li>
                         <li>
