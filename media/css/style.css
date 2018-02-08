@@ -489,7 +489,7 @@ hr {
     font-size: 0.87rem;
 }
 
-/* -- MEMBER INFORMATION -- */
+/* -- Member information -- */
 
 .profile-member-info {
     list-style: none;
@@ -772,9 +772,9 @@ hr {
     padding: .18rem 1%;
     background: #e6e6e6;
     border-radius: .06rem;
-    box-shadow: .18rem .18rem .18rem 05.31rem var(--darkGray);
-    -webkit-box-shadow: .18rem .18rem .18rem 0 var(--darkGray);
-    -moz-box-shadow: .18rem .18rem .18rem 0 var(--darkGray);
+    box-shadow: .18rem .18rem .18rem 0 var(--gray);
+    -webkit-box-shadow: .18rem .18rem .18rem 0 var(--gray);
+    -moz-box-shadow: .18rem .18rem .18rem 0 var(--gray);
 }
 
 .close-notif {
@@ -1085,7 +1085,7 @@ hr {
     font-size: 1rem;
 }
 
-/* --intro-- */
+/* -- Intro -- */
 
 .intro {
     text-align: center;
@@ -1179,7 +1179,7 @@ hr {
     background-image: url(../img/arrow-right.png?v=1);
 }
 
-/* -- STORIES -- */
+/* -- Stories -- */
 
 .wrapper-stories,
 .wrapper-info {
@@ -1445,7 +1445,6 @@ footer h3 {
 }
 
 .nav-footer {
-    /*footer without copyright*/
     width: 90%;
     margin: .62rem 5%;
     padding: .25rem 0;

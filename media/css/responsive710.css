@@ -25,25 +25,25 @@
     margin: 1.12rem 0 1.12rem 7%;
 }
 
-/*--news events--*/
+/*-- News events --*/
 
 .event>h4 {
     margin: .43rem 0 .18rem 0.12rem;
     font-size: 1rem;
 }
 
-.event>h5 {
+.event > h5 {
     margin: 0.12rem .43rem 0 .25rem;
     font-size: 1rem;
 }
 
-.event>a>img {
+.event > a > img {
     margin: .43rem 4%;
     width: 92%;
     border-radius: 0.12rem;
 }
 
-/*--navigation bar--*/
+/*-- Navigation bar --*/
 
 .logo-section {
     width: 8.12rem;
@@ -78,11 +78,11 @@
     margin-top: 3.06rem;
 }
 
-#nav-menu>ul.show {
+#nav-menu > ul.show {
     max-height: 40em;
 }
 
-#nav-menu>ul>li {
+#nav-menu > ul > li {
     width: 100%;
 }
 
@@ -115,7 +115,7 @@
     margin-bottom: 2.5rem;
 }
 
-/*--search on page search.php--*/
+/*-- Search on page search.php --*/
 
 .search-form {
     width: 80%;
@@ -155,8 +155,6 @@
     border-radius: 0;
 }
 
-/*------*/
-
 .wrapper-member-table {
     width: 96%;
     margin: 1rem 2%;
@@ -177,27 +175,24 @@
     letter-spacing: .06rem;
 }
 
-.header,
-.header2 {
+.header, .header2 {
     width: 98%;
     margin: 0 1%;
     padding: 0;
     border: none;
 }
 
-/*--admin page--*/
+/*-- Admins page --*/
 
 .admin-table {
     font-size: .62rem;
 }
 
-.admin-table,
-th,
-td {
+.admin-table, th, td {
     padding: .31rem 0;
 }
 
-/*--pods and stories--*/
+/*-- Pods and stories --*/
 
 .stories {
     width: 46%;
@@ -214,7 +209,7 @@ td {
     width: 96%;
 }
 
-/*--footer--*/
+/*-- Footer --*/
 
 .hr-mobile {
     display: inline-block;
