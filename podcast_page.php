@@ -20,9 +20,9 @@ if ($member_ok == true) {
     }
     
 	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
+		$favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
+		$favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} else {
 		$favorites_button = '';
 	}
@@ -177,10 +177,10 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_pod") {
 				        		status.innerHTML = '<span class="success">This podcast has been added to your list.</span>';
-				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_pod") {
 				        		status.innerHTML = '<span class="success">This podcast has been deleted from your list.</span>';
-				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
 				        	}

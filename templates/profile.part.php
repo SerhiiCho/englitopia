@@ -211,10 +211,10 @@ if ($friends) {
                 $img_actual_ext = $img_ext[1];
                 $img =  '<img src="media/img/uploads/profile'.$id_friend->id.
                         '.'.$img_actual_ext.'?'.$get_pic_version.
-                        '" class="member_pic_other" alt="'.$fr->user1.'">';
+                        '" class="member-pic-other" alt="'.$fr->user1.'">';
             } else {
                 $img = '<img src="media/img/uploads/profiledefault.jpg"
-                        alt="Profile photo" class="member_pic_other">';
+                        alt="Profile photo" class="member-pic-other">';
             }
             $friend_last_login = facebook_time_ago($friend_pic->last_login);
 			if ($friend_last_login == 'Just Now') {
@@ -227,7 +227,7 @@ if ($friends) {
                                         <a href="profile.php?member=/'.$fr->user1.'" title="'.$fr->user1.'">'.$img.'</a>
                                         <div>
                                             <div class="conversations">
-                                                <p id="conversations_from" style="margin-top:.87rem;">
+                                                <p id="conversations-from" style="margin-top:.87rem;">
                                                     <b>'.ucfirst($fr->user1).$friend_last_login.'</b>
                                                 </p>
                                                 <p class="conversations_content">

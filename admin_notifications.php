@@ -64,7 +64,7 @@ check_admin();
                     <input type="text" name="link" placeholder="http:// ...">
                     
                     <span class="span-form">Choose image if you have</span>
-                    <input type='file' name='file' id="notif_upload_img">
+                    <input type='file' name='file' id="notif-upload-img">
                     
                     <button type="submit" name="send" class="button">Preview</button>
                 </form>

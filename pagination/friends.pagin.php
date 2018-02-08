@@ -104,9 +104,9 @@ if ($friend) {
                 $img_info = glob('media/img/uploads/profile'.$his->id.'*');
                 $img_ext = explode('.', $img_info[0]);
                 $img_actual_ext = $img_ext[1];
-                $img = '<img src="media/img/uploads/profile'.$his->id.'.'.$img_actual_ext.'?'.$photo_version.'" class="member_pic_other">';
+                $img = '<img src="media/img/uploads/profile'.$his->id.'.'.$img_actual_ext.'?'.$photo_version.'" class="member-pic-other">';
             } else {
-                $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member_pic_other">';
+                $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic-other">';
             }
 
             // Last login green/grey icon
@@ -122,8 +122,8 @@ if ($friend) {
                                     <a href="profile.php?member=/'.$user1.'" title="'.$user1.'">'.$img.'</a>
                                     <div>
                                         <div class="conversations">
-                                            <p id="conversations_from" style="margin-top:.87rem;"><b>'.ucfirst($his_name).$last_login.'</b></p>
-                                            <p class="conversations_content">
+                                            <p id="conversations-from" style="margin-top:.87rem;"><b>'.ucfirst($his_name).$last_login.'</b></p>
+                                            <p class="conversations-content">
                                                 <a href="profile.php?member=/'.$user1.'" title="View profile" style="color:#4a4a4a;">
                                                     View profile
                                                 </a>

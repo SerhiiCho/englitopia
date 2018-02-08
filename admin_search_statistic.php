@@ -25,7 +25,7 @@ check_admin();
             </div>
 
             <div class="wrapper_member_table">
-                <ul class="members_table_info">
+                <ul class="members-table-info">
                     <li><i class="fa fa-eye" aria-hidden="true"></i> - How many times the word has been searched</li>
                 </ul>
             </div>

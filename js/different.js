@@ -27,13 +27,13 @@ function counter(object, max, message) {
 }
 
 // Show Overlay and Popup window
-function popup_open(num) {
+function openPopupWindow(num) {
     document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup_window' + num).style.display = 'block';
+    document.getElementById('popup-window' + num).style.display = 'block';
 }
 
 // Close Popup Event
-function popup_close(num) {
+function closePopupWindow(num) {
     document.getElementById('overlay').style.display = 'none';
-    document.getElementById('popup_window' + num).style.display = 'none';
+    document.getElementById('popup-window' + num).style.display = 'none';
 }

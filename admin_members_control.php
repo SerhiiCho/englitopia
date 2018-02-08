@@ -26,7 +26,7 @@ check_admin();
 
             <div class="wrapper-member-table">
                 <h3>Members table</h3>
-                <ul class="members_table_info">
+                <ul class="members-table-info">
                     <li><i class="fa fa-exclamation-circle" aria-hidden="true"></i> - Reports</li>
                     <li><i class="fa fa-lock" aria-hidden="true"></i> - People blocked him</li>
                 </ul>

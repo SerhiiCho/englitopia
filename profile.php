@@ -56,15 +56,15 @@ if ($he_is_blocker == true) {
                             <?php echo $friend_button;?>
                         </span>
                         
-                        <a href="#" onclick="popup_open('1')">MESSAGE</a>
+                        <a href="#" onclick="openPopupWindow('1')">MESSAGE</a>
                         
-                        <span style="width:14%;" onclick="popup_open('2')">
+                        <span style="width:14%;" onclick="openPopupWindow('2')">
                             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                         </span>
 
                         <!-- Messages Status -->
                         <div>
-                            <span id="status_friendship" style="margin-top:-.56rem;"></span>
+                            <span id="status-friendship" style="margin-top:-.56rem;"></span>
 
                             <?php
                                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
@@ -93,9 +93,9 @@ if ($he_is_blocker == true) {
 
         <!-- Popup window for typing a message -->    
         <div id="overlay"></div>
-        <div id="popup_window1" class="popup_window">
+        <div id="popup-window1" class="popup-window">
             <div class="popup_controls">
-                <span id="popup_close1" class="popup_close" onclick="popup_close('1')">
+                <span id="popup_close1" class="popup_close" onclick="closePopupWindow('1')">
                     <i class="fa fa-window-close" aria-hidden="true"></i>
                 </span>
             </div>
@@ -114,9 +114,9 @@ if ($he_is_blocker == true) {
 
         <!-- Popup window for Show more button -->    
         <div id="overlay"></div>
-        <div id="popup_window2" class="popup_window">
+        <div id="popup-window2" class="popup-window">
             <div class="popup_controls">
-                <span id="popup_close2" class="popup_close" onclick="popup_close('2')">
+                <span id="popup_close2" class="popup_close" onclick="closePopupWindow('2')">
                     <i class="fa fa-window-close" aria-hidden="true"></i>
                 </span>
             </div>
@@ -125,7 +125,7 @@ if ($he_is_blocker == true) {
 
             <div class="popup_content">
                 <div class="header2">
-                    <ul class="more_block settings-ul">
+                    <ul class="more-block settings-ul">
 
                         <li>
                             <span id="block_btn"><?php echo $block_button;?></span>

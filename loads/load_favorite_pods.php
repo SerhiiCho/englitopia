@@ -33,11 +33,11 @@ if ($rows_p > 0) {
                     <a href="podcast_page.php?id='.$favs_p->id.'" title="'.$favs_p->subject.'">
                         <div class="conversations">
 
-                            <h4 id="conversations_date">
+                            <h4 id="conversations-date">
                                 Posted '.facebook_time_ago($favs_p->date).'
                             </h4>
 
-                            <p id="conversations_from">
+                            <p id="conversations-from">
                                 <b>'.$favs_p->id.'. '.$favs_p->subject.'</b>
                             </p>
 

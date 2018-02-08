@@ -1,9 +1,8 @@
 <script>
 
-// Friends function
 function sendFriendRequest(type,user,elem) {
     var elem = document.getElementById(elem);
-    var status = document.getElementById("status_friendship");
+    var status = document.getElementById("status-friendship");
     var ajax = ajaxObj("POST", "php_parsers/friends.pars.php");
 
     elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';
@@ -41,10 +40,9 @@ function sendFriendRequest(type,user,elem) {
     ajax.send("type=" + type + "&user=" + user);
 }
 
-// Blocking users
 function blockUser(type,blockee,elem) {
     var elem = document.getElementById(elem);
-    var status = document.getElementById("status_friendship");
+    var status = document.getElementById("status-friendship");
     var ajax = ajaxObj("POST","php_parsers/block.pars.php");
 
     elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';

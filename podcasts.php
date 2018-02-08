@@ -20,7 +20,7 @@
             echo $list;?>
 
             <?php if ($host_ok === true):?>
-                <a href="add_podcast.php" class="add-material"></a>
+                <a href="add_podcast.php" class="fas fa-plus-circle add-material"></a>
             <?php endif;?>
 
             <!-- Pagination -->

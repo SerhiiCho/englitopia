@@ -33,11 +33,11 @@ if ($rows_st > 0) {
                             title="'.$favs->subject.'">
                             <div class="conversations">
 
-                                <h4 id="conversations_date">
+                                <h4 id="conversations-date">
                                     Posted '.facebook_time_ago($favs->date).'
                                 </h4>
 
-                                <p id="conversations_from">
+                                <p id="conversations-from">
                                     <b>'.$favs->id.'. '.$favs->subject.'</b>
                                 </p>
 

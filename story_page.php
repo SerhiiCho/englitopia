@@ -21,9 +21,9 @@ if ($member_ok == true) {
     }
 
 	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
+		$favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
+		$favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
 	}
 }
 
@@ -158,10 +158,10 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_story") {
 				        		status.innerHTML = '<span class="success">This story has been added to your list.</span>';
-				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_story") {
 				        		status.innerHTML = '<span class="success">This story has been deleted from your list.</span>';
-				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
 				        	}

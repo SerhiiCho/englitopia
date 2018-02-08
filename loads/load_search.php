@@ -65,7 +65,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
                     <div>
                         <div class="conversations">
                             <h4 id="conversations_date">Posted '.facebook_time_ago($st['date']).'</h4>
-                            <p id="conversations_from"><b>Story '.$st['id'].'. '.$st['subject'].'</b></p>
+                            <p id="conversations-from"><b>Story '.$st['id'].'. '.$st['subject'].'</b></p>
                             <p class="conversations_content">'.substr($st['intro'],0,40).'...</p>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
                     <div>
                         <div class="conversations">
                             <h4 id="conversations_date">Posted '.facebook_time_ago($p['date']).'</h4>
-                            <p id="conversations_from"><b>Podcast '.$p['id'].'. '.$p['subject'].'</b></p>
+                            <p id="conversations-from"><b>Podcast '.$p['id'].'. '.$p['subject'].'</b></p>
                             <p class="conversations_conteznt">'.substr($p['intro'],0,40).'...</p>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
                     <div>
                         <div class="conversations">
                             <h4 id="conversations_date">Posted '.facebook_time_ago($in['date']).'</h4>
-                            <p id="conversations_from"><b>'.$in['subject'].'</b></p>
+                            <p id="conversations-from"><b>'.$in['subject'].'</b></p>
                             <p class="conversations_content">Information</p>
                         </div>
                     </div>

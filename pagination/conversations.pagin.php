@@ -160,9 +160,9 @@ if (!$talks) {
 		            $img_info = glob('media/img/uploads/profile'.$pick.'*');
 		            $img_ext = explode('.', $img_info[0]);
 		            $img_actual_ext = $img_ext[1];
-	                $img = '<img src="media/img/uploads/profile'.$pick.'.'.$img_actual_ext.'?'.$m_photo_version.'" class="member_pic_other">';
+	                $img = '<img src="media/img/uploads/profile'.$pick.'.'.$img_actual_ext.'?'.$m_photo_version.'" class="member-pic-other">';
 		        } else {
-	                $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member_pic_other">';
+	                $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic-other">';
 				}
 
 				// Last login green/grey icon
@@ -187,19 +187,19 @@ if (!$talks) {
 
 			            $list .= '  <a href="profile.php?member=/'.$from_username.'" title="Profile page '.$from_username.'">'.$img.'</a>
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
-									<div class="conversations_unread">
+									<div class="conversations-unread">
 
-										<p id="conversations_from" style="margin-top:.87rem;">
+										<p id="conversations-from" style="margin-top:.87rem;">
 											<b>'.ucfirst($from_username).$last_login.'</b>
 										</p>
 
-										<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
+										<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 											'.$message.'...
 										</p>
 
 										<i class="unreaded_message_num">
 											'.$unreaded_messages.' 
-											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<i class="far fa-envelope"></i>
 										</i>
 										
 										<div class="delete_conversations">
@@ -209,7 +209,7 @@ if (!$talks) {
 												<input type="hidden" name="other_person" value="'.$other.'">
 												<input type="hidden" name="me" value="'.$user_id.'">
 												<button type="submit" name="delete">
-													<i class="fa fa-trash-o" aria-hidden="true"></i>
+													<i class="fas fa-trash-alt"></i>
 												</button>
 											</form>
 										</div>
@@ -222,11 +222,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 									<div class="conversations">
 
-										<p id="conversations_from" style="margin-top:.87rem;">
+										<p id="conversations-from" style="margin-top:.87rem;">
 											<b>'.ucfirst($from_username).$last_login.'</b>
 										</p>
 
-										<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
+										<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 											'.$message.'...
 										</p>
 										
@@ -237,7 +237,7 @@ if (!$talks) {
 												<input type="hidden" name="other_person" value="'.$other.'">
 												<input type="hidden" name="me" value="'.$user_id.'">
 												<button type="submit" name="delete">
-													<i class="fa fa-trash-o" aria-hidden="true"></i>
+													<i class="fas fa-trash-alt"></i>
 												</button>
 											</form>
 										</div>
@@ -252,11 +252,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 										<div class="conversations">
 
-											<p id="conversations_from" style="margin-top:.87rem;">
+											<p id="conversations-from" style="margin-top:.87rem;">
 												<b>'.ucfirst($from_username).$last_login.'</b>
 											</p>
 
-											<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
+											<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
 											
@@ -267,7 +267,7 @@ if (!$talks) {
 													<input type="hidden" name="other_person" value="'.$other.'">
 													<input type="hidden" name="me" value="'.$user_id.'">
 													<button type="submit" name="delete">
-														<i class="fa fa-trash-o" aria-hidden="true"></i>
+														<i class="fas fa-trash-alt"></i>
 													</button>
 												</form>
 											</div>
@@ -280,11 +280,11 @@ if (!$talks) {
 									<a href="chat.php?id='.$message_id_chat.'" id="id_message" title="Chat with '.$from_username.'">
 										<div class="conversations">
 
-											<p id="conversations_from" style="margin-top:.87rem;">
+											<p id="conversations-from" style="margin-top:.87rem;">
 												<b>'.ucfirst($from_username).$last_login.'</b>
 											</p>
 
-											<p class="conversations_content" style="margin:.18rem 2.06rem 0 4.37rem;">
+											<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
 											
@@ -295,7 +295,7 @@ if (!$talks) {
 													<input type="hidden" name="other_person" value="'.$other.'">
 													<input type="hidden" name="me" value="'.$user_id.'">
 													<button type="submit" name="delete">
-														<i class="fa fa-trash-o" aria-hidden="true"></i>
+														<i class="fas fa-trash-alt"></i>
 													</button>
 												</form>
 											</div>

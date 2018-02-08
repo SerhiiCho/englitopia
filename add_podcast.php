@@ -99,11 +99,11 @@ if ($host_ok === false){
                     
                     <!-- Audio -->
                     <span class="span-form">Choose mp3</span>
-                    <input type='file' name='audio' id="notif_upload_img" accept=".mp3" required>
+                    <input type='file' name='audio' id="notif-upload-img" accept=".mp3" required>
 
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
-                    <input type='file' name='img' id="notif_upload_img" accept=".jpg" required>
+                    <input type='file' name='img' id="notif-upload-img" accept=".jpg" required>
                     
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>

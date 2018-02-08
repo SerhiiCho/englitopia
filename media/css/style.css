@@ -8,7 +8,7 @@
     --red: #a52a2a;
     --green: #006147;
     --gray: #505050;
-    --lightGray: #d1d1d1;
+    --lightGray: #dadada;
     --darkGray: #2e2e2e;
 }
 
@@ -536,7 +536,7 @@ hr {
     color: #eee;
 }
 
-#status_friendship {
+#status-friendship {
     display: block;
     text-align: center;
     margin: .62rem auto;
@@ -546,7 +546,7 @@ hr {
     display: none;
 }
 
-.more_block {
+.more-block {
     width: 92%;
     margin: 1.43rem 4% 0 4%!important;
     transition: .3s;
@@ -591,7 +591,7 @@ hr {
 /* -- Conversations -- */
 
 .conversations,
-.conversations_unread {
+.conversations-unread {
     width: 98%;
     min-height: 4.37rem;
     font-size: 0.87rem;
@@ -599,25 +599,25 @@ hr {
     padding: .12rem 1%;
 }
 
-.conversations_unread {
-    background: #eee;
+.conversations-unread {
+    background: var(--lightGray);
     border-radius: .18rem;
 }
 
-#conversations_from {
+#conversations-from {
     margin: 0 2.5rem 0 4.37rem;
     padding-top: .12rem;
     font-size: 0.87rem;
     font-weight: 400;
 }
 
-.conversations_content {
+.conversations-content {
     font-size: .81rem;
     margin: 0 .37rem 0 4.37rem;
     color: var(--gray);
 }
 
-#conversations_date {
+#conversations-date {
     width: 87%;
     text-align: left;
     margin: .37rem 0 .06rem 4.37rem;
@@ -625,7 +625,7 @@ hr {
     color: var(--gray);
 }
 
-.member_pic_other {
+.member-pic-other {
     width: 3.56rem;
     border-radius: .12rem;
     margin: .62rem .62rem 0 .18rem;
@@ -801,7 +801,7 @@ hr {
     margin-top: .37rem;
 }
 
-#notif_upload_img {
+#notif-upload-img {
     height: 1.56rem;
 }
 
@@ -943,7 +943,7 @@ hr {
     z-index: 2600;
 }
 
-.popup_window {
+.popup-window {
     display: none;
     position: fixed;
     top: 13%;
@@ -958,7 +958,7 @@ hr {
     box-shadow: 0 .12rem .31rem .25rem var(--darkGray);
 }
 
-.popup_window span {
+.popup-window span {
     height: 1rem;
     margin: .25rem .56rem 0 .56rem;
 }
@@ -1367,7 +1367,7 @@ audio {
     margin: 1rem 25%;
 }
 
-.members_table_info {
+.members-table-info {
     margin: .62rem auto;
     list-style: none;
     padding: .62rem;
@@ -1375,7 +1375,7 @@ audio {
     border-radius: .18rem;
 }
 
-.members_table_info li {
+.members-table-info li {
     padding: .25rem;
     border-bottom: solid .06rem var(--gray);
 }

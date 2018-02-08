@@ -70,15 +70,15 @@ if ($notifs) {
 
         $list .= '  <div class="notification">
                         <a href="'.$notifs->link.'" title="'.$notifs->title.'">
-                            <img src="media/img/notifications/'.$notifs->image.'.jpg?'.$notifs->title.'" alt="'.$notifs->title.'" title="'.$notifs->title.'" class="member_pic_other">
+                            <img src="media/img/notifications/'.$notifs->image.'.jpg?'.$notifs->title.'" alt="'.$notifs->title.'" title="'.$notifs->title.'" class="member-pic-other">
                         </a>
 
-                        <h4 id="conversations_date">
+                        <h4 id="conversations-date">
                             '.facebook_time_ago($notifs->date).'
                         </h4>
 
-                        <p id="conversations_from"><b>'.$notifs->title.'</b></p>
-                        <p class="conversations_content">'.nl2br($notifs->notification).'</p>
+                        <p id="conversations-from"><b>'.$notifs->title.'</b></p>
+                        <p class="conversations-content">'.nl2br($notifs->notification).'</p>
 
                         <div>
                             <form method="POST" action="includes/notifications.inc.php">
@@ -104,9 +104,9 @@ foreach ($friendship as $fr) {
             $img_info = glob('media/img/uploads/profile'.$friend->id.'*');
             $img_ext = explode('.', $img_info[0]);
             $img_actual_ext = $img_ext[1];
-            $img = '<img src="media/img/uploads/profile'.$friend->id.'.'.$img_actual_ext.'?'.$friend_data->photo_version.'" class="member_pic_other">';
+            $img = '<img src="media/img/uploads/profile'.$friend->id.'.'.$img_actual_ext.'?'.$friend_data->photo_version.'" class="member-pic-other">';
         } else {
-            $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member_pic_other">';
+            $img = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic-other">';
         }
 
         $list .= '<div id="friendreq_'.$fr->id.'">
@@ -115,7 +115,7 @@ foreach ($friendship as $fr) {
                             '.$img.'
                         </a>
                         
-                        <p id="conversations_from"><b>'.ucfirst($fr->user1).'</b> sent a friend request</p>
+                        <p id="conversations-from"><b>'.ucfirst($fr->user1).'</b> sent a friend request</p>
                         
                         <button onclick="friendReqHandler(\'accept\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')" id="friend_req_first_button">Accept</button>
                         <button onclick="friendReqHandler(\'reject\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')">Ignore</button>

@@ -83,7 +83,7 @@ if ($writer_ok === false){
 
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
-                    <input type='file' name='file' id="notif_upload_img" required>
+                    <input type='file' name='file' id="notif-upload-img" required>
                     
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>
