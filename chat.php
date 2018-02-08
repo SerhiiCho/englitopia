@@ -68,7 +68,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
 
                     $("#button-load-chat").click(function() {
                         resultsCount = resultsCount + 10;
-                        $("#load_chat").load("loads/load_chat.php", {
+                        $("#load-chat").load("loads/load_chat.php", {
                             postResultsCount: resultsCount,
                             idChat: idOfThisChat,
                             from: idFrom,
@@ -80,7 +80,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
             </script>
 
             <!-- Chat will be loaded here after clicking Show more -->
-            <div id="load_chat">
+            <div id="load-chat">
                 <?php require 'templates/chat.part.php';?>
             </div>
 
@@ -123,7 +123,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
                 ajax.onreadystatechange = function() {
                     if (ajaxReturn(ajax) == true){
                         if (ajax.responseText > allMessages){
-                            $("#load_chat").load(" #load_chat");
+                            $("#load-chat").load(" #load-chat");
                             $('embed').remove();
                             $('body').append('<embed src="audio/new_message.ogg" autostart="true" hidden="true" loop="false" style="display:none;">');
                         }

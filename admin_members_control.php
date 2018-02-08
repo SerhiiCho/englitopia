@@ -27,8 +27,8 @@ check_admin();
             <div class="wrapper-member-table">
                 <h3>Members table</h3>
                 <ul class="members-table-info">
-                    <li><i class="fa fa-exclamation-circle" aria-hidden="true"></i> - Reports</li>
-                    <li><i class="fa fa-lock" aria-hidden="true"></i> - People blocked him</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> - Reports</li>
+                    <li><i class="fas fa-lock"></i> - People blocked him</li>
                 </ul>
             </div>
 
@@ -43,8 +43,8 @@ check_admin();
             <table class="admin-table">
                 <th>id</th>
                 <th>Username</th>
-                <th><i class="fa fa-exclamation-circle" aria-hidden="true"></i></th>
-                <th><i class="fa fa-lock" aria-hidden="true"></i></th>
+                <th><i class="fas fa-exclamation-triangle"></i></th>
+                <th><i class="fas fa-lock"></i></th>
 
                 <?php echo $list;?>
 

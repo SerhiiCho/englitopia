@@ -89,7 +89,7 @@ switch($posts) {
                 <li><h3>Follow Us</h3></li>
                 <li>
                     <a href="https://www.twitter.com/englitopia">
-                        <i class="fa fa-twitter"></i> twitter
+                        <i class="fab fa-twitter"></i> twitter
                     </a>
                 </li>
             </ul>

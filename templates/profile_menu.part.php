@@ -6,7 +6,7 @@
 				<i class="fas fa-user"></i>
 			</a>
 		</li>
-		<li id="update_notif_unreded">
+		<li id="update-notif-unreded">
 
 			<a href="notifications.php" title="Notifications" id="profile-menu-line-notifications">
 				<i class="fas fa-bell" <?php if (isset($_SESSION['username']) && $notif_unreaded !== 0) { echo 'data-badge="'.$notif_unreaded.'"';}?>></i>

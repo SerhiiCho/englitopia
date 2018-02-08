@@ -50,12 +50,12 @@ function blockUser(type,blockee,elem) {
         if (ajaxReturn(ajax) == true) {
             if (ajax.responseText == "blocked_ok") {
 
-                elem.innerHTML = '<button onclick="blockUser(\'unblock\',\'<?php echo $u_get;?>\',\'block_btn\')"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Unblock</button>';
+                elem.innerHTML = '<button onclick="blockUser(\'unblock\',\'<?php echo $u_get;?>\',\'block-btn\')"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Unblock</button>';
                 status.innerHTML = '<span class="success">'+ blockee +' has been blocked</span>';
 
             } else if (ajax.responseText == "unblocked_ok") {
 
-                elem.innerHTML = '<button onclick="blockUser(\'block\',\'<?php echo $u_get;?>\',\'block_btn\')"><i class="fa fa-lock" aria-hidden="true"></i> Block</button>';
+                elem.innerHTML = '<button onclick="blockUser(\'block\',\'<?php echo $u_get;?>\',\'block-btn\')"><i class="fa fa-lock" aria-hidden="true"></i> Block</button>';
                 status.innerHTML = '<span class="success"> '+ blockee +' has been unblocked<span>';
 
             } else {

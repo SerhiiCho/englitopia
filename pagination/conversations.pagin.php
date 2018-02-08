@@ -197,12 +197,12 @@ if (!$talks) {
 											'.$message.'...
 										</p>
 
-										<i class="unreaded_message_num">
+										<i class="unreaded-message-num">
 											'.$unreaded_messages.' 
 											<i class="far fa-envelope"></i>
 										</i>
 										
-										<div class="delete_conversations">
+										<div class="delete-conversations">
 											<form method="POST" action="includes/delete_message.inc.php">
 												<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
 												<input type="hidden" name="id_chat" value="'.$message_id_chat.'">
@@ -230,7 +230,7 @@ if (!$talks) {
 											'.$message.'...
 										</p>
 										
-										<div class="delete_conversations">
+										<div class="delete-conversations">
 											<form method="POST" action="includes/delete_message.inc.php">
 												<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
 												<input type="hidden" name="id_chat" value="'.$message_id_chat.'">
@@ -260,7 +260,7 @@ if (!$talks) {
 												'.$message.'...
 											</p>
 											
-											<div class="delete_conversations">
+											<div class="delete-conversations">
 												<form method="POST" action="includes/delete_message.inc.php">
 													<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
 													<input type="hidden" name="id_chat" value="'.$message_id_chat.'">
@@ -288,7 +288,7 @@ if (!$talks) {
 												'.$message.'...
 											</p>
 											
-											<div class="delete_conversations">
+											<div class="delete-conversations">
 												<form method="POST" action="includes/delete_message.inc.php">
 													<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
 													<input type="hidden" name="id_chat" value="'.$message_id_chat.'">

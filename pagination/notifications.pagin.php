@@ -117,7 +117,7 @@ foreach ($friendship as $fr) {
                         
                         <p id="conversations-from"><b>'.ucfirst($fr->user1).'</b> sent a friend request</p>
                         
-                        <button onclick="friendReqHandler(\'accept\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')" id="friend_req_first_button">Accept</button>
+                        <button onclick="friendReqHandler(\'accept\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')" id="friend-req-first-button">Accept</button>
                         <button onclick="friendReqHandler(\'reject\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')">Ignore</button>
                     </div>
                 </div>';

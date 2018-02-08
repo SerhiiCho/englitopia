@@ -632,7 +632,7 @@ hr {
     float: left;
 }
 
-.unreaded_message_num {
+.unreaded-message-num {
     min-width: 1.9rem;
     height: 1.25rem;
     position: absolute;
@@ -651,13 +651,13 @@ hr {
 
 /* -- Delete conversations -- */
 
-.delete_conversations {
+.delete-conversations {
     text-align: right;
     margin-top: 0;
 }
 
-.delete_conversations button,
-.delete_conversations label {
+.delete-conversations button,
+.delete-conversations label {
     position: absolute;
     padding: .06rem .37rem;
     margin: -2rem 0 0 -1.56rem;
@@ -667,8 +667,8 @@ hr {
     border: none;
 }
 
-.delete_conversations button:hover,
-.delete_conversations label:hover {
+.delete-conversations button:hover,
+.delete-conversations label:hover {
     color: var(--darkGray);
 }
 
@@ -738,7 +738,7 @@ hr {
     left: 43%;
 }
 
-#load_chat {
+#load-chat {
     margin-top: 2.81rem;
 }
 
@@ -812,42 +812,42 @@ hr {
     background: #eee;
 }
 
-#friend_req_first_button {
+#friend-req-first-button {
     background: var(--red);
     color: #eee;
 }
 
-#friend_req_first_button:hover {
+#friend-req-first-button:hover {
     background: var(--red);
 }
 
-.conversations>button:hover {
+.conversations > button:hover {
     background: #eee;
 }
 
 /* -- Report -- */
 
-.report_form {
+.report-form {
     width: 13.12rem;
     margin: 0 auto 0 auto;
 }
 
-.report_form > p {
+.report-form > p {
     margin-top: .56rem;
 }
 
-.report_form input {
+.report-form input {
     width: .81rem;
     height: .81rem;
 }
 
-.report_form > p > span {
+.report-form > p > span {
     margin-left: .75rem;
     font-size: 1rem;
 }
 
-.report_form > button,
-.report_form > a {
+.report-form > button,
+.report-form > a {
     width: 9.37rem;
     height: 1.68rem;
     border: solid .06rem var(--gray);
@@ -859,8 +859,8 @@ hr {
     background: #eee;
 }
 
-.report_form > button:hover,
-.report_form > a:hover {
+.report-form > button:hover,
+.report-form > a:hover {
     background: #eee;
 }
 
@@ -963,7 +963,7 @@ hr {
     margin: .25rem .56rem 0 .56rem;
 }
 
-.popup_close {
+.popup-close {
     font-size: 1.18rem;
     font-weight: bold;
     color: var(--gray);
@@ -971,7 +971,7 @@ hr {
     float: right;
 }
 
-.popup_close:hover {
+.popup-close:hover {
     color: var(--red);
 }
 
@@ -1036,7 +1036,7 @@ hr {
 }
 
 .form textarea,
-.report_form > textarea {
+.report-form > textarea {
     height: 2.37rem;
     width: 97%;
     padding: .25rem 1.5%;
@@ -1370,14 +1370,11 @@ audio {
 .members-table-info {
     margin: .62rem auto;
     list-style: none;
-    padding: .62rem;
-    border: solid .06rem var(--gray);
-    border-radius: .18rem;
+    text-align: center;
 }
 
 .members-table-info li {
     padding: .25rem;
-    border-bottom: solid .06rem var(--gray);
 }
 
 /* -- Pagination -- */

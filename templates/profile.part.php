@@ -157,12 +157,12 @@ if ($is_friend == true) {
 
 // LOGIC FOR BLOCK BUTTON
 if ($i_am_blocker == true) {
-    $block_button = '   <button onclick="blockUser(\'unblock\',\''.$u_get.'\',\'block_btn\')">
+    $block_button = '   <button onclick="blockUser(\'unblock\',\''.$u_get.'\',\'block-btn\')">
                             <i class="fa fa-unlock-alt" aria-hidden="true"></i> 
                             Unblock
                         </button>';
 } elseif ($member_ok == true && $u_get != $log_username) {
-    $block_button = '   <button onclick="blockUser(\'block\',\''.$u_get.'\',\'block_btn\')">
+    $block_button = '   <button onclick="blockUser(\'block\',\''.$u_get.'\',\'block-btn\')">
                             <i class="fa fa-lock" aria-hidden="true"></i> 
                             Block
                         </button>';

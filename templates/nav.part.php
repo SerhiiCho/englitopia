@@ -42,7 +42,7 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <!--Messages button-->
-    <div id="update_messeges_unreded">
+    <div id="update-messeges-unreded">
 
 	    <?php if (isset($_SESSION['username'])):?>
 		    <a href="conversations.php" title="Conversations" class="hb-button hb-button-right">

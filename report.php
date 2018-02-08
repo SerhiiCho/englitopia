@@ -57,7 +57,7 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
             <!-- Content -->
             <div class="wrapper-small2_chat">
 	            <?php if (isset($_POST['from']) && isset($_POST['to'])):?>
-	                <form class="report_form" action="includes/report.inc.php" method="POST">
+	                <form class="report-form" action="includes/report.inc.php" method="POST">
 	                    <p>
 	                        <input type="radio" name="type" value="adult_content">
 	                        <span>Adult content</span>

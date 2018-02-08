@@ -56,9 +56,9 @@ if ($he_is_blocker == true) {
                             <?php echo $friend_button;?>
                         </span>
                         
-                        <a href="#" onclick="openPopupWindow('1')">MESSAGE</a>
+                        <a href="#" id="message-window">MESSAGE</a>
                         
-                        <span style="width:14%;" onclick="openPopupWindow('2')">
+                        <span style="width:14%;" id="show-more-window">
                             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                         </span>
 
@@ -93,16 +93,16 @@ if ($he_is_blocker == true) {
 
         <!-- Popup window for typing a message -->    
         <div id="overlay"></div>
-        <div id="popup-window1" class="popup-window">
-            <div class="popup_controls">
-                <span id="popup_close1" class="popup_close" onclick="closePopupWindow('1')">
+        <div id="popup-open1" class="popup-window">
+            <div>
+                <span class="popup-close" id="close-first-window">
                     <i class="fa fa-window-close" aria-hidden="true"></i>
                 </span>
             </div>
 
             <br />
 
-            <div class="popup_content">
+            <div>
                 <form method="POST" action="includes/message.inc.php" class="form">
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
                     <input type="hidden" name="to" value="<?php echo $user_id;?>">
@@ -114,21 +114,21 @@ if ($he_is_blocker == true) {
 
         <!-- Popup window for Show more button -->    
         <div id="overlay"></div>
-        <div id="popup-window2" class="popup-window">
-            <div class="popup_controls">
-                <span id="popup_close2" class="popup_close" onclick="closePopupWindow('2')">
+        <div id="popup-open2" class="popup-window">
+            <div>
+                <span class="popup-close" id="close-second-window">
                     <i class="fa fa-window-close" aria-hidden="true"></i>
                 </span>
             </div>
 
             <br />
 
-            <div class="popup_content">
+            <div>
                 <div class="header2">
                     <ul class="more-block settings-ul">
 
                         <li>
-                            <span id="block_btn"><?php echo $block_button;?></span>
+                            <span id="block-btn"><?php echo $block_button;?></span>
                         </li>
 
                         <li>

@@ -24,9 +24,9 @@ check_admin();
                 <h1>Search statistic</h1>
             </div>
 
-            <div class="wrapper_member_table">
+            <div class="wrapper-member-table">
                 <ul class="members-table-info">
-                    <li><i class="fa fa-eye" aria-hidden="true"></i> - How many times the word has been searched</li>
+                    <li><i class="fas fa-eye"></i> - How many times the word has been searched</li>
                 </ul>
             </div>
 
@@ -41,7 +41,7 @@ check_admin();
             <table class="admin-table">
                 <th>id</th>
                 <th>Word</th>
-                <th><i class="fa fa-eye" aria-hidden="true"></i></th>
+                <th><i class="fas fa-eye"></i></th>
                 <th>Last search</th>
                 <?php echo $list;?>
             </table>

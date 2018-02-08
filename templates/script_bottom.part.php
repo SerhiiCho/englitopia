@@ -6,9 +6,9 @@
     $(document).ready(function() {
         setInterval(function() {
             // Messages
-            $("#update_messeges_unreded").load(" #update_messeges_unreded");
+            $("#update-messeges-unreded").load(" #update-messeges-unreded");
             // Notifications
-            $("#update_notif_unreded").load(" #update_notif_unreded");
+            $("#update-notif-unreded").load(" #update-notif-unreded");
         },5000)
     });
 
