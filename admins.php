@@ -11,7 +11,6 @@ check_admin();
 <html lang="en">
     <head>
         <?php require 'templates/head.part.php';?>
-
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
         <title><?php echo $_SESSION['username'];?></title>
@@ -20,7 +19,7 @@ check_admin();
     <body>
         <div class="wrapper">
             <?php require 'templates/profile_menu.part.php';?>
-
+            <!-- Intro -->
             <div class="intro">
                 <h1>Admins' room </h1>
             </div>
@@ -35,6 +34,9 @@ check_admin();
                     </li>
                     <li>
                         <a href="admin_members_control.php" title="Members control">Members control</a>
+                    </li>
+                    <li>
+                        <a href="admin_post_office.php" title="Post office">Post office</a>
                     </li>
                 </ul>
 
