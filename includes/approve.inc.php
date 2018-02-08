@@ -43,6 +43,7 @@ if (isset($_POST['reject']) && isset($_POST['story_id'])) {
 
     $post = R::dispense('postoffice');
     $post->type = 'attention';
+    $post->important = 1;
     $post->message = $message_to_admins;
     $post->date = $date;
     R::store($post);
@@ -82,6 +83,7 @@ if (isset($_POST['reject']) && isset($_POST['pod_id'])) {
 
     $post = R::dispense('postoffice');
     $post->type = 'attention';
+    $post->important = 1;
     $post->message = $message_to_admins;
     $post->date = $date;
     R::store($post);

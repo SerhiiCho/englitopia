@@ -7,14 +7,14 @@ if (isset($_SESSION['username'])) {
 
     // Selecting last messages
     $unreaded = R::count('messages', 'have_read = ?
-                                        AND id_to = ?
-                                        AND delete_messages != ?',
-                                        array(0, $my_id, $my_id));
+                                    AND id_to = ?
+                                    AND delete_messages != ?',
+                                    array(0, $my_id, $my_id));
 
     // Notifications
     $notif_unreaded = R::count('friends', 'user2 = ?
-                                            AND accepted = ?',
-                                            array($log_username, 0));
+                                        AND accepted = ?',
+                                        array($log_username, 0));
 
     // Check last notif checkdate
     $note_check = R::findOne("membersdata", "user_id = ?", array($my_id));
@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
 
 	    <?php if (isset($_SESSION['username'])):?>
 		    <a href="conversations.php" title="Conversations" class="hb-button hb-button-right">
-                <i class="far fa-envelope" <?php if (isset($_SESSION['username']) && $unreaded !== 0) { echo 'data-badge="'.$unreaded.'"';}?>></i>
+                <i class="far fa-envelope icon" <?php if (isset($_SESSION['username']) && $unreaded != 0) { echo 'data-badge="'.$unreaded.'"';}?>></i>
 		    </a>
 		<?php endif;?>
 

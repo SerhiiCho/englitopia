@@ -1,15 +1,28 @@
+<?php
+$admin_notif_unreaded = 0;
+
+if ($admin_ok === true) {
+	$admin_last_check = R::findOne("membersdata", "user_id = ?", array($user_id));
+
+	if ($admin_last_check) {
+		$admin_notif_unreaded = R::count("postoffice", "date > ? AND important = ?",
+										array($admin_last_check->admin_note_check, 1));
+	}
+}
+?>
+
 <div class="profile-menu-line">
     <ul>
         <li>
-			<a href="profile.php?member=/<?php echo $_SESSION['username'];?>"
+			<a href="profile.php?member=/<?php echo $log_username;?>"
 				title="Profile" id="profile-menu-line-profile">
 				<i class="fas fa-user"></i>
 			</a>
 		</li>
-		<li id="update-notif-unreded">
+		<li>
 
 			<a href="notifications.php" title="Notifications" id="profile-menu-line-notifications">
-				<i class="fas fa-bell" <?php if (isset($_SESSION['username']) && $notif_unreaded !== 0) { echo 'data-badge="'.$notif_unreaded.'"';}?>></i>
+				<i class="fas fa-bell icon" <?php if ($notif_unreaded !== 0) { echo 'data-badge="'.$notif_unreaded.'"';}?>></i>
 			</a>
 
 		</li>
@@ -25,7 +38,7 @@
 		</li>
 		<li>
 			<a href="settings_menu.php" title="Settings" id="profile-menu-line-settings">
-				<i class="fas fa-cog"></i>
+				<i class="fas fa-cog icon" <?php if ($admin_notif_unreaded !== 0) { echo 'data-badge="'.$admin_notif_unreaded.'"';}?>></i>
 			</a>
 		</li>
     </ul>

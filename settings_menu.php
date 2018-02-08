@@ -53,7 +53,9 @@ check_member();
                     <!--Only for Admin-->
                     <?php if ($admin_ok == true):?>
                         <li>
-                            <a href="admins.php" title="Admins">Admins' room</a>
+                            <a href="admins.php" title="Admins">
+                                Admins' room <i class="icon" <?php if ($admin_notif_unreaded !== 0) { echo 'data-badge="'.$admin_notif_unreaded.'"';}?>></i>
+                            </a>
                         </li>
                     <?php endif;?>
 

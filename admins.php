@@ -36,7 +36,9 @@ check_admin();
                         <a href="admin_members_control.php" title="Members control">Members control</a>
                     </li>
                     <li>
-                        <a href="admin_post_office.php" title="Post office">Post office</a>
+                        <a href="admin_post_office.php" title="Post office">
+                            Post office <i class="icon" <?php if ($admin_notif_unreaded !== 0) { echo 'data-badge="'.$admin_notif_unreaded.'"';}?>></i>
+                        </a>
                     </li>
                 </ul>
 

@@ -224,13 +224,11 @@ hr {
     font-size: 1rem !important;
 }
 
-.fa-envelope,
-.fa-bell {
+.icon {
     position: relative;
 }
 
-.fa-envelope[data-badge]:after,
-.fa-bell[data-badge]:after {
+.icon[data-badge]:after {
     content: attr(data-badge);
     top: -.25rem;
     right: -.5rem;

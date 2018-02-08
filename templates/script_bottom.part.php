@@ -5,10 +5,7 @@
     // Update unreaded messages
     $(document).ready(function() {
         setInterval(function() {
-            // Messages
             $("#update-messeges-unreded").load(" #update-messeges-unreded");
-            // Notifications
-            $("#update-notif-unreded").load(" #update-notif-unreded");
         },5000)
     });
 
