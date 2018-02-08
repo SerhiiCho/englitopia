@@ -58,27 +58,27 @@ if ($writer_ok === false){
 
                     <!-- Subject -->
                     <span class="span-form">Subject</span>
-                    <input type="text" name="subject" onkeyup="counter(this,40,'message_title');" placeholder="Subject ..." required>
+                    <input type="text" name="subject" onkeyup="countCharsInTextfield(this,40,'message_title');" placeholder="Subject ..." required>
                     <div id="message_title" class="original"></div>
 
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
 
                     <!-- Intro -->
-                    <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
+                    <textarea name="intro" onkeyup="countCharsInTextfield(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
                     <div id="intro_text" class="original"></div>
 
                     <!-- Text -->
-                    <textarea name="text" onkeyup="counter(this, 10000,'message_status');" placeholder="Story ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
+                    <textarea name="text" onkeyup="countCharsInTextfield(this, 10000,'message_status');" placeholder="Story ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
                     <div id="message_status" class="original"></div>
 
                     <!-- Tags -->
                     <span class="span-form">Tags</span>
-                    <input type="text" name="tags" onkeyup="counter(this, 1000,'story_tags');" value="story, ">
+                    <input type="text" name="tags" onkeyup="countCharsInTextfield(this, 1000,'story_tags');" value="story, ">
                     <div id="story_tags" class="original"></div>
 
                     <!-- Author -->
                     <span class="span-form">Author</span>
-                    <input type="text" name="author" onkeyup="counter(this,128,'story_author');" placeholder="John Doe" required>
+                    <input type="text" name="author" onkeyup="countCharsInTextfield(this,128,'story_author');" placeholder="John Doe" required>
                     <div id="story_author" class="original"></div>
 
                     <!-- Image -->

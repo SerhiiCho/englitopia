@@ -4,8 +4,6 @@ require "../includes/check.inc.php";
 check_member();
 
 if (isset($_POST['from']) && isset($_POST['to'])) {
-
-    // Vars
     $message = '';
     $report_date = date("Y-m-d");
     $report_time = date("H:i:s");
@@ -20,15 +18,16 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
         exit();
 	}
 
-    // If empty
     if (empty($type)) {
         header("Location: ../report.php?message=/empty");
         exit();
     }
 
     // If already sent
-    $if_sent = R::count("reports", "from_user = ? AND to_user = ? AND report_date = ?",
-                                                                array($from, $to, $report_date));
+    $if_sent = R::count("reports", "from_user = ?
+                                AND to_user = ?
+                                AND report_date = ?",
+                                array($from, $to, $report_date));
  
     if ($if_sent > 0) {
         header("Location: ../report.php?message=/you_alredy_reported_today");

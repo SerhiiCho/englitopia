@@ -2,7 +2,6 @@
 
 require "dbh.inc.php";
 
-// Initializing variables
 $user_id = '';
 $my_id = '';
 $log_username = '';
@@ -15,8 +14,7 @@ $ip = preg_replace('#[^0-9.]#','',getenv('REMOTE_ADDR'));
 $url_member_false = 'login.php?message=/you_should_be_logged_in';
 $url_admin_false = 'redirect.php?message=/error';
 
-// User Verify function
-function check_if_logged($log_username, $cookie_password) {
+function checkUserIsIogged($log_username, $cookie_password) {
     if (R::count('members', 'username = ? AND cookie_password = ?', array($log_username, $cookie_password)) > 0) {
         return true;
     }
@@ -26,8 +24,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["_token"]) && isset($_SESSIO
     $cookie_password = preg_replace('#[^a-z0-9$.\/%]#i','',$_SESSION['cookie_password']);
     $log_username = preg_replace('#[^a-z0-9]#i','',$_SESSION['username']);
     
-    // Verify the member
-    $member_ok = check_if_logged($log_username, $cookie_password);
+    $member_ok = checkUserIsIogged($log_username, $cookie_password);
 
     // Check username and password are matching
     if ($member_ok == true) {
@@ -103,7 +100,6 @@ function check_admin() {
 	}
 }
 
-// If user is not me
 function check_me() {
 	if ($_SESSION['username'] != 'admin') {
 		die('<h3>This page is not available</h3>');

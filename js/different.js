@@ -19,10 +19,10 @@ function ajaxReturn(x) {
     }
 }
 
-// Coun texarea letters
-function counter(object, max, message) {
+function countCharsInTextfield(object, max, message) {
     if (length < max) {
-        document.getElementById(message).innerHTML = '<span cl="original">' + object.value.length + ' / ' + max + '</span>';
+        var displayResult = document.getElementById(message);
+        displayResult.innerHTML = object.value.length + ' / ' + max;
     }
 }
 
@@ -40,21 +40,21 @@ function closePopupWindow(num) {
 var messageWindow = document.getElementById('message-window');
 var showMoreWindow = document.getElementById('show-more-window');
 var closeFirstWindow = document.getElementById('close-first-window');
-var closeSecondWindow = document.getElementById('close-second-window');
+var closeSecondWindow = document.getElementById('close-second-window')
 
 // Event listeners
-messageWindow.addEventListener("click", function(){
+messageWindow.addEventListener("click", function() {
     openPopupWindow('1');
 });
 
-showMoreWindow.addEventListener("click", function(){
+showMoreWindow.addEventListener("click", function() {
     openPopupWindow('2');
 });
 
-closeFirstWindow.addEventListener("click", function(){
+closeFirstWindow.addEventListener("click", function() {
     closePopupWindow('1');
 });
 
-closeSecondWindow.addEventListener("click", function(){
+closeSecondWindow.addEventListener("click", function() {
     closePopupWindow('2');
 });

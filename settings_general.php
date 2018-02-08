@@ -51,15 +51,12 @@ $about = $user->about;
 
                         <!--FIRSTNAME-->
                         <span class="span-form">First name</span>
-                        <input
-                        	type="name"
-                            name="first"
+                        <input type="name" name="first"
                             placeholder="First name"
                             value="<?php echo $first;?>"
-                            id="firstname"
-                            onkeyup="counter(firstname,15,'message_first');"
+                            onkeyup="countCharsInTextfield(this, 15,'message-first');"
                         >
-                        <div id="message_first" class="original"></div>
+                        <div id="message-first" class="original"></div>
 
                         <!--LASTNAME-->
                         <span class="span-form">Last name</span>
@@ -67,21 +64,20 @@ $about = $user->about;
                             type="name"
                             name="last"
                             placeholder="Last name"
-                            id="lastname"
-                            onkeyup="counter(lastname,15,'message_last');"
+                            onkeyup="countCharsInTextfield(this, 15,'message-last');"
                             value="<?php echo $last;?>"
                         >
-                        <div id="message_last" class="original"></div>
+                        <div id="message-last" class="original"></div>
 
                         <!--ABOUT YOURSELF-->
                         <span class="span-form">About yourself</span>
                         <textarea
                             name="about"
                             placeholder="Describe yourself..."
-                            id="textarea"
-                            onkeyup="counter(textarea,230,'message_text');"
+                            id="settings-general-about"
+                            onkeyup="countCharsInTextfield(this, 230,'message-about');"
                             ><?php echo $about;?></textarea>
-                        <div id="message_text" class="original"></div>
+                        <div id="message-about" class="original"></div>
 
                         <!--TOKEN-->
                         <input

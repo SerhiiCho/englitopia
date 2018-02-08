@@ -53,11 +53,11 @@ check_admin();
             ?>
                 <form method="POST" action="includes/notifications.inc.php" enctype='multipart/form-data' class="form">
                     <span class="span-form">Title of notification</span>
-                    <input type="text" name="title" onkeyup="counter(this, 80, 'message_title');" placeholder="Title">
+                    <input type="text" name="title" onkeyup="countCharsInTextfield(this, 80, 'message_title');" placeholder="Title">
                     <div id="message_title"></div>
                     
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                    <textarea name="message" onkeyup="counter(this, 2000,'message_text');" placeholder="Type a message for all members..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    <textarea name="message" onkeyup="countCharsInTextfield(this, 2000,'message_text');" placeholder="Type a message for all members..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                     <div id="message_text"></div>
                     
                     <span class="span-form">Don't type anything if notification doesn't have a link</span>

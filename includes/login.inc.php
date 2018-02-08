@@ -20,21 +20,17 @@ $cookie_username = password_hash(rand(), PASSWORD_DEFAULT);
 $cookie_password = (rand() + rand()) * 10000;
 $errors = array();
 
-// Check if inputs are empty
 if (empty($email) || empty($password)) {
     $errors[] = 'empty';
 }
 
-// Check if characters are allowed username
 if (!preg_match('%^[A-Za-z0-9]{8,50}$%', stripslashes(trim($password)))) {
     $errors[] = 'error_name_or_password';
 }
 
-// Check if email is valid
 if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'error_name_or_password';
 }
-
 
 // If that username is not found
 $user = R::findOne('members', 'email = ? OR username = ?', array($email, $username));
@@ -60,15 +56,11 @@ if ($user) {
                 $user_cookie->cookie_password = $cookie_password;
                 R::store($user_cookie);
 
-                // Remember me checkbox
                 if ($checkbox == 1) {
-
-                    // Set cookie
                     setcookie("cookie_username", $cookie_username, strtotime( '+15 days' ), "/", null, null, TRUE);
                     setcookie("cookie_password", $cookie_password, strtotime( '+15 days' ), "/", null, null, TRUE);
                 }
 
-                // Updating membersdata table
                 if ($user->username !== 'admin') {
                     $user_2 = R::findOne('membersdata', 'user_id = ?', array($user->id));
 
