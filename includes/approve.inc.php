@@ -1,6 +1,7 @@
 <?php
 
 require 'check.inc.php';
+require "../functions/functions.php";
 check_member();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,15 +39,19 @@ if (isset($_POST['approve']) && isset($_POST['story_id'])) {
 // Reject story
 if (isset($_POST['reject']) && isset($_POST['story_id'])) {
 
+    $message_to_admins = ucfirst($log_username).' rejected story "'.$story->subject.'" created by: '.$story->writer.'. '.facebook_time_ago($date);
+
+    $post = R::dispense('postoffice');
+    $post->type = 'attention';
+    $post->message = $message_to_admins;
+    $post->date = $date;
+    R::store($post);
+
     setcookie('rejected_story', '1', time()+800, "/", null, null, TRUE);
     R::trash($story);
-
-    unlink("../media/img/imgs/story".$story_id.".jpg");
-
     R::getAll("ALTER TABLE stories AUTO_INCREMENT = $story_id");
 
-    // @TODO: Send message to all admins
-
+    unlink("../media/img/imgs/story".$story_id.".jpg");
     header("location: ../stories.php?message=/story_deleted");
 }
 
@@ -72,14 +77,18 @@ if (isset($_POST['approve']) && isset($_POST['pod_id'])) {
 if (isset($_POST['reject']) && isset($_POST['pod_id'])) {
 
     setcookie('rejected_pod', '1', time()+800, "/", null, null, TRUE);
+
+    $message_to_admins = ucfirst($log_username).' rejected podcast "'.$pod->subject.'" created by: '.$pod->host.'. '.facebook_time_ago($date);
+
+    $post = R::dispense('postoffice');
+    $post->type = 'attention';
+    $post->message = $message_to_admins;
+    $post->date = $date;
+    R::store($post);
     R::trash($pod);
+    R::getAll("ALTER TABLE pod AUTO_INCREMENT = $pod_id");
 
     unlink("../media/img/imgs/pod".$pod_id.".jpg");
     unlink("../media/audio/podcast".$pod_id.".mp3");
-
-    R::getAll("ALTER TABLE pod AUTO_INCREMENT = $pod_id");
-
-    // @TODO: Send message to all admins
-
     header("location: ../podcasts.php?message=/podcast_deleted");
 }

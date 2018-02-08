@@ -1,5 +1,5 @@
 <?php
-require 'pagination/members.pagin.php';
+require 'pagination/post_office.pagin.php';
 check_member();
 check_admin();
 ?>
@@ -20,6 +20,7 @@ check_admin();
             <div class="intro">
                 <h1>Post office</h1>
             </div>
+             <?php echo $list;?>
         </div>
         <?php require 'templates/script_bottom.part.php';?>
     </body>
