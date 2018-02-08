@@ -73,12 +73,10 @@ if (isset($_POST['send'])) {
                     // Changing size of the image and putting to the folder
                     smart_resize_image($file_tmp_name, null, 150, 150, false, $file_destination, false, false, 80);
                 } else {
-                    // Redirect
                     header("Location: ../admin_notifications.php?message=/image_is_to_big");
                     exit();
                 }
             } else {
-                // Redirect
                 header("Location: ../admin_notifications.php?message=/only_jpg_allowed");
                 exit();
             }
@@ -97,7 +95,6 @@ if (isset($_POST['send'])) {
         header("Location: ../admin_notifications.php?message=/".array_shift($errors));
         exit();
     }
-// Redirect
 header("Location: ../admin_notifications_preview.php");
 exit();
 }

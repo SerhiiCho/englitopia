@@ -16,6 +16,5 @@ if (isset($_COOKIE["cookie_username"]) && isset($_COOKIE["cookie_password"])) {
 session_unset($_SESSION['username']);
 session_destroy();
 
-// Redirect
 header("Location: ../login.php?message=/you_just_logged_out");
 exit();

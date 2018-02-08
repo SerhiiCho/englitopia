@@ -23,7 +23,6 @@ if (isset($_POST['message']) || (isset($_POST['sent']))) {
 
     // If message is very long
     if (strlen($message) > 3000) {
-        // Redirect
         if ($came_from == 'message') {
             header('Location:../chat.php?id='.$id_chat.'&message=/message_is_too_long');
         } else {

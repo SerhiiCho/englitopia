@@ -11,13 +11,12 @@
         $message = preg_replace("/[^a-zA-Z0-9\/!?\':.,$;_ ]/", "", $_POST['message']);
         $subject = preg_replace("/[^a-zA-Z0-9\/!?\':.,$;_ ]/", "", $_POST['subject']);
         
-        //Validation expected data exists
+        //Validation
         if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message'])) {
             header("Location: ../contact.php?message=/FillInTheForm");
             exit();
         } else {
 
-            //Check empty fields
             if(empty($name)||empty($email_from)||empty($message)) {
                 header("Location: ../contact.php?message=/Empty");
                 exit();
