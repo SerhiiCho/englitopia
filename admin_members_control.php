@@ -9,16 +9,14 @@ check_admin();
 <html lang="en">
     <head>
         <?php require 'templates/head.part.php';?>
-
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
-        <title><?php echo $_SESSION['username'];?></title>
+        <title>Members' control</title>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>
         <div class="wrapper">
             <?php require 'templates/profile_menu.part.php';?>
-
             <!-- Intro -->
             <div class="intro">
                 <h1>Members' control</h1>

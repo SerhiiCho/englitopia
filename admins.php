@@ -13,7 +13,7 @@ check_admin();
         <?php require 'templates/head.part.php';?>
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
-        <title><?php echo $_SESSION['username'];?></title>
+        <title>Admins' room</title>
     </head>
         <?php require 'templates/nav.part.php';?>
     <body>
@@ -21,7 +21,7 @@ check_admin();
             <?php require 'templates/profile_menu.part.php';?>
             <!-- Intro -->
             <div class="intro">
-                <h1>Admins' room </h1>
+                <h1>Admins' room</h1>
             </div>
 
             <div class="header2">
