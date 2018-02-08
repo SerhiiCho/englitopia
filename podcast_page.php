@@ -18,6 +18,14 @@ if ($member_ok == true) {
     } else {
         $favorite = 0;
     }
+    
+	if (isset($_SESSION['username']) && $favorite == 1) {
+		$favorites_button = '<button class="icon star-icon" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></button>';
+	} elseif (isset($_SESSION['username']) && $favorite == 0) {
+		$favorites_button = '<button class="icon star-empty-icon" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></button>';
+	} else {
+		$favorites_button = '';
+	}
 }
 
 if (isset($_COOKIE['rejected_pod'])) {
@@ -80,27 +88,10 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                 
                 <!-- Add to favorites -->
                 <div class="page-icons">
-                    <form action="includes/favorite.inc.php" method="POST">
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                        <input type="hidden" name="p_id" value="<?php echo $id;?>">
-                        <input type="hidden" name="came_from" value="pod">
-                        
-                        <?php if (isset($_SESSION['username']) && $favorite == 1):?>
-
-                            <input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="0">
-                            <label class="favorite" for="check_box">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </label>
-
-                        <?php elseif (isset($_SESSION['username']) && $favorite == 0):?>
-
-                            <input type="checkbox" style="display:none;" name="check_box_pod" id="check_box" onchange="this.form.submit()" value="1">
-                            <label class="favorite" for="check_box">
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </label>
-
-                        <?php endif;?>
-                    </form>
+                    <!-- Favorites -->
+                    <div id="favorite-buttons">
+                    	<?php echo $favorites_button;?>
+                    </div>
 
                     <!-- Delete button -->
                     <?php if ($admin_ok == true):?>
@@ -155,7 +146,49 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 
                 </div>
             </div>
-            <script src="js/podcast_page.js"></script>
+            <script>
+				function deletePodcast(type, postId, elem) {
+				    var elem = document.getElementById(elem);
+				    var status = document.getElementById("status");
+				    var ajax = ajaxObj("POST","php_parsers/delete_post.pars.php");
+				    var conf = confirm("Are you sure you want to delete this podcast?");
+				
+				    if (conf != true) {
+				        return false;
+				    }
+				
+				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    ajax.onreadystatechange = function() {
+				        if (ajaxReturn(ajax) == true) {
+				            elem.innerHTML = '<button class="check-mark-icon icon"></button>';
+				            status.innerHTML = ajax.responseText;
+				        }
+				    }
+				    ajax.send("type=" + type + "&postId=" + postId);
+				}
+				
+				function addFavoritePod(type, podId, elem) {
+				    var elem = document.getElementById(elem);
+				    var status = document.getElementById("status");
+				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
+				
+				    elem.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+				    ajax.onreadystatechange = function() {
+				        if (ajaxReturn(ajax) == true) {
+				        	if (ajax.responseText == "added_pod") {
+				        		status.innerHTML = '<span class="success">This podcast has been added to your list.</span>';
+				        		elem.innerHTML = '<button class="icon star-icon" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        	} else if (ajax.responseText == "deleted_pod") {
+				        		status.innerHTML = '<span class="success">This podcast has been deleted from your list.</span>';
+				        		elem.innerHTML = '<button class="icon star-empty-icon" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></button>';
+				        	} else if (ajax.responseText == "error") {
+				        		status.innerHTML = '<span class="error">Error</span>';
+				        	}
+				        }
+				    }
+				    ajax.send("type=" + type + "&podId=" + podId);
+				}
+            </script>
         </div>
         <?php require 'templates/script_bottom.part.php';?>
     </body>

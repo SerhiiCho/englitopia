@@ -83,7 +83,7 @@ if ($notifs) {
                         <div>
                             <form method="POST" action="includes/notifications.inc.php">
                                 <input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
-                                <button type="submit" name="close" class="close_notif center">Close</button>
+                                <button type="submit" name="close" class="close-notif center">Close</button>
                             </form>
                         </div>
                     </div>';

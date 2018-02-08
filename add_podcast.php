@@ -70,17 +70,17 @@ if ($host_ok === false){
 
                     <!-- Subject -->
                     <span class="span-form">Subject</span>
-                    <input type="name" name="subject" onkeyup="counter(this,40,'message_title');" placeholder="Subject ...">
+                    <input type="text" name="subject" onkeyup="counter(this,40,'message_title');" placeholder="Subject ..." required>
                     <div id="message_title" class="original"></div>
 
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
 
                     <!-- Intro -->
-                    <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    <textarea name="intro" onkeyup="counter(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
                     <div id="intro_text" class="original"></div>
 
                     <!-- Content -->
-                    <textarea name="text" onkeyup="counter(this, 5000,'message_status');" placeholder="Content ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    <textarea name="text" onkeyup="counter(this, 5000,'message_status');" placeholder="Content ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
                     <div id="message_status" class="original"></div>
 
                     <!-- Tags -->
@@ -90,20 +90,20 @@ if ($host_ok === false){
 
                     <!-- Author -->
                     <span class="span-form">Author</span>
-                    <input type="name" name="author" onkeyup="counter(this,128,'story_author');" value="Unknown">
+                    <input type="text" name="author" onkeyup="counter(this,128,'story_author');" value="Unknown" required>
                     <div id="story_author" class="original"></div>
 
                     <!-- Audio duration -->
                     <span class="span-form">Audio duration</span>
-                    <input type="name" name="duration" value="00:00:00">
+                    <input type="text" name="duration" value="00:00:00" required>
                     
                     <!-- Audio -->
                     <span class="span-form">Choose mp3</span>
-                    <input type='file' name='audio' id="notif_upload_img" accept=".mp3">
+                    <input type='file' name='audio' id="notif_upload_img" accept=".mp3" required>
 
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
-                    <input type='file' name='img' id="notif_upload_img" accept=".jpg">
+                    <input type='file' name='img' id="notif_upload_img" accept=".jpg" required>
                     
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>

@@ -14,11 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_POST['send'])) {
 
     // Variables
-    $title = $_POST['title'];
-    $message = $_POST['message'];
-    $link = $_POST['link'];
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+    $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+    $link = filter_var($_POST['link'], FILTER_SANITIZE_STRING);
     $today = date("d.m.Y");
     $errors = array();
+
     // Image
     $file = $_FILES['file'];
     $file_name = $file['name'];

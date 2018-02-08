@@ -34,7 +34,7 @@ if ($notif) {
                         <form method="POST" action="includes/close_notification.inc.php">
                             <input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
                             <input type="hidden" name="me" value="'.$user_id.'">
-                            <button type="submit" name="close" class="close_notif center">Close</button>
+                            <button type="submit" name="close" class="close-notif center">Close</button>
                         </form>
                     </div>
                 </div>';

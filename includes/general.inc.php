@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_POST['change_name'])) {
 
-    $firstName = preg_replace('#[^a-zA-Z]#i', '', $_POST['first']);
-    $lastName = preg_replace('#[^a-zA-Z]#i', '', $_POST['last']);
-    $aboutUser = str_replace('\\', '', $_POST['about']);
+    $firstName = filter_var($_POST['first'], FILTER_SANITIZE_STRING);
+    $lastName = filter_var($_POST['last'], FILTER_SANITIZE_STRING);
+    $aboutUser = filter_var($_POST['about'], FILTER_SANITIZE_STRING);
 
     // Error handlers
     $bannedWordsList = file_get_contents('../my_log/banned_words.txt', FILE_USE_INCLUDE_PATH);
@@ -44,8 +44,8 @@ if (isset($_POST['change_name'])) {
     }
 } else if (isset($_POST['change_country'])) {
 
-        $country = $_POST['country'];
-        $gender = $_POST['gender'];
+        $country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
+        $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
 
         $countriesList = file_get_contents('../my_log/countries_list_php.txt', FILE_USE_INCLUDE_PATH);
 

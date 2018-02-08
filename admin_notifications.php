@@ -53,7 +53,7 @@ check_admin();
             ?>
                 <form method="POST" action="includes/notifications.inc.php" enctype='multipart/form-data' class="form">
                     <span class="span-form">Title of notification</span>
-                    <input type="name" name="title" onkeyup="counter(this, 80, 'message_title');" placeholder="Title">
+                    <input type="text" name="title" onkeyup="counter(this, 80, 'message_title');" placeholder="Title">
                     <div id="message_title"></div>
                     
                     <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
@@ -61,7 +61,7 @@ check_admin();
                     <div id="message_text"></div>
                     
                     <span class="span-form">Don't type anything if notification doesn't have a link</span>
-                    <input type="name" name="link" placeholder="http:// ...">
+                    <input type="text" name="link" placeholder="http:// ...">
                     
                     <span class="span-form">Choose image if you have</span>
                     <input type='file' name='file' id="notif_upload_img">
