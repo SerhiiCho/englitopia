@@ -12,19 +12,15 @@ $favorite = 0;
 
 //Favorite
 if ($member_ok == true) {
-    $find_favor = R::findOne('membersdata', 'user_id = ?', array($user_id));
+    $find_favor = R::findOne('favoritestory', 'id_story = ? AND id_user = ?',array(
+        $id, $user_id
+    ));
 
-    if (strpos($find_favor->favorite_story, $id.', ') !== false) {
-        $favorite = 1;
+    if (isset($_SESSION['username']) && $find_favor) {
+        $favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
     } else {
-        $favorite = 0;
+        $favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
     }
-
-	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
-	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
-	}
 }
 
 if (isset($_COOKIE['rejected_pod'])) {
