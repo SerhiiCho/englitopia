@@ -3,21 +3,9 @@
 // Define base params
 define( 'BASE_DIR', dirname(dirname(__FILE__)) );
 
-require BASE_DIR.'/libs/rb.php';
-require BASE_DIR.'/config.php';
-
-ini_set( 'display_errors', $config['display_errors'] );
-
-// Disable the website
-if ( $config['disabled'] === true ) {
-    die('<h2>Sorry, the site is temporarily unavailable</h2>');
-}
+require_once(BASE_DIR . '/libs/rb.php');
+require_once(BASE_DIR . '/config.php');
 
 // Database connection
-R::setup(
-    $config['database']['connect'],
-    $config['database']['username'],
-    $config['database']['password']
-);
-
+R::setup( 'mysql:host=' . DB_HOST.';dbname=' . DB_NAME, DB_USER, DB_PASSWORD );
 R::freeze( true );

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title><?php echo $config['project_name'];?></title>
+        <title>Englitopia</title>
         <?php require 'templates/head.part.php';?>        
     </head>
         <?php require 'templates/nav.part.php';?>
