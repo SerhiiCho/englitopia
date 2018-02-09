@@ -98,10 +98,11 @@ foreach ($stories as $story) {
 
     // For admins and writers only
     if ($story->approved != 2 && ($admin_ok === true || $writer_ok === true)) {
-        $list .= '  <div class="stories">
+        $list .= '  <div class="stories" style="opacity: 0.8;">
                         <hr>
                         <a href="story_page.php?id='.$story->id.'">
                             <img src="media/img/imgs/story'.$story->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Story '.$story->id.'" title="Open '.$story->subject.'">
+                            <div class="for-admins">Votes: '.$story->approved.'/2</div>
                         </a>
 
                         <h4 class="headline1">'.$story->subject.'</h4>

@@ -98,10 +98,11 @@ foreach ($pods as $pod) {
 
     // For admins and writers only
     if ($pod->approved != 2 && ($admin_ok === true || $host_ok === true)) {
-        $list .= '  <div class="stories">
+        $list .= '  <div class="stories" style="opacity: 0.8;">
                         <hr>
                         <a href="podcast_page.php?id='.$pod->id.'">
                             <img src="media/img/imgs/pod'.$pod->id.'.jpg?'.$if_has_cookie.'" class="stories-img" alt="Podcast '.$pod->id.'" title="Open '.$pod->subject.'">
+                            <div class="for-admins">Votes: '.$pod->approved.'/2</div>
                         </a>
 
                         <h4 class="headline1">'.$pod->subject.'</h4>

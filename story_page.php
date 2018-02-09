@@ -81,6 +81,17 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
         <?php endif;?>
 
         <div class="wrapper">
+            <?php
+                $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
+                switch($message) {
+                    case '/you_already_approved_this_story':
+                        echo '<h4 class="error">You already approved this story.</h4>'; 
+                        break;
+                    case '/success':
+                        echo '<h4 class="success">Story has has been posted. Now it\'s available for users.</h4>';
+                        break;
+                }
+            ?>
             <div class="wrapper-stories">
                 <h2 class="headline1"><?php echo ucfirst($story->subject);?></h2>
                 <h2 class="headline2">Story <?php echo $story->id;?></h2>

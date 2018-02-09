@@ -1174,6 +1174,14 @@ h1,h2,h3,h4,h5,h6 {
     margin-left: 3%;
 }
 
+.for-admins {
+    font-size: 1rem;
+    color: #eee;
+    background: var(--red);
+    text-align: center;
+    margin-top: -.7rem;
+}
+
 .stories {
     width: 31%;
     height: 24.5rem;
