@@ -10,6 +10,20 @@ if (isset($_POST['postId']) && $_POST['type'] == "deletePod") {
 
     $message_to_admins = ucfirst($log_username).' deleted podcast "'.$pod->subject.'" created by: '.$pod->host;
 
+    // ------------------------------
+    $users_ids = explode(', ', $pod->added_to_favs);
+    foreach ($users_ids as $id) {
+        $user_data = R::findOne("membersdata", "user_id = ?", array($id));
+        $favorite = str_replace($pod_id.', ', '', $user_data->favorite_pod);
+        
+        R::getAll("UPDATE membersdata
+                    SET favorite_pod = ?
+                    WHERE user_id = ?",
+                    array($favorite, $id));
+    }
+    exit;
+    // TODO: this stuff ---------------
+
     $post = R::dispense('postoffice');
     $post->type = 'attention';
     $post->important = 1;

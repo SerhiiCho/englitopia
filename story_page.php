@@ -161,17 +161,14 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 				
 				function addFavoriteStory(type, storyId, elem) {
 				    var elem = document.getElementById(elem);
-				    var status = document.getElementById("status");
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
 				
 				    elem.innerHTML = '<i class="fas fa-star-half"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_story") {
-				        		status.innerHTML = '<span class="success">This story has been added to your list.</span>';
 				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_story") {
-				        		status.innerHTML = '<span class="success">This story has been deleted from your list.</span>';
 				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';

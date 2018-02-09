@@ -180,17 +180,14 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				
 				function addFavoritePod(type, podId, elem) {
 				    var elem = document.getElementById(elem);
-				    var status = document.getElementById("status");
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
 				
 				    elem.innerHTML = '<i class="fas fa-star-half"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_pod") {
-				        		status.innerHTML = '<span class="success">This podcast has been added to your list.</span>';
 				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_pod") {
-				        		status.innerHTML = '<span class="success">This podcast has been deleted from your list.</span>';
 				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
