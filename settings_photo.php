@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 require 'functions/smart_resize_image.func.php';
 
 check_member();
@@ -103,15 +103,15 @@ if ($pic) {
 <html lang="en">
     <head>
         <title>Change profile photo</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
 
             <!-- Intro -->
             <div class="intro">
@@ -148,7 +148,7 @@ if ($pic) {
                 </div>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

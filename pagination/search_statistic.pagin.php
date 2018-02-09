@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 
 $rows = R::count("searchstat");
 $page_rows = 50;

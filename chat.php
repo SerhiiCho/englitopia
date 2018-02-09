@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require 'functions/functions.php';
+require_once('includes/check.inc.php');
+require_once('functions/functions.php');
 
 check_member();
 
@@ -31,16 +31,16 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
 <html>
     <head>
         <title>Chat</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-messages{border-bottom:solid .12rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper-chat">
             <?php
-                require 'templates/profile_menu.part.php';
+                require_once('templates/profile_menu.part.php');
 
                 // Error messages
                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
@@ -103,7 +103,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
             </form>
         </div>
 
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
 
         <script>
             // Submit form by enter

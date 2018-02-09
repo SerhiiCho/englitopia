@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 check_member();
 
 if ($host_ok === false){
@@ -13,9 +13,9 @@ if ($host_ok === false){
 <html lang="en">
     <head>
         <title>Add new podcast</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
             <!--Intro-->
@@ -109,7 +109,7 @@ if ($host_ok === false){
                 </form>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

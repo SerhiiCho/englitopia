@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require 'functions/facebook_time_ago.php';
+require_once('includes/check.inc.php');
+require_once('functions/facebook_time_ago.php');
 
 $rows = R::count('pod');
 $page_rows = 16;

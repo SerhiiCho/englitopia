@@ -10,16 +10,16 @@ check_admin();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title><?php echo $username;?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
         	<div class="header2">
 	            <div class="header-profile">
 	                <?php echo $mem_pic;?>
@@ -138,7 +138,7 @@ check_admin();
                 </div>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

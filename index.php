@@ -4,9 +4,9 @@
 <html lang="en">
     <head>
         <title>Englitopia</title>
-        <?php require 'templates/head.part.php';?>        
+        <?php require_once('templates/head.part.php');?>        
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
     <div class="wrapper">
 
@@ -51,11 +51,11 @@
             window.onload = operaMini;
         </script>
         <script type="text/javascript" src="js/banner.js"></script>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
 
     <?php
-        require 'templates/footer.part.php';
+        require_once('templates/footer.part.php');
 
         // Page counter
         if (!isset($_SESSION['has_visited'])) {

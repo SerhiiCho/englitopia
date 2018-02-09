@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 check_member();
 
 $to = '';
@@ -15,15 +15,15 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
 <html lang="en">
     <head>
         <title>Report</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
 
             <!-- Intro -->
             <div class="intro">
@@ -97,7 +97,7 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
 
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

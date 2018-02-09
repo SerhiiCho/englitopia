@@ -1,12 +1,12 @@
-<?php require 'includes/check.inc.php';?>
+<?php require_once('includes/check.inc.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title>Message</title>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
             <div class="header2">
@@ -36,7 +36,7 @@
 
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

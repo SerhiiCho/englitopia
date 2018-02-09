@@ -4,9 +4,9 @@
 <html lang="en">
     <head>
         <title>Information</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
 
@@ -28,7 +28,7 @@
                 <div id="pagination_controls"><? echo $pagination_controls;?></div>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

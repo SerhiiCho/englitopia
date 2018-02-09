@@ -1,6 +1,6 @@
 <?php
 
-require "dbh.inc.php";
+require_once("dbh.inc.php");
 
 $user_id = '';
 $my_id = '';

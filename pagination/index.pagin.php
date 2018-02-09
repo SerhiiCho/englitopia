@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require 'functions/facebook_time_ago.php';
+require_once('includes/check.inc.php');
+require_once('functions/facebook_time_ago.php');
 
 $list_story = '';
 $list_pod = '';

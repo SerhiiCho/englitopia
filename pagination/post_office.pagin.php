@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 
 // Count
 $rows = R::count("postoffice");

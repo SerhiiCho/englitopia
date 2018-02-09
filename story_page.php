@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require "functions/functions.php";
+require_once('includes/check.inc.php');
+require_once("functions/functions.php");
 
 // Vars from GET
 $id = $_GET["id"];
@@ -50,10 +50,10 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require "templates/head.part.php";?>
+        <?php require_once('templates/head.part.php');?>
         <title><?php echo $story->id.'. '.$story->subject;?></title>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <!-- FOR ADMINS AND WRITERS -->
         <?php if ($story->approved != 2):?>
@@ -172,7 +172,7 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
             	
             </script>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php'; ;?>
+    <?php require_once('templates/footer.part.php'); ;?>
 </html>

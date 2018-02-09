@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require "functions/functions.php";
+require_once('includes/check.inc.php');
+require_once("functions/functions.php");
 
 // Make sure the _GET username is set, and sanitize it
 if (isset($_GET["member"])) {

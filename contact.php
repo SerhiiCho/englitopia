@@ -1,14 +1,14 @@
-<?php require 'includes/check.inc.php';?>
+<?php require_once('includes/check.inc.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Contact form</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     	<script type="text/javascript" src="js/different.js"></script>
     </head>
-	<?php require 'templates/nav.part.php';?>
+	<?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper-small">
             <header>

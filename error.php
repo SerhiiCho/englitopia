@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 
 $status = $_SERVER['REDIRECT_STATUS'];
 
@@ -26,10 +26,10 @@ if ($title_error == false || strlen($status) != 3) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require 'templates/head.part.php';?>
+    <?php require_once('templates/head.part.php');?>
     <title><?php echo $title_error;?></title>
 </head>
-    <?php require 'templates/nav.part.php';?>
+    <?php require_once('templates/nav.part.php');?>
 <body>
     <div class="wrapper-big">
         <img src="media/img/dragon_error.png?v=1" alt="Englitopia" title="Englitopia">
@@ -37,6 +37,6 @@ if ($title_error == false || strlen($status) != 3) {
         <h3><? echo $message_error;?></h3>
         <hr class="hr-mobile">
     </div>
-    <?php require 'templates/script_bottom.part.php';?>
+    <?php require_once('templates/script_bottom.part.php');?>
 </body>
 </html>

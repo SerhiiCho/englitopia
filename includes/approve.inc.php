@@ -1,6 +1,6 @@
 <?php
 
-require 'check.inc.php';
+require_once('check.inc.php');
 require "../functions/functions.php";
 check_member();
 

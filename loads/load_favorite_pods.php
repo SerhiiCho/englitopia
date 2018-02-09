@@ -1,7 +1,6 @@
 <?php
-
-require '../includes/check.inc.php';
-require '../functions/facebook_time_ago.php';
+require_once('../includes/check.inc.php');
+require_once('../functions/facebook_time_ago.php');
 
 $results_count = $_POST['post_results_count'];
 

@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 
 // CHECK IF MEMBER IS LOGGED
 if ($member_ok == true) {
@@ -12,9 +12,9 @@ if ($member_ok == true) {
 <html lang="en">
     <head>
         <title>Create your account</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
         <script type="text/javascript" src="js/signup.js"></script>
     <body>
         <div class="wrapper-small">
@@ -86,8 +86,7 @@ if ($member_ok == true) {
                     <img src="media/img/dragonChill.png?v=1" alt="Englitopia" title="Englitopia" width="300" height="250">
                 </div>
             </header>
-            <?php require 'templates/script_bottom.part.php';?>
+            <?php require_once('templates/script_bottom.part.php');?>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
     </body>
 </html>

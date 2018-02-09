@@ -8,15 +8,15 @@ check_member();
 <html>
     <head>
         <title>Notifications</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-notifications{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-        	<?php require 'templates/profile_menu.part.php';?>
+        	<?php require_once('templates/profile_menu.part.php');?>
             <div class="header2">
 
                 <!-- Intro -->
@@ -35,7 +35,7 @@ check_member();
 
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
 
         <script>
             // Friend request handler
@@ -68,5 +68,5 @@ check_member();
         </script>
 
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

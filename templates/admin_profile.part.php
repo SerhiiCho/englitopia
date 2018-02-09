@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require "functions/functions.php";
+require_once('includes/check.inc.php');
+require_once("functions/functions.php");
 
 // Vars
 $mem_pic = '';

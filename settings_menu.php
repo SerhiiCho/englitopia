@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 check_member();
 
 ?>
@@ -9,15 +9,15 @@ check_member();
 <html lang="en">
     <head>
         <title>Settings</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-settings{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
 
             <!-- Intro -->
             <div class="intro">
@@ -69,7 +69,7 @@ check_member();
                 </ul>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

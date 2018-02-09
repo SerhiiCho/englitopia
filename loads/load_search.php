@@ -1,9 +1,7 @@
 <?php
+require_once('../includes/check.inc.php');
+require_once('../functions/functions.php');
 
-require '../includes/check.inc.php';
-require '../functions/functions.php';
-
-// Vars
 $search_new_count = preg_replace('#[^0-9%]#i','',$_POST['post_search_new_count']);
 $search = strtolower(preg_replace('#[^a-zA-Z- ]#i','',$_POST['post_search']));
 

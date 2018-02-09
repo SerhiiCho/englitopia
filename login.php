@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 
 // // CHECK IF MEMBER IS LOGGED
 if ($member_ok == true) {
@@ -11,10 +11,10 @@ if ($member_ok == true) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title>Log in</title>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper-small">
             <header>
@@ -109,6 +109,6 @@ if ($member_ok == true) {
             }
         </script>
 
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
 </html>

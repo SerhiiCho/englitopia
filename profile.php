@@ -13,16 +13,16 @@ if ($he_is_blocker == true) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title><?php echo escapeChars(ucfirst($m_username));?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
         	<div class="header2">
 	            <div class="header-profile">
 
@@ -87,7 +87,7 @@ if ($he_is_blocker == true) {
                 
             </div>
             <div class="header2">
-                <?php require 'templates/tabs.part.php';?>
+                <?php require_once('templates/tabs.part.php');?>
             </div>
         </div>
 
@@ -144,11 +144,11 @@ if ($he_is_blocker == true) {
         </div>
 
         <?php
-            require 'templates/script_bottom.part.php';
-            require 'templates/profile.part2.php';
+            require_once('templates/script_bottom.part.php');
+            require_once('templates/profile.part2.php');
         ?>
 
         <script>document.getElementById("default_open").click();</script>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

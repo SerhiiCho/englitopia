@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require 'functions/functions.php';
+require_once('includes/check.inc.php');
+require_once('functions/functions.php');
 
 ?>
 
@@ -9,9 +9,9 @@ require 'functions/functions.php';
 <html lang="en">
     <head>
         <title>Search</title>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
     </head>
-        <?php require 'templates/nav.part.php';?>
+        <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
 
@@ -203,7 +203,7 @@ require 'functions/functions.php';
 	            ?>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

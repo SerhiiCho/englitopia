@@ -1,6 +1,6 @@
 <?php
 
-require "../includes/check.inc.php";
+require_once("../includes/check.inc.php");
 check_member();
 
 if (isset($_POST['from']) && isset($_POST['to'])) {

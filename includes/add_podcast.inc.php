@@ -1,7 +1,7 @@
 <?php
 
-require 'check.inc.php';
-require '../functions/smart_resize_image.func.php';
+require_once('check.inc.php');
+require_once('../functions/smart_resize_image.func.php');
 check_member();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

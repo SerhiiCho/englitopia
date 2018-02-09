@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/check.inc.php';
+require_once('includes/check.inc.php');
 require 'functions/facebook_time_ago.php';
 check_member();
 
@@ -8,7 +8,7 @@ check_member();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title>Favorites</title>
 
         <!-- Emphasize menu button -->
@@ -17,7 +17,7 @@ check_member();
         <?php require 'templates/nav.part.php';?>
     <body>
         <div class="wrapper">
-            <?php require 'templates/profile_menu.part.php';?>
+            <?php require_once('templates/profile_menu.part.php');?>
 
             <!-- Intro -->
             <div class="intro">
@@ -99,7 +99,7 @@ check_member();
                 </div>
             </div>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
 
         <script>
 
@@ -136,5 +136,5 @@ check_member();
         </script>
 
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>

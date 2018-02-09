@@ -1,6 +1,6 @@
 <?php
 
-require 'check.inc.php';
+require_once('check.inc.php');
 check_member();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

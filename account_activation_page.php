@@ -1,7 +1,7 @@
 <?php
 
-require 'includes/check.inc.php';
-require 'functions/functions.php';
+require_once('includes/check.inc.php');
+require_once('functions/functions.php');
 
 // CHECK IF MEMBER IS LOGGED
 if ($member_ok == true) {
@@ -44,10 +44,10 @@ if (isset($_POST['activate'])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'templates/head.part.php';?>
+        <?php require_once('templates/head.part.php');?>
         <title>Account Activation</title>
     </head>
-	<?php include 'templates/nav.part.php';?>
+	<?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper-small">
             <header>
@@ -70,7 +70,7 @@ if (isset($_POST['activate'])) {
                 </form>
             </header>
         </div>
-        <?php require 'templates/script_bottom.part.php';?>
+        <?php require_once('templates/script_bottom.part.php');?>
     </body>
-    <?php require 'templates/footer.part.php';?>
+    <?php require_once('templates/footer.part.php');?>
 </html>
