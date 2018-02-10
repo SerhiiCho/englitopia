@@ -1,9 +1,9 @@
 <script>
 
-function sendFriendRequest(type,user,elem) {
-    let elem = document.getElementById(elem)
-    let status = document.getElementById("status-friendship")
-    let ajax = ajaxObj("POST", "php_parsers/friends.pars.php")
+function sendFriendRequest(type, user, elem) {
+    var elem = document.getElementById(elem)
+    var status = document.getElementById("status-friendship")
+    var ajax = ajaxObj("POST", "php_parsers/friends.pars.php")
 
     elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
     ajax.onreadystatechange = function() {
@@ -30,9 +30,9 @@ function sendFriendRequest(type,user,elem) {
 }
 
 function blockUser(type,blockee,elem) {
-    let elem = document.getElementById(elem)
-    let status = document.getElementById("status-friendship")
-    let ajax = ajaxObj("POST","php_parsers/block.pars.php")
+    var elem = document.getElementById(elem)
+    var status = document.getElementById("status-friendship")
+    var ajax = ajaxObj("POST","php_parsers/block.pars.php")
 
     elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
     ajax.onreadystatechange = function() {

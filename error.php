@@ -4,15 +4,15 @@ require_once('includes/check.inc.php');
 
 $status = $_SERVER['REDIRECT_STATUS'];
 
-$codes = array(
-       403 => array('403 Forbidden', 'Oops! The server has refused to fulfill your request.'),
-       404 => array('404 Not Found', 'Oops! The page was not found on Englitopia server.'),
-       405 => array('405 Method Not Allowed', 'Oops! The method specified in the Request-Line is not allowed for the specified resource.'),
-       408 => array('408 Request Timeout', 'Oops! Your browser failed to send a request in the time allowed by the server.'),
-       500 => array('500 Internal Server Error', 'Oops! The request was unsuccessful due to an unexpected condition encountered by the server.'),
-       502 => array('502 Bad Gateway', 'Oops! The server received an invalid response from the upstream server while trying to fulfill the request.'),
-       504 => array('504 Gateway Timeout', 'Oops! The upstream server failed to send a request in the time allowed by the server.'),
-);
+$codes = [
+       403 => ['403 Forbidden', 'Oops! The server has refused to fulfill your request.'],
+       404 => ['404 Not Found', 'Oops! The page was not found on Englitopia server.'],
+       405 => ['405 Method Not Allowed', 'Oops! The method specified in the Request-Line is not allowed for the specified resource.'],
+       408 => ['408 Request Timeout', 'Oops! Your browser failed to send a request in the time allowed by the server.'],
+       500 => ['500 Internal Server Error', 'Oops! The request was unsuccessful due to an unexpected condition encountered by the server.'],
+       502 => ['502 Bad Gateway', 'Oops! The server received an invalid response from the upstream server while trying to fulfill the request.'],
+       504 => ['504 Gateway Timeout', 'Oops! The upstream server failed to send a request in the time allowed by the server.'],
+];
 
 $title_error = $codes[$status][0];
 $message_error = $codes[$status][1];

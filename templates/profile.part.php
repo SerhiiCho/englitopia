@@ -12,7 +12,7 @@ if (isset($_GET["member"])) {
 }
 
 // Check if get user is active
-if (R::count('members', 'username = ? AND active = ?', array($u_get, 1)) < 1) {
+if (R::count('members', 'username = ? AND active = ?', [$u_get, 1]) < 1) {
     echo '<br>
         <div class="intro">
             <h1 class="error">'.$u_get.' doesn\'t exist or is not yet activated!</h1>
@@ -21,13 +21,15 @@ if (R::count('members', 'username = ? AND active = ?', array($u_get, 1)) < 1) {
 }
 
 // Check to see if the viewer is the account owner
-$page_owner="no";
+$page_owner = "no";
 if ($u_get == $log_username && $member_ok == true) {
 	$page_owner = "yes";
 }
 
 // Fetch the user row from the query above
-$user = R::findOne('members', 'username = ? AND active = ?', array($u_get, 1));
+$user = R::findOne('members', 'username = ? AND active = ?',
+    [$u_get, 1]
+);
 
 $user_id = $user->id;
 $m_email = $user->email;
@@ -41,7 +43,9 @@ $m_about = $user->about;
 $m_date = $user->date;
 
 // Select the member_data from the member_data table
-$user_data = R::findOne('membersdata', 'user_id = ?', array($user_id));
+$user_data = R::findOne('membersdata', 'user_id = ?',
+    [$user_id]
+);
 
 $m_ip = $user_data->ip;
 $m_photo_status = $user_data->photo_status;
@@ -84,35 +88,50 @@ $friend_button = '<i class="fa fa-ban" aria-hidden="true"></i>';
 if ($u_get != $log_username && $member_ok == true) {
 
     // Give a "Friends" button
-    if (R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ?
-                            OR user1 = ?  AND user2 = ? AND accepted = ?',
-                            array($log_username, $u_get, 1, $u_get, $log_username, 1)) > 0) {
+    $count = R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ?
+        OR user1 = ?  AND user2 = ? AND accepted = ?',
+            [$log_username, $u_get, 1, $u_get, $log_username, 1]
+    );
+
+    if ($count > 0) {
         $is_friend = true;
     }
 
     // Give a "cancel" button
-    if (R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ?
-                            OR user1 = ? AND user2 = ? AND accepted = ?',
-                            array( $log_username, $u_get, 0, $u_get, $log_username,0)) > 0) {
+    $count_cancel = R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ?
+        OR user1 = ? AND user2 = ? AND accepted = ?',
+            [ $log_username, $u_get, 0, $u_get, $log_username,0]
+    );
+
+    if ($count_cancel > 0) {
         $not_is_friend_yet = true;
     }
 
     // Give a "accept" button
-    if (R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ? AND who_sent = ?
-                            OR user1 = ? AND user2 = ? AND accepted = ? AND who_sent = ?',
-                            array($log_username, $u_get, 0, $my_id, $u_get, $log_username, 0, $my_id)) > 0) {
+    $count_accept = R::count('friends', 'user1 = ? AND user2 = ? AND accepted = ?
+        AND who_sent = ? OR user1 = ? AND user2 = ? AND accepted = ? AND who_sent = ?',
+            [$log_username, $u_get, 0, $my_id, $u_get, $log_username, 0, $my_id]
+    );
+
+    if ($count_accept > 0) {
         $my_request = true;
     }
 
     // If he blocked me
-    if (R::count('blockedusers', 'blocker = ? AND blockee = ?', array(
-                                            $u_get, $log_username)) > 0) {
+    $count_blocked_me = R::count('blockedusers', 'blocker = ? AND blockee = ?',
+        [$u_get, $log_username]
+    );
+
+    if ($count_blocked_me > 0) {
         $he_is_blocker = true;
     }
 
     // If i blocked him
-    if (R::count('blockedusers', 'blocker = ? AND blockee = ?', array(
-                                            $log_username,  $u_get)) > 0) {
+    $count_i_blocked_him = R::count('blockedusers', 'blocker = ? AND blockee = ?',
+        [$log_username,  $u_get]
+    );
+
+    if ($count_i_blocked_him > 0) {
         $i_am_blocker = true;
     }
 }
@@ -123,32 +142,21 @@ if ($is_friend == true) {
                             <i class="fa fa-check" aria-hidden="true"></i> 
                             FRIENDS
                         </button>';
-} elseif ($member_ok == true &&
-        $u_get !== $log_username &&
-        $he_is_blocker == false &&
-        $not_is_friend_yet == false
-       ) {
+} elseif ($member_ok == true && $u_get !== $log_username && $he_is_blocker == false
+                                                && $not_is_friend_yet == false) {
 
     $friend_button = '  <button onclick="sendFriendRequest(\'friend\',\''.$u_get.'\',\'friend_btn\')">
                             + FRIEND
                         </button>';
-} elseif ($member_ok == true &&
-        $u_get !== $log_username &&
-        $he_is_blocker == false &&
-        $not_is_friend_yet == true &&
-        $my_request == true
-       ) {
+} elseif ($member_ok == true && $u_get !== $log_username && $he_is_blocker == false &&
+        $not_is_friend_yet == true && $my_request == true ) {
 
     $friend_button = '  <button onclick="sendFriendRequest(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
                             <i class="fa fa-ban" aria-hidden="true"></i> 
                             CANCEL
                         </button>';
-} elseif ($member_ok == true &&
-        $u_get !== $log_username &&
-        $he_is_blocker == false &&
-        $not_is_friend_yet == true &&
-        $my_request == false
-       ) {
+} elseif ($member_ok == true && $u_get !== $log_username && $he_is_blocker == false
+            && $not_is_friend_yet == true && $my_request == false) {
 
     $friend_button = '  <button onclick="sendFriendRequest(\'friend\',\''.$u_get.'\',\'friend_btn\')">
                             ACCEPT
@@ -172,9 +180,9 @@ if ($i_am_blocker == true) {
 $more_friends = '';
 $friends_tab = '';
 
-$friends_count = R::count('friends', 'WHERE (user1 = ? AND accepted = ?)
-                                    OR (user2 = ? AND accepted = ?)',
-                                array($m_username, 1, $m_username, 1));
+$friends_count = R::count('friends', 'WHERE (user1 = ? AND accepted = ?) OR (user2 = ? AND accepted = ?)',
+    [$m_username, 1, $m_username, 1]
+);
                                 
 $list_of_friends = 20;
 $show_more_friends = $friends_count - $list_of_friends;
@@ -184,10 +192,10 @@ if ($friends_count > $list_of_friends && $page_owner === 'yes') {
 }
 
 // Friends
-$friends = R::find('friends', 'user1 = ? AND accepted = ?
-                    OR user2 = ? AND accepted = ?
-                    ORDER BY friendship_date',
-                    array($m_username, 1, $m_username, 1));
+$friends = R::find('friends', 'user1 = ? AND accepted = ? OR user2 = ?
+    AND accepted = ? ORDER BY friendship_date',
+        [$m_username, 1, $m_username, 1]
+);
 
 if ($friends) {
     foreach ($friends as $fr) {
@@ -197,11 +205,15 @@ if ($friends) {
         }
 
         // Figure out what id
-        $id_friend = R::findOne('members', 'username = ?', array($fr->user1));
+        $id_friend = R::findOne('members', 'username = ?',
+            [$fr->user1]
+        );
 
 
         // Profile image of sender
-        $friend_pic = R::findOne('membersdata', 'user_id = ?', array($id_friend->id));
+        $friend_pic = R::findOne('membersdata', 'user_id = ?',
+            [$id_friend->id]
+        );
 
         if ($friend_pic) {
             if ($friend_pic->photo_status == 1) {

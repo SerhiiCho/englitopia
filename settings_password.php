@@ -38,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         $sql_pass = R::findOne('members', 'id = ? AND username = ?',
-                                        array($user_id, $log_username));
+            [$user_id, $log_username]
+        );
         if (!$sql_pass) {
             $errors[] = '<h3 class="error">Wrong password!</h3>';
         } else {
@@ -50,12 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (empty($errors)) {
-            // Hashing the password
             $hashedpassword = password_hash($password_new, PASSWORD_DEFAULT);
 
-            // Insert the member into the database
-            R::getAll("UPDATE members SET password = ?
-                        WHERE username = ?", array($hashedpassword, $log_username));
+            // Insert member
+            R::getAll("UPDATE members SET password = ? WHERE username = ?",
+                [$hashedpassword, $log_username]
+            );
 
             $errors[] = '   <h5 class="success">Password has been changed!</h5>
 

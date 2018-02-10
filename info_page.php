@@ -5,13 +5,13 @@ require_once("functions/functions.php");
 
 // Vars from GET
 $id = $_GET["id"];
-$info = R::findOne('info', 'id = ?', array($id));
+$info = R::findOne('info', 'id = ?', [$id]);
 $subject_for_cookie = str_replace(" ","_",$info->subject);
 $favorite = 0;
 
 // Page views count
 if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id) {
-    $cookie = R::findOne('info', 'id = ?', array($id));
+    $cookie = R::findOne('info', 'id = ?', [$id]);
     $cookie->views = $cookie->views + 1;
     R::store($cookie);
     setcookie($subject_for_cookie, $id, time()+60, "/", null, null, TRUE);

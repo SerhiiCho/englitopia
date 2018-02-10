@@ -8,7 +8,9 @@ if (isset($_POST['type']) && isset($_POST['blockee'])) {
 	$blockee = preg_replace('#[^a-z0-9]#i','',strtolower($_POST['blockee']));
 
 	//If exist
-	$sql = R::count("members", "username = ? AND active = ?", array($blockee, 1));
+	$sql = R::count("members", "username = ? AND active = ?",
+		[$blockee, 1]
+	);
 
 	if ($sql < 1) {
 		echo "<span class='error'>$blockee does not exist or this profile is deactivated</span>";
@@ -17,7 +19,8 @@ if (isset($_POST['type']) && isset($_POST['blockee'])) {
 
     //See if he wants to block admin
 	$numrows_admin = R::count("members", "status = ? AND username = ?",
-											array('Admin', $blockee));
+		['Admin', $blockee]
+	);
 
 	if ($_POST['type'] == "block") {
 	    if ($numrows_admin > 0) {

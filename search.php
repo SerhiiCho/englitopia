@@ -28,7 +28,7 @@ require_once('functions/functions.php');
                         $search = strtolower(preg_replace('#[^a-zA-Z- ]#i','',$_POST['search']));
 
                         // Save search words to statistic
-                        if (R::count('searchstat', 'words = ?', array($search)) > 0) {
+                        if (R::count('searchstat', 'words = ?', [$search]) > 0) {
 
                             // If there are no such word in database stats, add one
                             $search_load = R::getAll("UPDATE searchstat
@@ -103,7 +103,7 @@ require_once('functions/functions.php');
                             $st_rows = count($stories);
                             $p_rows = count($pods);
                             $i_rows = count($info);
-                            $errors = array();
+                            $errors = [];
 
                             // Errors handlers
                             if (empty($search)) {

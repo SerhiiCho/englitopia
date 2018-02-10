@@ -16,7 +16,7 @@ if (isset($_POST["check"])) {
     }
 
     // Check if email is taken or not
-    if (R::count('members', 'email = ?', array($email)) > 0) {
+    if (R::count('members', 'email = ?', [$email]) > 0) {
         echo '<span class="error">
                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                 Email is taken

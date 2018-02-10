@@ -7,10 +7,14 @@ check_member();
 if (isset($_POST['postId']) && $_POST['type'] == "deletePod") {
 
     $pod_id = preg_replace('#[^a-z0-9]#i','',strtolower($_POST['postId']));
-    $pod = R::findOne('pod', 'id = ?', array($pod_id));
 
-    R::getAll('DELETE FROM favoritepod
-                WHERE id_pod = ?', array($pod_id));
+    $pod = R::findOne('pod', 'id = ?',
+        [$pod_id]
+    );
+
+    R::getAll('DELETE FROM favoritespod WHERE id_pod = ?',
+        [$pod_id]
+    );
 
     // Sending message to admins
     $message_to_admins = ucfirst($log_username).' deleted podcast "'.$pod->subject.'" created by: '.$pod->host;
@@ -33,10 +37,14 @@ if (isset($_POST['postId']) && $_POST['type'] == "deletePod") {
 if (isset($_POST['postId']) && $_POST['type'] == "deleteStory") {
 
     $story_id = preg_replace('#[^a-z0-9]#i','',strtolower($_POST['postId']));
-    $story = R::findOne('stories', 'id = ?', array($story_id));
 
-    R::getAll('DELETE FROM favoritestory
-                WHERE id_story = ?', array($story_id));
+    $story = R::findOne('stories', 'id = ?',
+        [$story_id]
+    );
+
+    R::getAll('DELETE FROM favoritestory WHERE id_story = ?',
+        [$story_id]
+    );
 
     // Sending message to admins
     $message_to_admins = ucfirst($log_username).' deleted story "'.$story->subject.'" created by: '.$story->writer;

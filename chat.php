@@ -7,7 +7,7 @@ check_member();
 
 // Vars from GET
 $id_of_this_chat = $_GET["id"];
-$story = R::findOne('messages', 'id_chat = ?', array($id_of_this_chat));
+$story = R::findOne('messages', 'id_chat = ?', [$id_of_this_chat]);
 $id_from = $story->id_from;
 $id_to = $story->id_to;
 $message = $story->message;
@@ -20,9 +20,9 @@ R::getAll("UPDATE messages
             AND id_to = '$user_id'");
 
 // If user changes url id, it will redirect him
-if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR
-                            (id = ? AND id_2 = ?)", array($id_of_this_chat,
-                            $user_id, $id_of_this_chat, $user_id)) < 1){
+if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
+    [$id_of_this_chat, $user_id, $id_of_this_chat, $user_id]
+) < 1) {
     header('location: conversations.php');
 }
 ?>

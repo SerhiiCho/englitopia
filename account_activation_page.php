@@ -11,7 +11,7 @@ if ($member_ok == true) {
 
 if (isset($_POST['activate'])) {
 
-    $errors = array();
+    $errors = [];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -20,7 +20,7 @@ if (isset($_POST['activate'])) {
         $errors[] = '<h3 class="error">Enter your current email and password!</h3>';
     }
 
-    $user = R::findOne("members", "email = ?", array($email));
+    $user = R::findOne("members", "email = ?", [$email]);
 
     if ($user) {
         // De-hashing the password
@@ -30,9 +30,9 @@ if (isset($_POST['activate'])) {
         }
 
         if (empty($errors)) {
-            R::getAll("UPDATE members SET active = ? 
-                        WHERE email = ?",
-                        array(1, $email));
+            R::getAll("UPDATE members SET active = ? WHERE email = ?",
+                [1, $email]
+            );
 
             header('Location: login.php?message=/your_account_has_been_activated');
         }

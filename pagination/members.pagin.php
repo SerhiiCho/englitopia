@@ -3,7 +3,7 @@
 require_once('includes/check.inc.php');
 
 // Count
-$rows = R::count("members", "id != ?", array(1));
+$rows = R::count("members", "id != ?", [1]);
 
 $page_rows = 50;
 $last = ceil($rows/$page_rows);
@@ -74,7 +74,9 @@ if ($members) {
         $username = $member->username;
         $reports = $member->reports;
 
-        $blockee = R::count("blockedusers", "blockee = ?", array($username));
+        $blockee = R::count("blockedusers", "blockee = ?",
+            [$username]
+        );
 
         $list .= "  <tr>
                         <td>{$user_id}</td>

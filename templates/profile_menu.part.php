@@ -2,11 +2,14 @@
 $admin_notif_unreaded = 0;
 
 if ($admin_ok === true) {
-	$admin_last_check = R::findOne("membersdata", "user_id = ?", array($user->id));
+	$admin_last_check = R::findOne("membersdata", "user_id = ?",
+		[$my_id]
+	);
 
 	if ($admin_last_check) {
 		$admin_notif_unreaded = R::count("postoffice", "date > ? AND important = ?",
-										array($admin_last_check->admin_note_check, 1));
+			[$admin_last_check->admin_note_check, 1]
+		);
 	}
 }
 ?>

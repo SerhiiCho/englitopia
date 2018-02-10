@@ -17,7 +17,7 @@ $list = '';
 $buttons = 0;
 
 // Social notifications
-$notif = R::findOne("notifications", "active = ?", array(0));
+$notif = R::findOne("notifications", "active = ?", [0]);
 
 if ($notif) {
     $buttons = 1;

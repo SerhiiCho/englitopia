@@ -75,10 +75,9 @@ if (isset($_POST['delete'])) {
             $message[] = '<h4 class="success">Your profile photo has been deleted!</h4>';
         }
 
-        R::getAll("UPDATE membersdata
-                    SET photo_status = ?
-                    WHERE id = ?",
-                    array(0, $user_id));
+        R::getAll("UPDATE membersdata SET photo_status = ? WHERE id = ?",
+            [0, $user_id]
+        );
     } else {
         $message[] = "<h4 class='error'>You don't have any profile photos.</h4>";
     }
@@ -87,7 +86,7 @@ if (isset($_POST['delete'])) {
 // Establish member picture
 $mem_pic = '<img src="media/img/uploads/profiledefault.jpg" alt="Profile photo" class="member-pic" style="float:none;width:12.5rem;">';
 
-$pic = R::findOne("membersdata", "user_id = ?", array($user_id));
+$pic = R::findOne("membersdata", "user_id = ?", [$user_id]);
 
 if ($pic) {
     if ($pic->photo_status == 1) {

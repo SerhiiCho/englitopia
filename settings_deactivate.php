@@ -21,7 +21,7 @@ if (isset($_POST['delete'])) {
         $errors[] = '<h3 class="error">Enter your current password!</h3>';
     }
 
-    $user = R::findOne("members", "id = ?", array($user_id));
+    $user = R::findOne("members", "id = ?", [$user_id]);
     if ($user) {
         // De-hashing the password
         $hashed_password_check = password_verify($password, $user->password);
@@ -32,9 +32,9 @@ if (isset($_POST['delete'])) {
 
     if (empty($errors)) {
         // Delete the member from the database by setting row from 1(active) to 0(deactive)...
-        R::getAll("UPDATE members SET active = ?
-                    WHERE id = ?",
-                    array(0, $user_id));
+        R::getAll("UPDATE members SET active = ? WHERE id = ?",
+            [0, $user_id]
+        );
 
         // Expire their cookie files
         if (isset($_COOKIE["cookie_username"]) && isset($_COOKIE["cookie_password"])) {

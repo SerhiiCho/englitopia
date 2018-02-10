@@ -62,8 +62,8 @@
 			$_SESSION['has_visited']="yes";
 
             // If row has been already created
-            if (R::count('visits', 'date = ?', array(date("d.m.y"))) > 0) {
-                $views = R::findOne('visits', 'date = ?', array(date("d.m.y")));
+            if (R::count('visits', 'date = ?', [date("d.m.y")]) > 0) {
+                $views = R::findOne('visits', 'date = ?', [date("d.m.y")]);
 
                 $views->value = $views->value + 1;
 
