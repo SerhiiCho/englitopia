@@ -11,7 +11,6 @@ if (!isset($data['submit'])) {
 
 // Vars
 $email = $data['email'];
-$username = $data['email'];
 $password = $data['password'];
 $checkbox = $data['check-box-hidden'];
 $date = date("Y-m-d H:i:s");
@@ -28,12 +27,13 @@ if (!preg_match('%^[A-Za-z0-9]{8,50}$%', stripslashes(trim($password)))) {
     $errors[] = 'error_name_or_password';
 }
 
-if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if(!filter_var($email, FILTER_SANITIZE_STRING)) {
     $errors[] = 'error_name_or_password';
 }
 
+
 // If that username is not found
-$user = R::findOne('members', 'email = ? OR username = ?', array($email, $username));
+$user = R::findOne('members', 'email = ? OR username = ?', [$email, $email]);
 
 if ($user) {
 
