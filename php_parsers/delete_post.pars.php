@@ -17,7 +17,7 @@ if (isset($_POST['postId']) && $_POST['type'] == "deletePod") {
     );
 
     // Sending message to admins
-    $message_to_admins = ucfirst($log_username).' deleted podcast "'.$pod->subject.'" created by: '.$pod->host;
+    $message_to_admins = ucfirst($log_username).' deleted podcast "'.$pod->subject.'" created by "'.ucfirst($pod->host).'"';
 
     $post = R::dispense('postoffice');
     $post->type = 'attention';
@@ -47,7 +47,7 @@ if (isset($_POST['postId']) && $_POST['type'] == "deleteStory") {
     );
 
     // Sending message to admins
-    $message_to_admins = ucfirst($log_username).' deleted story "'.$story->subject.'" created by: '.$story->writer;
+    $message_to_admins = ucfirst($log_username).' deleted story "'.$story->subject.'" created by "'.ucfirst($story->writer).'"';
 
     $post = R::dispense('postoffice');
     $post->type = 'attention';
