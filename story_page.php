@@ -5,16 +5,16 @@ require_once("functions/functions.php");
 
 // Vars from GET
 $id = $_GET["id"];
-$story = R::findOne('stories', 'id = ?', array($id));
+$story = R::findOne('stories', 'id = ?', [$id]);
 $subject_for_cookie = str_replace(" ","_",$story->subject);
 $favorites_button = '';
 $favorite = 0;
 
 //Favorite
 if ($member_ok == true) {
-    $find_favor = R::findOne('favoritestory', 'id_story = ? AND id_user = ?',array(
-        $id, $user_id
-    ));
+    $find_favor = R::findOne('favoritestory', 'id_story = ? AND id_user = ?',
+        [$id, $user_id]
+    );
 
     if (isset($_SESSION['username']) && $find_favor) {
         $favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
@@ -31,7 +31,7 @@ if (isset($_COOKIE['rejected_pod'])) {
 
 // Page views count
 if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id) {
-    $cookie = R::findOne('stories', 'id = ?', array($id));
+    $cookie = R::findOne('stories', 'id = ?', [$id]);
     $cookie->views = $cookie->views + 1;
     R::store($cookie);
     setcookie($subject_for_cookie, $id, time()+60, "/", null, null, TRUE);

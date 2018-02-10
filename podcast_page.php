@@ -5,27 +5,22 @@ require_once("functions/functions.php");
 
 // Vars from GET
 $id = $_GET["id"];
-$pod = R::findOne('pod', 'id = ?', array($id));
+$pod = R::findOne('pod', 'id = ?', [$id]);
 $subject_for_cookie = str_replace(" ","_",$pod->subject);
+$favorites_button = '';
 $favorite = 0;
 
 //Favorite
 if ($member_ok == true) {
-    $find_favor = R::findOne('membersdata', 'user_id = ?', array($user_id));
+    $find_favor = R::findOne('favoritespod', 'id_pod = ? AND id_user = ?',
+        [$id, $user_id]
+    );
 
-    if (strpos($find_favor->favorite_pod, $id.', ') !== false) {
-        $favorite = 1;
+    if (isset($_SESSION['username']) && $find_favor) {
+        $favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
     } else {
-        $favorite = 0;
+        $favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
     }
-    
-	if (isset($_SESSION['username']) && $favorite == 1) {
-		$favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
-	} elseif (isset($_SESSION['username']) && $favorite == 0) {
-		$favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
-	} else {
-		$favorites_button = '';
-	}
 }
 
 if (isset($_COOKIE['rejected_pod'])) {
@@ -36,7 +31,7 @@ if (isset($_COOKIE['rejected_pod'])) {
 
 // Page views count
 if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id) {
-    $cookie = R::findOne('pod', 'id = ?', array($id));
+    $cookie = R::findOne('pod', 'id = ?', [$id]);
     $cookie->views = $cookie->views + 1;
     R::store($cookie);
     setcookie($subject_for_cookie, $id, time()+60, "/", null, null, TRUE);
@@ -181,7 +176,6 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				function addFavoritePod(type, podId, elem) {
 				    var elem = document.getElementById(elem);
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");
-				
 				    elem.innerHTML = '<i class="fas fa-star-half"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
@@ -190,7 +184,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				        	} else if (ajax.responseText == "deleted_pod") {
 				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
-				        		status.innerHTML = '<span class="error">Error</span>';
+				        		elem.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
 				        	}
 				        }
 				    }
