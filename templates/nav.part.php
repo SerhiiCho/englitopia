@@ -30,7 +30,7 @@ if (isset($_SESSION['username'])) {
         $notif_unreaded++;
     }
 
-    $badge = (isset($_SESSION['username']) && $unreaded != 0) ? $unreaded : '';
+    $badge = (isset($_SESSION['username']) && $unreaded != 0) ? 'data-badge="'.$unreaded.'"' : '';
 }
 ?>
 <nav id="nav-menu">
@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
 
 	    <?php if (isset($_SESSION['username'])):?>
 		    <a href="conversations.php" title="Conversations" class="hb-button hb-button-right">
-                <i class="far fa-envelope icon" data-badge="<?php echo $badge;?>"></i>
+                <i class="far fa-envelope icon" <?php echo $badge;?>></i>
 		    </a>
 		<?php endif;?>
 

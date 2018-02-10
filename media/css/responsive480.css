@@ -224,6 +224,14 @@
     margin: .62rem 25%;
 }
 
+/* -- Report -- */
+
+.report {
+    width: 90%;
+    margin: 3%;
+    padding: 2%;
+}
+
 /*-- Footer --*/
 
 .footer-col > li > a,
