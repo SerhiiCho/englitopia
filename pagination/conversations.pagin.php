@@ -53,30 +53,31 @@ $limit = 'LIMIT ' .($page_num - 1) * $page_rows .',' .$page_rows;
 // Pagination controls
 if ($last != 1) {
     if ($page_num > 1) {
-
         $previous = $page_num - 1;
-		$pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$previous}'>prev</a>";
-
-        // Render clickable number links that should appear on the left of the target page number
+        $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$previous.'>
+                                    <i class="fas fa-angle-left"></i>
+                                </a>';
+        // Links on the left of the target page number
         for ($i = $page_num-4; $i < $page_num; $i++) {
             if ($i > 0) {
-                $pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$i}'>{$i}</a>";
+                $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$i.'>'.$i.'</a>';
             }
         }
-	}
+    }
 
-	$pagination_controls .= '<h4>'.$page_num.'</h4>';
-	// Render clickable number links that should appear on the right of the target page number
+    $pagination_controls .= '<h4>'.$page_num.'</h4>';
     for ($i = $page_num+1; $i <= $last; $i++) {
         $pagination_controls .= '<a href="'.$_SERVER['PHP_SELF'].'?page='.$i.'">'.$i.'</a>';
         if ($i >= $page_num+4) {
             break;
         }
-	}
+    }
 
     if ($page_num != $last) {
         $next = $page_num + 1;
-        $pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$next}'>next</a>";
+        $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$next.'>
+                                    <i class="fas fa-angle-right"></i>
+                                </a>';
     }
 }
 

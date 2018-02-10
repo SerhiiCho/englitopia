@@ -30,7 +30,7 @@ check_member();
 
                 <!-- Pagination -->
                 <div  class="pagination" id="pagination">
-                	<div id="pagination_controls"><?php echo $pagination_controls;?></div>
+                	<?php echo $pagination_controls;?>
                 </div>
 
             </div>

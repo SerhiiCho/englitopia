@@ -1371,9 +1371,10 @@ audio {
 
 .pagination {
     width: 100%;
-    height: 1.9rem;
+    height: 2rem;
     margin: 1.25rem auto .68rem auto;
     text-align: center;
+    display: inline-block;
 }
 
 .pagination a,

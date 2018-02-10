@@ -7,7 +7,7 @@ require_once('functions/facebook_time_ago.php');
 $rows = R::count('friends', 'user1 = ? AND accepted = ?
                             OR user2 = ? AND accepted = ? ', array(
                                 $log_username, 1, $log_username, 1));
-$page_rows = 30;
+$page_rows = 50;
 $last = ceil($rows/$page_rows);
 
 if ($last < 1) {
@@ -44,14 +44,17 @@ if ($last == 1) {
 $pagination_controls = '';
 $list = '';
 
+// Pagination controls
 if ($last != 1) {
     if ($page_num > 1) {
         $previous = $page_num - 1;
-        $pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$previous}'><i class='fa fa-arrow-left' aria-hidden='true'></i></a>";
-        // Render clickable number links that should appear on the left of the target page number
+        $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$previous.'>
+                                    <i class="fas fa-angle-left"></i>
+                                </a>';
+        // Links on the left of the target page number
         for ($i = $page_num-4; $i < $page_num; $i++) {
             if ($i > 0) {
-                $pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$i}'>{$i}</a>";
+                $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$i.'>'.$i.'</a>';
             }
         }
     }
@@ -66,7 +69,9 @@ if ($last != 1) {
 
     if ($page_num != $last) {
         $next = $page_num + 1;
-        $pagination_controls .= "<a href='{$_SERVER['PHP_SELF']}?page={$next}'><i class='fa fa-arrow-right' aria-hidden='true'></i></a>";
+        $pagination_controls .= '<a href='.$_SERVER['PHP_SELF'].'?page='.$next.'>
+                                    <i class="fas fa-angle-right"></i>
+                                </a>';
     }
 }
 

@@ -29,7 +29,7 @@ check_member();
             	<div id="messages"><?php echo $list;?></div>
                 <h5 class="pagin"><?php echo $text_line2;?></h5>
                 <div  class="pagination">
-                    <div id="pagination_controls"><?php echo $pagination_controls;?></div>
+                    <?php echo $pagination_controls;?>
                 </div>
             </div>
         </div>

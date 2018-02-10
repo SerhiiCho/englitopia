@@ -34,7 +34,7 @@ check_admin();
             <h5 style="font-weight:bold;"><?php echo $text_line2;?></h5>
 
             <div  class="pagination">
-                <div id="pagination_controls"><?php echo $pagination_controls; ?></div>
+                <?php echo $pagination_controls; ?>
             </div>
             <hr>
 

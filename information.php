@@ -25,7 +25,7 @@
 
             <!-- Pagination -->
             <div  class="pagination">
-                <div id="pagination_controls"><? echo $pagination_controls;?></div>
+                <? echo $pagination_controls;?>
             </div>
         </div>
         <?php require_once('templates/script_bottom.part.php');?>
