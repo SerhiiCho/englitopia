@@ -1,6 +1,8 @@
 <?php
 
-$fav_st = R::findOne('membersdata', 'user_id = ?', array($user_id));
+$fav_st = R::findOne('membersdata', 'user_id = ?',
+    [$user_id]
+);
 
 // Transforming strings into arrays
 $pieces_array_st = explode(", ", $fav_st->favorite_story);

@@ -1,6 +1,8 @@
 <?php
 
-$fav_p = R::findOne('membersdata', 'user_id = ?', array($user_id));
+$fav_p = R::findOne('membersdata', 'user_id = ?',
+    [$user_id]
+);
 
 // Transforming strings into arrays
 $pieces_array_p = explode(", ", $fav_p->favorite_pod);

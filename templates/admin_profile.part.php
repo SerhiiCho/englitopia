@@ -18,7 +18,8 @@ if (isset($_GET["member"])) {
 
 // Check if get user is active
 $user = R::findOne("members", "username = ? AND active = ?",
-                    array($u_get, 1));
+    [$u_get, 1]
+);
 
 if (!$user) {
 	echo '  <br>
@@ -42,7 +43,9 @@ $about = $user->about;
 $date = $user->date;
 
 // Select the member_data from the member_data table
-$user_data = R::findOne("membersdata", "user_id = ?", array($user_id));
+$user_data = R::findOne("membersdata", "user_id = ?",
+    [$user_id]
+);
 
 if ($user_data) {
     $ip = $user_data->ip;
@@ -66,7 +69,9 @@ if ($status_photo == 1) {
 }
 
 // Select members' reports
-$reports = R::find("reports", "to_user = ?", array($username));
+$reports = R::find("reports", "to_user = ?",
+    [$username]
+);
 
 if ($reports) {
     foreach ((array) $reports as $report) {
@@ -93,10 +98,14 @@ if ($reports) {
 }
 
 // Count members' reports
-$total_reports = R::count("reports", "to_user = ?", array($username));
+$total_reports = R::count("reports", "to_user = ?",
+    [$username]
+);
 
 // Searching for:
-$searching = R::findOne("membersdata", "user_id = ?", array($user_id));
+$searching = R::findOne("membersdata", "user_id = ?",
+    [$user_id]
+);
 
 if ($searching) {
     $searching_for .= ' <div class="intro">

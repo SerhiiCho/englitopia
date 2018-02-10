@@ -8,12 +8,14 @@ $limit = 30;
 
 // Count all messages
 $all_messages = R::count("messages", "id_chat = ? AND delete_messages != ?",
-                                            array($id_of_this_chat, $user_id ));
+    [$id_of_this_chat, $user_id]
+);
 
 // Looping all messages into array
 $sql_messages = R::find("messages", "id_chat = ? AND delete_messages != ?
-                                    ORDER BY id DESC LIMIT ".$limit,
-                                    array($id_of_this_chat, $user_id));
+    ORDER BY id DESC LIMIT ".$limit,
+        [$id_of_this_chat, $user_id]
+);
 
 // Reverse array of results from above
 $all_rows = array_reverse($sql_messages,true);
@@ -29,7 +31,9 @@ foreach ($all_rows as $row) {
     $message_id_chat = $row['id_chat'];
 
     // Select username of member message from
-    $sql_username = R::findOne("members", "id = ?", array($message_id_from));
+    $sql_username = R::findOne("members", "id = ?",
+        [$message_id_from]
+    );
     $from_username = $sql_username->username;
     
     // Chat messages
