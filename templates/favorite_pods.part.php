@@ -1,28 +1,23 @@
 <?php
 
-$fav_p = R::findOne('membersdata', 'user_id = ?',
+$rows_p = R::count('favoritepod', 'id_user = ?',
     [$user_id]
 );
-
-// Transforming strings into arrays
-$pieces_array_p = explode(", ", $fav_p->favorite_pod);
-
-// Counting array's elements
-$rows_p = count($pieces_array_p) - 1;
 
 $results_on_page = 20;
 $show_pod_more_results = $rows_p - $results_on_page;
 $list_p = '';
 $i = 1;
 
-// Favorite podcasts
-if ($rows_p > 0) {
+$find_all_favs = R::find('favoritepod', 'id_user = ?',
+    [$user_id]
+);
 
-    /*Foreach for every element, $i helps us know how many results we have
-    if more than 50 we'll break the loop'*/
-    foreach ((array) $pieces_array_p as $piece) {
+if ($find_all_favs) {
+
+    foreach ((array) $find_all_favs as $all) {
         $i++;
-        $favs_p = R::load("pod", $piece);
+        $favs_p = R::load("pod", $all->id_pod);
 
         $img = '<img src="media/img/imgs/pod'.$favs_p->id.'.jpg" alt="'.$favs_p->subject.'" class="favorites-pic">';
 
@@ -41,19 +36,6 @@ if ($rows_p > 0) {
                             <p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
                                 '.substr($favs_p->intro,0,40).'...
                             </p>
-
-                            <div class="delete_conversations">
-                                <form action="includes/favorite.inc.php" method="POST">
-                                    <input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
-                                    <input type="hidden" name="came_from" value="favorites_pod">
-                                    <input type="hidden" name="p_id" value="'.$favs_p->id.'">
-                                    <input type="checkbox" style="display:none;" name="check_box_pod" id="check_box2" onchange="this.form.submit()" value="0">
-
-                                    <label for="check_box2">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    </label>
-                                </form>
-                            </div>
                         </div>
                     </a>';
 

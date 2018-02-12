@@ -34,7 +34,7 @@ if (isset($_POST['storyId'])) {
     if ($type == 'addPod') {
 
         // Adding podcast
-        $fav_pod = R::dispense('favoritespod');
+        $fav_pod = R::dispense('favoritepod');
         $fav_pod->id_pod = $id_pod;
         $fav_pod->id_user = $user_id;
         R::store($fav_pod);
@@ -42,11 +42,11 @@ if (isset($_POST['storyId'])) {
     } else {
 
         // Deleting podcast
-        $fav_pod = R::findOne('favoritespod', 'id_pod = ?',
+        $fav_pod = R::findOne('favoritepod', 'id_pod = ?',
             [$id_pod]
         );
         R::trash($fav_pod);
-        R::getAll("ALTER TABLE favoritespod AUTO_INCREMENT = $fav_pod->id");
+        R::getAll("ALTER TABLE favoritepod AUTO_INCREMENT = $fav_pod->id");
 		echo "deleted_pod";
     }
 } else {

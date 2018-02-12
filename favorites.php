@@ -102,20 +102,9 @@ check_member();
         <?php require_once('templates/script_bottom.part.php');?>
 
         <script>
+            var openDefault = document.getElementById("default_open")
 
-            /*After deleting favorites, favorite.inc.php will bring us back to
-            this page and add 'message=/deleted_pod'' to the url. This if
-            statment clicks button 'btn_pods'*/
-            var podsBtn = document.getElementById("btn_pods"),
-                openDefault = document.getElementById("default_open"),
-                openPod = document.getElementById("podcasts_open");
-
-            if (document.URL.indexOf("message=/deleted_pod") >= 0|| document.URL.indexOf("/error_pod") >= 0) { 
-                podsBtn.click();
-            } else {
-                openDefault.click();
-            }
-            openPod.click();
+            openDefault.click();
 
             function openTab(evt, name) {
                 var i, tabcontent, tablinks,
@@ -124,14 +113,14 @@ check_member();
                     name = document.getElementById(name);
                 
                 for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+                    tabcontent[i].style.display = "none"
                 }
                 for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    tablinks[i].className = tablinks[i].className.replace(" active", "")
                 }
 
-                name.style.display = "block";
-                evt.currentTarget.className += " active";
+                name.style.display = "block"
+                evt.currentTarget.className += " active"
             }
         </script>
 

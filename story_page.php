@@ -11,15 +11,17 @@ $favorites_button = '';
 $favorite = 0;
 
 //Favorite
-if ($member_ok == true) {
+if ($member_ok === true) {
     $find_favor = R::findOne('favoritestory', 'id_story = ? AND id_user = ?',
         [$id, $user_id]
     );
 
-    if (isset($_SESSION['username']) && $find_favor) {
-        $favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
-    } else {
-        $favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
+    if ($story->approved == 2) {
+        if ($find_favor) {
+            $favorites_button = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
+        } else {
+            $favorites_button = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\''.$id.'\',\'favorite-buttons\')"></i>';
+        }
     }
 }
 

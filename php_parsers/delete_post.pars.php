@@ -12,7 +12,7 @@ if (isset($_POST['postId']) && $_POST['type'] == "deletePod") {
         [$pod_id]
     );
 
-    R::getAll('DELETE FROM favoritespod WHERE id_pod = ?',
+    R::getAll('DELETE FROM favoritepod WHERE id_pod = ?',
         [$pod_id]
     );
 

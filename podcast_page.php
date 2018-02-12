@@ -11,15 +11,17 @@ $favorites_button = '';
 $favorite = 0;
 
 //Favorite
-if ($member_ok == true) {
-    $find_favor = R::findOne('favoritespod', 'id_pod = ? AND id_user = ?',
+if ($member_ok === true) {
+    $find_favor = R::findOne('favoritepod', 'id_pod = ? AND id_user = ?',
         [$id, $user_id]
     );
 
-    if (isset($_SESSION['username']) && $find_favor) {
-        $favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
-    } else {
-        $favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
+    if ($pod->approved == 2) {
+        if ($find_favor) {
+            $favorites_button = '<i class="fas fa-star" onclick="addFavoritePod(\'deletePod\',\''.$id.'\',\'favorite-buttons\')"></i>';
+        } else {
+            $favorites_button = '<i class="far fa-star" onclick="addFavoritePod(\'addPod\',\''.$id.'\',\'favorite-buttons\')"></i>';
+        }
     }
 }
 
