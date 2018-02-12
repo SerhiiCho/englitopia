@@ -69,7 +69,7 @@ if ($last != 1) {
 
 $list = '';
 
-$members = R::find('members', 'ORDER BY reports DESC '.$limit);
+$members = R::find('members', 'WHERE id != 1 ORDER BY reports DESC '.$limit);
 
 if ($members) {
     foreach ((array) $members as $member) {

@@ -89,8 +89,6 @@ if (empty($errors)) {
     $user_2->searching = '';
     $user_2->note_check = date("Y-m-d H:i:s");
     $user_2->note_close = date("Y-m-d H:i:s");
-    $user_2->favorite_story = '';
-    $user_2->favorite_pod = '';
 
     R::store($user_2);
     R::close();
