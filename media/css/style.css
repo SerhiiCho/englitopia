@@ -615,7 +615,7 @@ hr {
     border-radius: .12rem;
     animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
-    perspective: 10002.81rem;
+    perspective: 10000;
 }
 
 /* -- Delete conversations -- */
