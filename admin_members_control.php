@@ -30,8 +30,8 @@ check_admin();
                 </ul>
             </div>
 
-            <h5 style="font-weight:bold;"><?php echo $text_line1;?></h5>
-            <h5 style="font-weight:bold;"><?php echo $text_line2;?></h5>
+            <h5 style="font-weight:bold;"><?php echo $text_line1; ?></h5>
+            <h5 style="font-weight:bold;"><?php echo $text_line2; ?></h5>
 
             <div  class="pagination">
                 <?php echo $pagination_controls; ?>
