@@ -2,6 +2,8 @@
 
 ### About
 
-Hey guys. My name is Serhii and I'm from Kharkiv / Ukraine. This is my first website that I've been creating since 1.07.17. At the same time I'm trying to expand my knowledge and be a good programmer. My language is russian, so sorry if you found any mistakes.
+<p>
+Hey guys. My name is Serhii and I'm from Kharkiv / Ukraine. This is my first website that I created. Here I've build everything with procedural PHP7, and Red Bean Php that is pretty awesome ORM.
+</p>
 
-to be continued...
+<img src="https://redbeanphp.com/img/redbeanphp_logo.png" style="text-align: center;">
