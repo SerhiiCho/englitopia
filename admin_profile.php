@@ -11,7 +11,7 @@ check_admin();
 <html lang="en">
     <head>
         <?php require_once('templates/head.part.php');?>
-        <title><?php echo $username;?></title>
+        <title><?= $username;?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
@@ -22,17 +22,17 @@ check_admin();
             <?php require_once('templates/profile_menu.part.php');?>
         	<div class="header2">
 	            <div class="header-profile">
-	                <?php echo $mem_pic;?>
+	                <?= $mem_pic;?>
 	            </div>
             </div>
             <div class="header2">
-                <h5 class="date"><?php echo $last_login;?></h5>
+                <h5 class="date"><?= $last_login;?></h5>
                 
                 <div class="tabcontent" style="display:block;">
 
                     <!-- Profile menu info -->
                     <div class="about">
-                        <p><?php echo $about;?></p>
+                        <p><?= $about;?></p>
                     </div>
 
                     <ul class="profile-member-info">
@@ -42,49 +42,49 @@ check_admin();
                         <li>
                             <p>
                                 <span>Username:</span>
-                                <span style="float:right;"><?php echo $username;?></span>
+                                <span style="float:right;"><?= $username;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Firstname:</span>
-                                <span style="float:right;"><?php echo $first;?></span>
+                                <span style="float:right;"><?= $first;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Lastname:</span>
-                                <span style="float:right;"><?php echo $last;?></span>
+                                <span style="float:right;"><?= $last;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Country from profile:</span>
-                                <span style="float:right;"><?php echo $country;?></span>
+                                <span style="float:right;"><?= $country;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Status:</span>
-                                <span style="float:right;"><?php echo $status;?></span>
+                                <span style="float:right;"><?= $status;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Joined us:</span>
-                                <span style="float:right;"><?php echo facebook_time_ago($date);?></span>
+                                <span style="float:right;"><?= facebook_time_ago($date);?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Email:</span>
-                                <span style="float:right;"><?php echo $email;?></span>
+                                <span style="float:right;"><?= $email;?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Gender:</span>
-                                <span style="float:right;"><?php echo $gender;?></span>
+                                <span style="float:right;"><?= $gender;?></span>
                             </p>
                         </li>
                         <li style="text-align:center;background-color:#C2C2C2;">
@@ -93,30 +93,30 @@ check_admin();
                         <li>
                             <p>
                                 <span>Country:</span>
-                                <span style="float:right;"><?php echo $sx_geo_data['country']['name_en'];?></span>
+                                <span style="float:right;"><?= $sx_geo_data['country']['name_en'];?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Region:</span>
-                                <span style="float:right;"><?php echo $sx_geo_data['region']['name_en'];?></span>
+                                <span style="float:right;"><?= $sx_geo_data['region']['name_en'];?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>City:</span>
-                                <span style="float:right;"><?php echo $sx_geo_data['city']['name_en'];?></span>
+                                <span style="float:right;"><?= $sx_geo_data['city']['name_en'];?></span>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <span>Latitude:</span>
-                                <span style="float:right;"><?php echo $sx_geo_data['city']['lat'];?></span>
+                                <span style="float:right;"><?= $sx_geo_data['city']['lat'];?></span>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <span>Longitude:</span><span style="float:right;"><?php echo $sx_geo_data['city']['lon'];?></span>
+                                <span>Longitude:</span><span style="float:right;"><?= $sx_geo_data['city']['lon'];?></span>
                             </p>
                         </li>
                         <?php unset($sx_geo);?>
@@ -126,14 +126,14 @@ check_admin();
                     </ul>
 
                     <ul class="reports">
-                        <?php echo $reports_list;?>
+                        <?= $reports_list;?>
                     </ul>
 
                     <ul class="profile-member-info">
                         <li style="text-align:center;background-color:#C2C2C2;">
                             <span>Searching for:</span>
                         </li>
-                        <?php echo $searching_for;?>
+                        <?= $searching_for;?>
                     </ul>
                 </div>
             </div>

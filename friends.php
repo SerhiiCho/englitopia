@@ -21,15 +21,15 @@ check_member();
 
             <!-- Intro -->
             <div class="intro">
-                <h1 class="pagin"><?php echo $text_line1;?></h1>
+                <h1 class="pagin"><?= $text_line1;?></h1>
             </div>
 
             <!-- Content -->
             <div class="header2">
-            	<div id="messages"><?php echo $list;?></div>
-                <h5 class="pagin"><?php echo $text_line2;?></h5>
+            	<div id="messages"><?= $list;?></div>
+                <h5 class="pagin"><?= $text_line2;?></h5>
                 <div  class="pagination">
-                    <?php echo $pagination_controls;?>
+                    <?= $pagination_controls;?>
                 </div>
             </div>
         </div>

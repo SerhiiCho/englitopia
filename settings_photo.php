@@ -120,13 +120,13 @@ if ($pic) {
 
             <!-- PROFILE PICTURE -->
             <div class="header-profile" style="text-align:center;">
-            <?php echo $mem_pic;?>
+            <?= $mem_pic;?>
             </div>
             <div class="wrapper-small2">
                 <br />
                 <div class="header">
                     <form action='settings_photo.php' method='POST' enctype='multipart/form-data' class="upload-pic-form">
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
                         <input type='file' name='file'>
                         <button type='submit' name='upload'>Upload</button>
                     </form>
@@ -141,7 +141,7 @@ if ($pic) {
                     ?>
 
                     <form action='settings_photo.php' method='POST' class="delete-pic-form">
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
                         <button type='submit' name='delete'>Delete</button>
                     </form>
                 </div>

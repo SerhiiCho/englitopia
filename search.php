@@ -56,7 +56,7 @@ require_once('functions/functions.php');
 
                 <script>
                     // Loads more results
-                    var search = "<?php echo $search?>";
+                    var search = "<?= $search?>";
                     $(document).ready(function() {
                         var search_count = 30;
                         $("#button").click(function() {

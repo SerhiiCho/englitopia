@@ -10,26 +10,26 @@
 
     <!--Profile menu info-->
     <div class="about">
-        <p><?php echo escapeChars($m_about);?></p>
+        <p><?= escapeChars($m_about);?></p>
     </div>
 
     <ul class="profile-member-info">
         <li>
             <p>
                 <span>Status:</span>
-                <span style="float:right;"><?php echo escapeChars($m_status);?></span>
+                <span style="float:right;"><?= escapeChars($m_status);?></span>
             </p>
         </li>
         <li>
             <p>
                 <span>Joined us:</span>
-                <span style="float:right;"><?php echo facebook_time_ago($m_date);?></span>
+                <span style="float:right;"><?= facebook_time_ago($m_date);?></span>
             </p>
         </li>
         <li>
         	<p>
         		<span>Last visit:</span>
-        		<span style="float:right;"><?php echo $m_last_login;?></span>
+        		<span style="float:right;"><?= $m_last_login;?></span>
         	</p>
         </li>
     </ul>

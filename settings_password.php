@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ?>
 
                 <form method="post" action="settings_password.php" class="form">
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                    <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
                     <span class="span-form">Your current password.</span>
                     <input type="password" name="password" placeholder="Password" maxlength="50">
                     <span class="span-form">Your password should only contain letters and numbers and at least 5 characters length. Maximum length 50 characters.</span>

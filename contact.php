@@ -59,7 +59,7 @@
                     <textarea  name="message" placeholder="Your message..." id="message" onkeyup="counter(message,3000,'message_message');" required></textarea>
                     <div id="message_message"></div>
                     
-                    <button class="g-recaptcha button" data-sitekey="<?php echo $config['reCaptcha']['data_sitekey'];?>" data-callback="onSubmit">Submit</button>
+                    <button class="g-recaptcha button" data-sitekey="<?= $config['reCaptcha']['data_sitekey'];?>" data-callback="onSubmit">Submit</button>
                 </form>
 
             </header>

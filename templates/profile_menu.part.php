@@ -17,7 +17,7 @@ if ($admin_ok === true) {
 <div class="profile-menu-line">
     <ul>
         <li>
-			<a href="profile.php?member=/<?php echo $log_username;?>"
+			<a href="profile.php?member=/<?= $log_username;?>"
 				title="Profile" id="profile-menu-line-profile">
 				<i class="fas fa-user"></i>
 			</a>

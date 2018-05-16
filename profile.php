@@ -14,7 +14,7 @@ if ($he_is_blocker == true) {
 <html lang="en">
     <head>
         <?php require_once('templates/head.part.php');?>
-        <title><?php echo escapeChars(ucfirst($m_username));?></title>
+        <title><?= escapeChars(ucfirst($m_username));?></title>
 
         <!-- Emphasize menu button -->
         <style>#profile-menu-line-profile{border-bottom:solid .125rem gray;}</style>
@@ -27,7 +27,7 @@ if ($he_is_blocker == true) {
 	            <div class="header-profile">
 
 	                <!-- PROFILE PICTURE -->
-	                <?php echo $mem_pic;?>
+	                <?= $mem_pic;?>
 	                
 		            <div class="name">
 		            	<h3>
@@ -41,10 +41,10 @@ if ($he_is_blocker == true) {
 		           			
 		            	</h3>
 		            	<h5 style="color:gray;">
-		            		<?php echo escapeChars($m_first).' '.escapeChars($m_last);?>
+		            		<?= escapeChars($m_first).' '.escapeChars($m_last);?>
 		            	</h5>
 		            	<h5 style="color:gray;">
-		            		<?php echo escapeChars($m_country);?>
+		            		<?= escapeChars($m_country);?>
 		            	</h5>
 		            </div>
 	            </div>
@@ -53,7 +53,7 @@ if ($he_is_blocker == true) {
 	            <?php if ($page_owner === "no"):?>
                     <div class="message-wrapper">
                         <span id="friend_btn" style="margin-left:2%;">
-                            <?php echo $friend_button;?>
+                            <?= $friend_button;?>
                         </span>
                         
                         <a href="#" id="message-window">MESSAGE</a>
@@ -104,9 +104,9 @@ if ($he_is_blocker == true) {
 
             <div>
                 <form method="POST" action="includes/message.inc.php" class="form">
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                    <input type="hidden" name="to" value="<?php echo $user_id;?>">
-                    <textarea name="message" placeholder="Type a message to <?php echo ucfirst($m_username);?>" maxlength="10000" autofocus required></textarea>
+                    <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
+                    <input type="hidden" name="to" value="<?= $user_id;?>">
+                    <textarea name="message" placeholder="Type a message to <?= ucfirst($m_username);?>" maxlength="10000" autofocus required></textarea>
                     <button type="submit" name="send" class="button">Send</button>
                 </form>
             </div>
@@ -128,13 +128,13 @@ if ($he_is_blocker == true) {
                     <ul class="more-block settings-ul">
 
                         <li>
-                            <span id="block-btn"><?php echo $block_button;?></span>
+                            <span id="block-btn"><?= $block_button;?></span>
                         </li>
 
                         <li>
                             <form action="report.php" method="POST">
-                                <input type="hidden" value="<?php echo $u_get;?>" name="to">
-                                <input type="hidden" value="<?php echo $log_username;?>" name="from">
+                                <input type="hidden" value="<?= $u_get;?>" name="to">
+                                <input type="hidden" value="<?= $log_username;?>" name="from">
                                 <button type="submit"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</button>
                             </form>
                         </li>

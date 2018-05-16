@@ -49,7 +49,7 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 <html lang="en">
     <head>
         <?php require_once('templates/head.part.php');?>
-        <title><?php echo $story->id.'. '.$story->subject;?></title>
+        <title><?= $story->id.'. '.$story->subject;?></title>
     </head>
         <?php require_once('templates/nav.part.php');?>
     <body>
@@ -57,21 +57,21 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
         <?php if ($story->approved != 2):?>
             <div class="approving-material">
                 <div class="intro">
-                    <h1>Votes: <?php echo $story->approved;?> / 2</h1>
-                    <h2>Story from: <?php echo ucfirst($story->writer);?></h2>
-                    <p> This story is not approved yet. It needs <?php echo $story->approved;?> more vote. Choose approve or reject.</p>
+                    <h1>Votes: <?= $story->approved;?> / 2</h1>
+                    <h2>Story from: <?= ucfirst($story->writer);?></h2>
+                    <p> This story is not approved yet. It needs <?= $story->approved;?> more vote. Choose approve or reject.</p>
 
                     <!-- Approve story -->
                     <form action="includes/approve.inc.php" method="post">
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                        <input type="hidden" name="story_id" value="<?php echo $id;?>">
+                        <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
+                        <input type="hidden" name="story_id" value="<?= $id;?>">
                         <button type="submit" class="button" name="approve">Approve</button>
                     </form>
 
                     <!-- Reject story -->
                     <form action="includes/approve.inc.php" method="post">
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                        <input type="hidden" name="story_id" value="<?php echo $id;?>">
+                        <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
+                        <input type="hidden" name="story_id" value="<?= $id;?>">
                         <button type="submit" class="button" name="reject">Reject</button>
                     </form>
                 </div>
@@ -91,35 +91,35 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
                 }
             ?>
             <div class="wrapper-stories">
-                <h2 class="headline1"><?php echo ucfirst($story->subject);?></h2>
-                <h2 class="headline2">Story <?php echo $story->id;?></h2>
+                <h2 class="headline1"><?= ucfirst($story->subject);?></h2>
+                <h2 class="headline2">Story <?= $story->id;?></h2>
 
                 <div class="page-icons">
                     <!-- Favorites -->
                     <div id="favorite-buttons">
-                    	<?php echo $favorites_button;?>
+                    	<?= $favorites_button;?>
                     </div>
 
                     <!-- Delete button -->
                     <?php if ($admin_ok == true):?>
                         <div id="delete-post">
-                            <i class="fas fa-trash-alt" onclick="deleteStory('deleteStory',<?php echo "'".$id."'";?>,'delete-post')"></i>
+                            <i class="fas fa-trash-alt" onclick="deleteStory('deleteStory',<?= "'".$id."'";?>,'delete-post')"></i>
                         </div>
                     <?php endif;?>
                 </div>
                 <div id="status"></div>
 
                 <hr>
-                <p><img src="media/img/imgs/story<?php echo $story->id.'.jpg?'.$if_has_cookie;?>" class="img-title" alt="story <?php echo $story->id;?>"></p>
-                <p><?php echo nl2br($story->content);?></p>
+                <p><img src="media/img/imgs/story<?= $story->id.'.jpg?'.$if_has_cookie;?>" class="img-title" alt="story <?= $story->id;?>"></p>
+                <p><?= nl2br($story->content);?></p>
             </div>
 
             <br /><hr>
 
             <div class="date">
-                <h4>Author:  <?php echo $story->author;?></h4>
-                <h4><?php echo 'Published '.facebook_time_ago($story->date);?></h4>
-                <h4><?php echo $story->views;?> views</h4>
+                <h4>Author:  <?= $story->author;?></h4>
+                <h4><?= 'Published '.facebook_time_ago($story->date);?></h4>
+                <h4><?= $story->views;?> views</h4>
 
                 <?php
                     // Only for Admins
@@ -165,9 +165,9 @@ if ($story->approved != 2 && $admin_ok == false && $writer_ok == false) {
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
 				        	if (ajax.responseText == "added_story") {
-				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="fas fa-star" onclick="addFavoriteStory(\'deleteStory\',\'<?= $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "deleted_story") {
-				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\'<?php echo $id;?>\',\'favorite-buttons\')"></i>';
+				        		elem.innerHTML = '<i class="far fa-star" onclick="addFavoriteStory(\'addStory\',\'<?= $id;?>\',\'favorite-buttons\')"></i>';
 				        	} else if (ajax.responseText == "error") {
 				        		status.innerHTML = '<span class="error">Error</span>';
 				        	}

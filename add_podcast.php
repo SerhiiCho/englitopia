@@ -73,7 +73,7 @@ if ($host_ok === false){
                     <input type="text" name="subject" onkeyup="countCharsInTextfield(this,40,'message_title');" placeholder="Subject ..." required>
                     <div id="message_title" class="original"></div>
 
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                    <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
 
                     <!-- Intro -->
                     <textarea name="intro" onkeyup="countCharsInTextfield(this, 207,'intro_text');" placeholder="Intro ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>

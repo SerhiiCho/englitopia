@@ -80,7 +80,7 @@ if (isset($_POST['delete'])) {
                 ?>
                 <form method="post" action="settings_deactivate.php" class="form">
                     <input type="password" name="password" placeholder="Password" maxlength="50" required>
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                    <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
                     <button type="submit" name="delete" value="delete" class="button">Deactivate</button>
                 </form>
             </div>

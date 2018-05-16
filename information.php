@@ -20,7 +20,7 @@
 
             <!-- Information -->
             <div class="wrapper-small2">
-                <?php echo $list;?>
+                <?= $list;?>
             </div>
 
             <!-- Pagination -->

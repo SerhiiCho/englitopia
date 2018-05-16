@@ -53,7 +53,7 @@ $about = $user->about;
                         <span class="span-form">First name</span>
                         <input type="name" name="first"
                             placeholder="First name"
-                            value="<?php echo $first;?>"
+                            value="<?= $first;?>"
                             onkeyup="countCharsInTextfield(this, 15,'message-first');"
                         >
                         <div id="message-first" class="original"></div>
@@ -65,7 +65,7 @@ $about = $user->about;
                             name="last"
                             placeholder="Last name"
                             onkeyup="countCharsInTextfield(this, 15,'message-last');"
-                            value="<?php echo $last;?>"
+                            value="<?= $last;?>"
                         >
                         <div id="message-last" class="original"></div>
 
@@ -76,14 +76,14 @@ $about = $user->about;
                             placeholder="Describe yourself..."
                             id="settings-general-about"
                             onkeyup="countCharsInTextfield(this, 230,'message-about');"
-                            ><?php echo $about;?></textarea>
+                            ><?= $about;?></textarea>
                         <div id="message-about" class="original"></div>
 
                         <!--TOKEN-->
                         <input
                             type="hidden"
                             name="_token"
-                            value="<?php echo $_SESSION['_token'];?>"
+                            value="<?= $_SESSION['_token'];?>"
                         >
 
                         <!--BUTTON-->
@@ -151,7 +151,7 @@ $about = $user->about;
                             ?>
                         </select>
 
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                        <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
 
                         <button type="submit" name="change_country" value="change_country" class="button">Save</button>
                     </form>

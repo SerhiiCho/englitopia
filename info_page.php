@@ -23,23 +23,23 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
 <head>
     <?php require_once('templates/head.part.php');?>
     <title>
-        <?php echo $info->subject;?>
+        <?= $info->subject;?>
     </title>
 </head>
         <?php require_once('templates/nav.part.php');?>
     <body>
         <div class="wrapper">
             <div class="wrapper-info">
-                <h2 class="headline1"><?php echo $info->subject;?></h2>
+                <h2 class="headline1"><?= $info->subject;?></h2>
                 <hr>
-                <p><?php echo nl2br($info->content);?></p>
+                <p><?= nl2br($info->content);?></p>
             </div>
             <br /><hr>
             
             <div class="date">
-                <h4>Updated <?php echo facebook_time_ago($info->date);?></h4>
-                <h4><?php echo date('jS \of M Y, H:i', strtotime($info->date));?></h4>
-                <h4><?php echo $info->views;?> views</h4>
+                <h4>Updated <?= facebook_time_ago($info->date);?></h4>
+                <h4><?= date('jS \of M Y, H:i', strtotime($info->date));?></h4>
+                <h4><?= $info->views;?> views</h4>
             </div>
 
             <?php

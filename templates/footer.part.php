@@ -63,10 +63,10 @@ switch($posts) {
         <nav class="nav-footer">
             <div class="footer-col-first">
                 <div>
-                    <?php echo '<h3>'.$headline.'</h3>';?>
-                    <?php echo '<span>“'.$message.'”</span>';?>
+                    <?= '<h3>'.$headline.'</h3>';?>
+                    <?= '<span>“'.$message.'”</span>';?>
                 </div>
-                <?php echo '<img src="media/img/footer/'.$picture.'?v=1" alt="Quotes">';?>
+                <?= '<img src="media/img/footer/'.$picture.'?v=1" alt="Quotes">';?>
             </div>
             <hr class="hr-mobile">
             <ul class="footer-col">
@@ -96,7 +96,7 @@ switch($posts) {
         </nav>
             <div class="copyright">
                 <h4>
-                    Copyright &copy; <?php echo date("Y");?> 
+                    Copyright &copy; 2017 - <?= date("Y");?> 
                     Englitopia
                 </h4>
             </div>

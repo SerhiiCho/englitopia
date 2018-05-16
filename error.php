@@ -27,7 +27,7 @@ if ($title_error == false || strlen($status) != 3) {
 <html lang="en">
 <head>
     <?php require_once('templates/head.part.php');?>
-    <title><?php echo $title_error;?></title>
+    <title><?= $title_error;?></title>
 </head>
     <?php require_once('templates/nav.part.php');?>
 <body>

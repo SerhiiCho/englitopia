@@ -30,8 +30,8 @@
             <div class="imgbanbtn imgbanbtn-next"></div>
         </div>
 
-        <div class="news"><?php echo $list_pod;?></div>
-        <div class="news"><?php echo $list_story;?></div>
+        <div class="news"><?= $list_pod;?></div>
+        <div class="news"><?= $list_story;?></div>
         <br />
     </div>
 

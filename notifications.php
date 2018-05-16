@@ -25,12 +25,12 @@ check_member();
                 </div>
                 
                 <div id="notif">
-                    <?php echo $list;?>
+                    <?= $list;?>
                 </div>
 
                 <!-- Pagination -->
                 <div  class="pagination" id="pagination">
-                	<?php echo $pagination_controls;?>
+                	<?= $pagination_controls;?>
                 </div>
 
             </div>

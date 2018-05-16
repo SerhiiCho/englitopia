@@ -25,7 +25,7 @@
 
             <!-- Pagination -->
             <div  class="pagination">
-                <?php echo $pagination_controls;?>
+                <?= $pagination_controls;?>
             </div>
 
         </div>

@@ -61,10 +61,10 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
                 // Button show more stories
                 $(document).ready(function() {
                     let resultsCount = 30;
-                    let idOfThisChat = "<?php echo $id_of_this_chat?>";
-                    let idFrom = "<?php echo $id_from?>";
-                    let idFrom2 = "<?php echo $id_to?>";
-                    let message = "<?php echo $message?>";
+                    let idOfThisChat = "<?= $id_of_this_chat?>";
+                    let idFrom = "<?= $id_from?>";
+                    let idFrom2 = "<?= $id_to?>";
+                    let message = "<?= $message?>";
 
                     $("#button-load-chat").click(function() {
                         resultsCount = resultsCount + 10;
@@ -93,8 +93,8 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
 
             <!-- Textarea for typing -->
             <form method="POST" action="includes/message.inc.php" class="chat-form">
-                <input  type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
-                <input  type="hidden" name="id_chat" value="<?php echo $message_id_chat;?>">
+                <input  type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
+                <input  type="hidden" name="id_chat" value="<?= $message_id_chat;?>">
                 <input  type="hidden" name="to" value="<?php if($message_id_to == $user_id){echo $message_id_from;} elseif ($message_id_from == $user_id){echo $message_id_to;}?>">
                 <input type="hidden" name="came_from" value="message">
                 <textarea name="message" placeholder="Type a message" maxlength="3000" autofocus required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
@@ -116,7 +116,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
 
             // Update chat
             function update_chat() {
-                let chatId = "<?php echo $message_id_chat?>";
+                let chatId = "<?= $message_id_chat?>";
                 let allMessages = document.getElementById('all_messages').getAttribute('data-myValue');
                 let ajax = ajaxObj("POST","php_parsers/update_chat.pars.php");
 

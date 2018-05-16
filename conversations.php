@@ -19,7 +19,7 @@ check_member();
 
             <!-- Intro -->
             <div class="intro">
-                <h1 class="pagin"><?php echo $text_line1;?></h1>
+                <h1 class="pagin"><?= $text_line1;?></h1>
             </div>
 
             <div class="header2">
@@ -32,12 +32,12 @@ check_member();
                     }
             	?>
 
-                <div id="messages"><?php echo $list;?></div>
+                <div id="messages"><?= $list;?></div>
 
                 <!-- Pagination -->
-                <h5 class="pagin"><?php echo $text_line2;?></h5>
+                <h5 class="pagin"><?= $text_line2;?></h5>
                 <div class="pagination">
-                    <?php echo $pagination_controls;?>
+                    <?= $pagination_controls;?>
                 </div>
             </div>
         </div>

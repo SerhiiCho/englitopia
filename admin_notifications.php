@@ -56,7 +56,7 @@ check_admin();
                     <input type="text" name="title" onkeyup="countCharsInTextfield(this, 80, 'message_title');" placeholder="Title">
                     <div id="message_title"></div>
                     
-                    <input type="hidden" name="_token" value="<?php echo $_SESSION['_token'];?>">
+                    <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
                     <textarea name="message" onkeyup="countCharsInTextfield(this, 2000,'message_text');" placeholder="Type a message for all members..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
                     <div id="message_text"></div>
                     

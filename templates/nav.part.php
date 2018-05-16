@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
 
 	    <?php if (isset($_SESSION['username'])):?>
 		    <a href="conversations.php" title="Conversations" class="hb-button hb-button-right">
-                <i class="far fa-envelope icon" <?php echo $badge;?>></i>
+                <i class="far fa-envelope icon" <?= $badge;?>></i>
 		    </a>
 		<?php endif;?>
 
@@ -77,13 +77,13 @@ if (isset($_SESSION['username'])) {
 
             <!--Log in button form-->                 
             <?php if (isset($_SESSION['username'])):?>
-                    <form action="profile.php?member=/<?php echo $_SESSION['username'];?>"
+                    <form action="profile.php?member=/<?= $_SESSION['username'];?>"
                             method="POST" id="update_unread_nav">
 
                         <button type="submit" name="submit" class="logged-in-button"
-                                title="<?php echo $_SESSION['username'];?> Profile">
+                                title="<?= $_SESSION['username'];?> Profile">
                                     <i class="far fa-user"></i>
-                                    <?php echo $_SESSION['username'];?>
+                                    <?= $_SESSION['username'];?>
                         </button>
 
                     </form>

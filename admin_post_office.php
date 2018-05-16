@@ -20,7 +20,7 @@ check_admin();
             <div class="intro">
                 <h1>Post office</h1>
             </div>
-             <?php echo $list;?>
+             <?= $list;?>
         </div>
         <?php require_once('templates/script_bottom.part.php');?>
     </body>

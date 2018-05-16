@@ -28,8 +28,8 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
             <!-- Intro -->
             <div class="intro">
                 <?php if (!empty($to)):?>
-                    <h1>Report <?php echo $to;?></h1>
-                    <p>Choose why you want to report <?php echo $to;?></p>
+                    <h1>Report <?= $to;?></h1>
+                    <p>Choose why you want to report <?= $to;?></p>
                 <?php else:?>
                     <h1>Report</h1>
                     <p>If you want to report user, you should go to user's profile page and press report button.</p>
@@ -83,15 +83,15 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
 	                        <span>Violence or extremism</span>
 	                    </p>
 	
-	                    <input type="hidden" name="from" value="<?php echo $from;?>">
-	                    <input type="hidden" name="to" value="<?php echo $to;?>">
+	                    <input type="hidden" name="from" value="<?= $from;?>">
+	                    <input type="hidden" name="to" value="<?= $to;?>">
 	                    
 	                    <br />
 	                    <textarea name="message" placeholder="Describe the problem" maxlength="500" id="message" onkeyup="counter(message,500,'message_text');"></textarea>
 	                    <div id="message_text"></div>
 	                    
 	                    <button type="submit">Report</button>
-	                    <a href="profile.php?member=/<?php echo $to;?>" style="border:none;background:none;">Back</a>
+	                    <a href="profile.php?member=/<?= $to;?>" style="border:none;background:none;">Back</a>
 	                </form>
 	            <?php endif;?>
 
