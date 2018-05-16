@@ -23,14 +23,13 @@ if (empty($email) || empty($password)) {
     $errors[] = 'empty';
 }
 
-if (!preg_match('%^[A-Za-z0-9]{8,50}$%', stripslashes(trim($password)))) {
+if (!preg_match('%^[A-Za-z0-9]{6,50}$%', stripslashes(trim($password)))) {
     $errors[] = 'error_name_or_password';
 }
 
 if(!filter_var($email, FILTER_SANITIZE_STRING)) {
     $errors[] = 'error_name_or_password';
 }
-
 
 // If that username is not found
 $user = R::findOne('members', 'email = ? OR username = ?', [$email, $email]);
@@ -43,9 +42,8 @@ if ($user) {
         exit();
     } else {
 
-        // If password is matching
+		// If password is matching
         if (password_verify($password, $user->password)) {
-
             if (!empty($errors)) {
                 header('Location:../login.php?message=/'.array_shift($errors));
                 exit();
