@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$story_id = $_POST['story_id'];
-$pod_id = $_POST['pod_id'];
+$story_id = $_POST['story_id'] ?? '';
+$pod_id = $_POST['pod_id'] ?? '';
 
 $pod = R::findOne('pod', 'id = ?', array($pod_id));
 $story = R::findOne('stories', 'id = ?', array($story_id));
