@@ -2,11 +2,11 @@
 
 ## About
 
-This is my first website that I wrote just to practice PHP7 in June 2017. For the first time in my life I'm using a PHP ORM (Object-relational mapping) [RedBean](https://www.redbeanphp.com/index.php). I fall in love with it after using it. My code is pretty ugly, there are some mistakes and not secure submit forms. But everything work well, and I've learned a lot.
+This is my first website that I wrote just to practice PHP7 in June 2017. This repo is just like a memory how I started my programming way. For the first time in my life I'm using a PHP ORM (Object-relational mapping) [RedBean](https://www.redbeanphp.com/index.php). I fall in love with it after using it. My code is pretty ugly, there are some mistakes and not secure submit forms. But everything work well, and I've learned a lot. You can register and befriend someone by sending a friend request. You can chat without refreshing the page. If some people are morans, you can ban this acoount or also report. There more to it. That's pretty amazing what I've done not knowing how javascript really works. When I started coding this app I didn't know that there are OOP programming.
 
 ## The idea
 
-The idea of this app was very simple. I should've been site for people who learn English. It has stories on different topics in English and different podcasts. For this moment it has some sudo material in it.
+The idea of this app was very simple. I should've been site for people who learn English. It has stories on different topics in English and different podcasts. For this moment it has 1 podcast from [Larave Podcast](http://www.laravelpodcast.com) site and one story.
 
 ## Additional information
 
