@@ -97,7 +97,7 @@ switch($posts) {
             <div class="copyright">
                 <h4>
                     Copyright &copy; 2017 - <?= date("Y");?> 
-                    Englitopia
+                    Englitopia by Serhii Cho
                 </h4>
             </div>
     </footer>
