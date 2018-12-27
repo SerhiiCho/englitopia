@@ -6,11 +6,11 @@ This is my first website that I wrote just to practice PHP7 in June 2017. This r
 
 ## The idea
 
-The idea of this app was very simple. I should've been site for people who learn English. It has stories on different topics in English and different podcasts. For this moment it has 1 podcast from [Larave Podcast](http://www.laravelpodcast.com) site and one story.
+The idea of this app was very simple. It should've been site for people who learn English. It has stories on different topics in English and different podcasts. For this moment it has 1 podcast from [Larave Podcast](http://www.laravelpodcast.com) site and one story just for example.
 
 ## Additional information
 
-After importing dump file there will be 2 users. One is admin and other is just a regular member.
+After importing dump file there will be 2 users. One is admin and other is just a regular member. But you can register your user on /signup.php.
 
 | Username | Password |
 |----------|----------|
