@@ -20,4 +20,4 @@ There are 4 statuses that user can use, in order to add status you need manually
 * **host** - can upload podcasts and other things related to podcasts
 * **writer** - can upload stories and other things related to stories
 
-* After importing dump file there will be 2 users. One with username 'admin' and password '111111', and second is 'foo' with password '111111'.
+After importing dump file there will be 2 users. One with username 'admin' and password '111111', and second is 'foo' with password '111111'.
