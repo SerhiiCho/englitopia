@@ -6,7 +6,7 @@ require_once("functions/functions.php");
 // Vars from GET
 $id = $_GET["id"];
 $story = R::findOne('stories', 'id = ?', [$id]);
-$subject_for_cookie = str_replace(" ","_",$story->subject);
+$subject_for_cookie = str_replace([' ', ',', '.'], ['_', '', ''], $story->subject);
 $favorites_button = '';
 $favorite = 0;
 

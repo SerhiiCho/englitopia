@@ -6,7 +6,7 @@ require_once("functions/functions.php");
 // Vars from GET
 $id = $_GET["id"];
 $pod = R::findOne('pod', 'id = ?', [$id]);
-$subject_for_cookie = str_replace(" ","_",$pod->subject);
+$subject_for_cookie = str_replace([' ', ',', '.'], ['_', '', ''], $pod->subject);
 $favorites_button = '';
 $favorite = 0;
 
