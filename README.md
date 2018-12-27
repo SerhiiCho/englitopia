@@ -7,5 +7,5 @@ This is my first website. Here I've build everything with procedural PHP7, and R
 ### How to start
 
 1. Rename config.example.php to config.php and put your settings there.
-2. Create database with name "englitopia", tables will be created for you by RedBeanPhp.
-3. Go to a website and reload the browser.
+2. Create database with name "englitopia"
+3. Import englitopia.sql dump file from the root of the app
