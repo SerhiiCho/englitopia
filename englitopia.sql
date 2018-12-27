@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Дек 27 2018 г., 14:29
+-- Время создания: Дек 27 2018 г., 14:42
 -- Версия сервера: 5.7.24
 -- Версия PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -52,7 +52,7 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`id`, `id_1`, `id_2`, `date_chat`, `delete_chat`) VALUES
-(1, 2, 1, '2018-12-27 14:28:20', 0);
+(1, 2, 1, '2018-12-27 14:30:30', 0);
 
 -- --------------------------------------------------------
 
@@ -170,6 +170,7 @@ CREATE TABLE `membersdata` (
   `last_login` datetime DEFAULT NULL,
   `searching` text COLLATE utf8mb4_unicode_ci,
   `note_check` datetime DEFAULT NULL,
+  `admin_note_check` datetime DEFAULT CURRENT_TIMESTAMP,
   `note_close` datetime DEFAULT NULL,
   `favorite_story` text COLLATE utf8mb4_unicode_ci,
   `favorite_pod` text COLLATE utf8mb4_unicode_ci
@@ -179,9 +180,9 @@ CREATE TABLE `membersdata` (
 -- Дамп данных таблицы `membersdata`
 --
 
-INSERT INTO `membersdata` (`id`, `user_id`, `photo_status`, `photo_version`, `ip`, `last_login`, `searching`, `note_check`, `note_close`, `favorite_story`, `favorite_pod`) VALUES
-(1, 1, 0, 0, '127.0.0.1', '2018-12-27 14:29:46', '', '2018-12-27 13:53:44', '2018-12-27 13:17:48', NULL, NULL),
-(2, 2, 1, 6, '127.0.0.1', '2018-12-27 14:29:10', '', '2018-12-27 13:55:17', '2018-12-27 13:53:14', NULL, NULL);
+INSERT INTO `membersdata` (`id`, `user_id`, `photo_status`, `photo_version`, `ip`, `last_login`, `searching`, `note_check`, `admin_note_check`, `note_close`, `favorite_story`, `favorite_pod`) VALUES
+(1, 1, 0, 0, '127.0.0.1', '2018-12-27 14:42:39', '', '2018-12-27 14:37:44', '2018-12-27 14:34:29', '2018-12-27 13:17:48', NULL, NULL),
+(2, 2, 1, 6, '127.0.0.1', '2018-12-27 14:29:10', '', '2018-12-27 13:55:17', '2018-12-27 14:33:06', '2018-12-27 13:53:14', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -205,7 +206,7 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `id_from`, `id_to`, `message`, `date_time`, `have_read`, `id_chat`, `delete_messages`) VALUES
-(1, 2, 1, 'Hello world', '2018-12-27 14:26:15', '0', 1, 0);
+(1, 2, 1, 'Hello world', '2018-12-27 14:36:15', '0', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -222,6 +223,13 @@ CREATE TABLE `notifications` (
   `link` varchar(255) NOT NULL DEFAULT '#',
   `active` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `title`, `notification`, `date`, `image`, `link`, `active`) VALUES
+(1, 'Welcome my friend', 'Welcome to my first app. I pretty proude of implementing auto refreshing messaging system not knowing how javascript actually works. That was a nice experience.', '2018-12-27 14:42:23', '2', '#', 1);
 
 -- --------------------------------------------------------
 
@@ -342,7 +350,7 @@ CREATE TABLE `visits` (
 --
 
 INSERT INTO `visits` (`id`, `date`, `month`, `week`, `year`, `value`) VALUES
-(1, '27.12.18', 'Dec', 'Thu', 2018, 2);
+(1, '27.12.18', 'Dec', 'Thu', 2018, 3);
 
 --
 -- Индексы сохранённых таблиц
@@ -498,7 +506,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT для таблицы `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `pod`
 --
