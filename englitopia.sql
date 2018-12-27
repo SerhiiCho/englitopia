@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Дек 27 2018 г., 13:39
+-- Время создания: Дек 27 2018 г., 14:29
 -- Версия сервера: 5.7.24
 -- Версия PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -47,6 +47,13 @@ CREATE TABLE `chat` (
   `delete_chat` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `chat`
+--
+
+INSERT INTO `chat` (`id`, `id_1`, `id_2`, `date_chat`, `delete_chat`) VALUES
+(1, 2, 1, '2018-12-27 14:28:20', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -85,6 +92,13 @@ CREATE TABLE `friends` (
   `friendship_date` datetime NOT NULL,
   `who_sent` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `friends`
+--
+
+INSERT INTO `friends` (`id`, `user1`, `user2`, `accepted`, `friendship_date`, `who_sent`) VALUES
+(1, 'admin', 'foo', 1, '2018-12-27 13:55:06', 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +152,8 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `email`, `username`, `country`, `first`, `last`, `gender`, `active`, `status`, `about`, `date`, `cookie_password`, `password`, `reports`) VALUES
-(1, 'admin@admin.com', 'admin', '', '', '', '', 1, 'Member, writer, host', '', '2018-12-27 13:17:48', '37760347710000', '$2y$10$m1/hrN7Gp9osrx2ajmcWouas8bQJbSwFpQLqjtCKZoSOVx./UWENC', 0);
+(1, 'admin@admin.com', 'admin', '', '', '', '', 1, 'member, writer, host,admin', '', '2018-12-27 13:17:48', '32630823440000', '$2y$10$m1/hrN7Gp9osrx2ajmcWouas8bQJbSwFpQLqjtCKZoSOVx./UWENC', 0),
+(2, 'foo@bar.com', 'foo', '', '', '', '', 1, 'Member', '', '2018-12-27 13:53:14', '12622649460000', '$2y$10$dBXN/iPnD5q//yAaGIVACe5lidde6iTy0KBg0E6B9aecmMSq6Aip6', 0);
 
 -- --------------------------------------------------------
 
@@ -165,7 +180,8 @@ CREATE TABLE `membersdata` (
 --
 
 INSERT INTO `membersdata` (`id`, `user_id`, `photo_status`, `photo_version`, `ip`, `last_login`, `searching`, `note_check`, `note_close`, `favorite_story`, `favorite_pod`) VALUES
-(1, 1, 0, 0, '127.0.0.1', '2018-12-27 13:39:41', '', '2018-12-27 13:36:18', '2018-12-27 13:17:48', NULL, NULL);
+(1, 1, 0, 0, '127.0.0.1', '2018-12-27 14:29:46', '', '2018-12-27 13:53:44', '2018-12-27 13:17:48', NULL, NULL),
+(2, 2, 1, 6, '127.0.0.1', '2018-12-27 14:29:10', '', '2018-12-27 13:55:17', '2018-12-27 13:53:14', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,6 +199,13 @@ CREATE TABLE `messages` (
   `id_chat` int(11) NOT NULL,
   `delete_messages` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `id_from`, `id_to`, `message`, `date_time`, `have_read`, `id_chat`, `delete_messages`) VALUES
+(1, 2, 1, 'Hello world', '2018-12-27 14:26:15', '0', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -319,7 +342,7 @@ CREATE TABLE `visits` (
 --
 
 INSERT INTO `visits` (`id`, `date`, `month`, `week`, `year`, `value`) VALUES
-(1, '27.12.18', 'Dec', 'Thu', 2018, 1);
+(1, '27.12.18', 'Dec', 'Thu', 2018, 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -435,7 +458,7 @@ ALTER TABLE `blockedusers`
 -- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `favoritepod`
 --
@@ -450,7 +473,7 @@ ALTER TABLE `favoritestory`
 -- AUTO_INCREMENT для таблицы `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `info`
 --
@@ -460,17 +483,17 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT для таблицы `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `membersdata`
 --
 ALTER TABLE `membersdata`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `notifications`
 --
