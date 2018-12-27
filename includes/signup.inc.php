@@ -83,7 +83,7 @@ if (empty($errors)) {
 
     $user_2->user_id = $user->id;
     $user_2->photo_status = 0;
-    $user_2->photo_version = '';
+    $user_2->photo_version = 0;
     $user_2->ip = preg_replace('#[^0-9.]#','', getenv('REMOTE_ADDR'));
     $user_2->last_login = date("Y-m-d H:i:s");
     $user_2->searching = '';

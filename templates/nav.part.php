@@ -16,17 +16,13 @@ if (isset($_SESSION['username'])) {
     );
 
     // Check last notif checkdate
-    $note_check = R::findOne("membersdata", "user_id = ?",
-        [$my_id]
-    );
+    $note_check = R::findOne("membersdata", "user_id = ?", [$my_id]);
 
     // Check last notif date
-    $note_date = R::findOne("notifications", "active = ?",
-        [1]
-    );
+    $note_date = R::findOne("notifications", "active = ?", [1]);
 
     // If check notif date < last note, than + 1 to nitif numb
-    if ($note_check->note_check < $note_date->date) {
+    if (!is_null($note_date) && $note_check->note_check < $note_date->date) {
         $notif_unreaded++;
     }
 

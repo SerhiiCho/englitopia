@@ -126,7 +126,7 @@ foreach ($friendship as $fr) {
                 </div>';
 }
 
-} elseif ($notifs->id < 1 && $num_rows_notif < 1) {
+} elseif (isset($notifs) && $notifs->id < 1 && $rows < 1) {
 	$list .= '<div class="intro"><p>You don\'t have any notifications</p></div>';
 }
 
