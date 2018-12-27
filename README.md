@@ -2,7 +2,7 @@
 
 ### About
 
-This is my first website. Here I've build everything with procedural PHP7, and Red Bean Php that is pretty awesome ORM. The code is pretty ugly, but common, your first app was probably ugly too. ))
+This is my first website that I wrote just to practice PHP7. Here I'm using RedBean that is pretty awesome PHP ORM. The code is pretty ugly, there are some mistakes and not secure forms. But everything work well. 
 
 ### How to start
 
