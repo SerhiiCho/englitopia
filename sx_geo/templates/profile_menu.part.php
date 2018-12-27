@@ -1,7 +1,7 @@
 <div class="profile-menu-line">
     <ul>
         <li>
-			<a href="profile.php?member=/<?php echo $_SESSION['username'];?>"
+			<a href="profile.php?member=/<?= $_SESSION['username'];?>"
 				title="Profile" id="profile-menu-line-profile">
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
 			</a>

@@ -73,13 +73,13 @@ if (isset($_SESSION['username'])) {
 
             <!--Log in button form-->                 
             <?php if (isset($_SESSION['username'])):?>
-                    <form action="profile.php?member=/<?php echo $_SESSION['username'];?>"
+                    <form action="profile.php?member=/<?= $_SESSION['username'];?>"
                             method="POST" id="update_unread_nav">
 
                         <button type="submit" name="submit" class="logged-in-button"
-                                title="<?php echo $_SESSION['username'];?> Profile">
+                                title="<?= $_SESSION['username'];?> Profile">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <?php echo $_SESSION['username'];?>
+                                    <?= $_SESSION['username'];?>
                         </button>
 
                     </form>
