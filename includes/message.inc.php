@@ -13,9 +13,9 @@ if (isset($_POST['message']) || (isset($_POST['sent']))) {
 
     // Vars
     $message = $_POST['message'];
-    $came_from = $_POST['came_from'];
+    $came_from = $_POST['came_from'] ?? '';
     $id_to = $_POST['to'];
-    $id_chat = $_POST['id_chat'];
+    $id_chat = $_POST['id_chat'] ?? '';
 
     // What his username
     $check_name = R::findOne("members", "id = ?", array($id_to));
@@ -69,6 +69,24 @@ if (isset($_POST['message']) || (isset($_POST['sent']))) {
             // Insert message data to a table messages
             $insert = R::dispense('messages');
 
+            // Figure out what is chat's id
+            $chat = R::findOne("chat", "(id_1 = ? AND id_2 = ?) OR (id_1 = ? AND id_2 = ?)",
+                [$user_id, $id_to, $id_to, $user_id]
+            );
+            // If it doesn't exist
+            if (is_null($chat)) {
+                $create_chat = R::dispense('chat');
+
+                $create_chat->id_1 = $user_id;
+                $create_chat->id_2 = $id_to;
+                $create_chat->date_chat = date("Y-m-d H:i:s");
+                $create_chat->delete_chat = 0;
+
+                R::store($create_chat);
+                $insert->id_chat = $create_chat->id;
+            }
+
+            $insert->id_chat = $id_chat;
             $insert->id_from = $user_id;
             $insert->id_to = $id_to;
             $insert->message = $message;
@@ -104,9 +122,9 @@ if (isset($_POST['message']) || (isset($_POST['sent']))) {
         }
 
         // Figure out what is chat's id
-        $chat = R::findOne("chat", "(id_1 = ? AND id_2 = ?) OR
-                                    (id_1 = ? AND id_2 = ?)",
-                                    array($user_id, $id_to, $id_to, $user_id));
+        $chat = R::findOne("chat", "(id_1 = ? AND id_2 = ?) OR (id_1 = ? AND id_2 = ?)",
+            [$user_id, $id_to, $id_to, $user_id]
+        );
         $id_chat = $chat->id;
 
         // Put chat id to every message

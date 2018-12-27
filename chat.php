@@ -94,8 +94,8 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
             <!-- Textarea for typing -->
             <form method="POST" action="includes/message.inc.php" class="chat-form">
                 <input  type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">
-                <input  type="hidden" name="id_chat" value="<?= $message_id_chat;?>">
-                <input  type="hidden" name="to" value="<?php if($message_id_to == $user_id){echo $message_id_from;} elseif ($message_id_from == $user_id){echo $message_id_to;}?>">
+                <input  type="hidden" name="id_chat" value="<?= $id_of_this_chat;?>">
+                <input  type="hidden" name="to" value="<?php if($id_to == $user_id){echo $id_from;} elseif ($id_from == $user_id){echo $id_to;}?>">
                 <input type="hidden" name="came_from" value="message">
                 <textarea name="message" placeholder="Type a message" maxlength="3000" autofocus required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
 
