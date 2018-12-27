@@ -1,14 +1,14 @@
 <img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/media/img/banner1.jpg" style="text-align:center">
 
-### About
+# About
 
 This is my first website that I wrote just to practice PHP7 in June 2017. For the first time in my life I'm using a PHP ORM (Object-relational mapping) [RedBean](https://www.redbeanphp.com/index.php). I fall in love with it after using it. My code is pretty ugly, there are some mistakes and not secure submit forms. But everything work well, and I've learned a lot.
 
-### The idea
+# The idea
 
 The idea of this app was very simple. I should've been site for people who learn English. It has stories on different topics in English and different podcasts. For this moment it has some sudo material in it.
 
-### Additional information
+# Additional information
 After importing dump file there will be 2 users. One is admin and other is just a regular member.
 
 | Username | Password |
@@ -26,7 +26,7 @@ Example:
 * **host** - can upload podcasts and other things related to podcasts
 * **writer** - can upload stories and other things related to stories
 
-### Get started
+# Get started
 
 1. Rename config.example.php to config.php and put your settings there.
 2. Create database with name "englitopia"
