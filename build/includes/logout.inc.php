@@ -13,7 +13,7 @@ if (isset($_COOKIE["cookie_username"]) && isset($_COOKIE["cookie_password"])) {
 	setcookie("cookie_password", '', strtotime( '-5 days' ), "/");
 }
 
-session_unset($_SESSION['username']);
+session_unset();
 session_destroy();
 
 header("Location: ../login.php?message=/you_just_logged_out");
