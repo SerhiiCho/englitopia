@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/media/img/banner1.jpg" style="text-align:center">
+<img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/build/media/img/banner1.jpg" style="text-align:center">
 
 ## About
 
@@ -29,8 +29,14 @@ Example:
 * **host** - can upload podcasts and other things related to podcasts
 * **writer** - can upload stories and other things related to stories
 
-## Get started
+## Get started with git clone
 
-1. Rename config.example.php to config.php and put your settings there.
-2. Create database with name "englitopia"
-3. Import englitopia.sql dump file from the root of the app
+1. `git clone https://github.com/SerhiiCho/englitopia.git`
+2. `cd englitopia` go to a downloaded folder
+3. `cp config.example.php config.php` rename config.example.php to config.php
+4. Put your database settings in config.php
+5. Create database with name "englitopia"
+6. Import englitopia.sql dump file from the root of the app
+7. `cd build`
+8. `php -S localhost:7000`
+9. Now go to a browser on localhost:7000
