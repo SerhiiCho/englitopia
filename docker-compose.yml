@@ -17,6 +17,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 111111
+      MYSQL_DATABASE: englitopia
     volumes:
       - ${DB_PATH_HOST}:/var/lib/mysql
 
@@ -24,4 +25,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - 6080:8080
+      - 5080:8080
