@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/media/img/banner1.jpg" style="text-align:center">
+<img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/src/media/img/banner1.jpg" style="text-align:center">
 
 ## About
 
@@ -29,13 +29,16 @@ Example:
 * **host** - can upload podcasts and other things related to podcasts
 * **writer** - can upload stories and other things related to stories
 
-## Get started
+## Get started without Docker
 
 1. `git clone https://github.com/SerhiiCho/englitopia.git`
-2. `cd englitopia` go to a downloaded folder
-3. `cp config.example.php config.php` rename config.example.php to config.php
-4. Put your database settings in config.php
-5. Create database with name "englitopia"
+2. `cd englitopia/src`
+3. Put your database settings in config.php
+4. Create database with name "englitopia"
 6. Import englitopia.sql dump file from the root of the app
-8. `php -S localhost:7000`
-9. Now go to a browser on localhost:7000
+7. `php -S localhost:7000`
+8. Now go to a browser on localhost:7000
+
+## Get started with Docker
+
+Just run `docker-compose up -d` in englitopia folder, an go to localhost in your browser
