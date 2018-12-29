@@ -36,9 +36,10 @@ Example:
 3. Put your database settings in config.php
 4. Create database with name "englitopia"
 6. Import englitopia.sql dump file from the root of the app
-7. `php -S localhost:7000`
-8. Now go to a browser on localhost:7000
+7. `php -S localhost:7000` and go to a browser on localhost:7000
 
 ## Get started with Docker
 
-Just run `docker-compose up -d` in englitopia folder, an go to localhost in your browser
+1. `git clone https://github.com/SerhiiCho/englitopia.git`
+2. `cd englitopia`
+3. `docker-compose up -d` and go to a browser on localhost
