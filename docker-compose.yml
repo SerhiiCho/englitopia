@@ -3,13 +3,12 @@ version: '3'
 services:
   web:
     build: .
-    # image: serhiicho/php:7.3-apache
     environment: 
       - APACHE_RUN_USER=www-data
     volumes: 
-      - ./website:/var/www/html
+      - ./src:/var/www/html
     ports: 
-      - 8080:80
+      - 80:80
     working_dir: /var/www/html
     depends_on:
       - db
@@ -22,7 +21,7 @@ services:
       MYSQL_ROOT_PASSWORD: 111111
       MYSQL_DATABASE: englitopia
     volumes:
-      - ./databases:/var/lib/mysql
+      - ./database:/var/lib/mysql
 
   adminer:
     image: adminer
