@@ -29,7 +29,7 @@ Example:
 * **host** - can upload podcasts and other things related to podcasts
 * **writer** - can upload stories and other things related to stories
 
-## Get started with git clone
+## Get started
 
 1. `git clone https://github.com/SerhiiCho/englitopia.git`
 2. `cd englitopia` go to a downloaded folder
@@ -37,6 +37,5 @@ Example:
 4. Put your database settings in config.php
 5. Create database with name "englitopia"
 6. Import englitopia.sql dump file from the root of the app
-7. `cd build`
 8. `php -S localhost:7000`
 9. Now go to a browser on localhost:7000
