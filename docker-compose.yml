@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    # image: serhiicho/php:7.3-apache
+    environment: 
+      - APACHE_RUN_USER=www-data
+    volumes: 
+      - ./website:/var/www/html
+    ports: 
+      - 8080:80
+    working_dir: /var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 111111
+      MYSQL_DATABASE: englitopia
+    volumes:
+      - ./databases:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5080:8080
