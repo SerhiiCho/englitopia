@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  web:
+  server:
     build: .
     environment: 
-      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_USER=#1000
     volumes: 
       - ./src:/var/www/html
     ports: 
@@ -22,9 +22,3 @@ services:
       MYSQL_DATABASE: englitopia
     volumes:
       - ./db:/var/lib/mysql
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 5080:8080
