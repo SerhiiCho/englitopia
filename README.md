@@ -38,4 +38,4 @@ Example:
 
 ## Get started with Docker
 
-* `docker-compose up -d` and go to a browser on *localhost*
+* `docker-compose up -d` and go to a browser on *localhost*, after MySQL init process is done the site will show up. It takes 20-30 second or so.
