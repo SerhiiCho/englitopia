@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    build: serhiicho/englitopia:server
+    image: serhiicho/englitopia:server
     environment: 
       - APACHE_RUN_USER=#1000
     volumes: 
