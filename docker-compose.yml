@@ -2,7 +2,9 @@ version: '3'
 
 services:
   server:
+    # build: ./server
     image: serhiicho/englitopia:server
+    container_name: server
     environment: 
       - APACHE_RUN_USER=#1000
     volumes: 
@@ -14,8 +16,11 @@ services:
       - db
 
   db:
-    # build: ./db
-    image: serhiicho/englitopia:db
+    build: ./db
+    # image: serhiicho/englitopia:db
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
-    volumes:
-      - ./db/storage:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 111111
+      MYSQL_DATABASE: englitopia

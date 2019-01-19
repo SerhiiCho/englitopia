@@ -20,16 +20,16 @@ RUN apt-get update \
         gnupg \
         gnupg2 \
         gnupg1 \
-        nodejs \
-        yarn \
-    && curl -sL https://deb.nodesource.com/setup_11.x | bash - \
     && docker-php-ext-install \
         pdo_mysql \
+        gd \
         bz2 \
         zip \
         pcntl \
         bcmath \
     && a2enmod rewrite \
     && service apache2 restart \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-configure \
+        gd \
+            --with-freetype-dir=/usr/include/ \
+            --with-jpeg-dir=/usr/include/
