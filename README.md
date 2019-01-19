@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/SerhiiCho/englitopia/master/src/media/img/banner1.jpg" style="text-align:center">
+![englitopia](https://raw.githubusercontent.com/SerhiiCho/englitopia/master/src/media/img/banner1.jpg)
 
 ## About
 
