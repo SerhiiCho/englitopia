@@ -33,7 +33,7 @@ Example:
 
 1. Put your database settings in *src/config.php*
 2. Create database with name *"englitopia"*
-3. Import *englitopia.sql* dump file from the root of the app
+3. Import *dump.sql* dump file from db directive
 4. `php -S localhost:7000` and go to a browser on *localhost:7000*
 
 ## Get started with Docker
