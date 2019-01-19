@@ -16,8 +16,8 @@ services:
       - db
 
   db:
-    build: ./db
-    # image: serhiicho/englitopia:db
+    # build: ./db
+    image: serhiicho/englitopia:db
     container_name: db
     command: --default-authentication-plugin=mysql_native_password
     restart: always
