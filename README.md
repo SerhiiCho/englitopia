@@ -1,4 +1,4 @@
-![englitopia](https://raw.githubusercontent.com/SerhiiCho/englitopia/master/src/media/img/banner1.jpg)
+![englitopia](https://bitbucket.org/serhii_cho/englitopia/raw/8fefe753dace245719e8ac3f8bf27d9426688132/src/media/img/banner1_min.jpg)
 
 ## About
 
