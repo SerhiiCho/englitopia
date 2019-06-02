@@ -32,4 +32,5 @@ RUN apt-get update \
     && docker-php-ext-configure \
         gd \
             --with-freetype-dir=/usr/include/ \
-            --with-jpeg-dir=/usr/include/
+            --with-jpeg-dir=/usr/include/ \
+        && chown -R www-data:www-data /var/www/html
