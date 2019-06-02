@@ -45,4 +45,4 @@ git clone https://github.com/SerhiiCho/englitopia.git
 cd englitopia && docker-compose up -d
 ```
 
-Now you can go to localhost:7000, note that if you see the white screen it means that  MySQL init process is doing its job. It usually takes 20-30 second to see the site.
+Now you can go to localhost:7000. Note that if you see the white screen it means that  MySQL init process is doing its job. It usually takes 20-30 second to see the site.
