@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('includes/check.inc.php');
