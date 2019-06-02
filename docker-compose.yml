@@ -2,7 +2,6 @@ version: '3'
 
 services:
   server:
-    # build: ./server
     image: serhiicho/englitopia:server
     container_name: server
     environment: 
@@ -10,13 +9,12 @@ services:
     volumes: 
       - ./src:/var/www/html
     ports: 
-      - 80:80
+      - 7000:80
     working_dir: /var/www/html
     depends_on:
       - db
 
   db:
-    # build: ./db
     image: serhiicho/englitopia:db
     container_name: db
     command: --default-authentication-plugin=mysql_native_password
