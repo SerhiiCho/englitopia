@@ -49,7 +49,7 @@ if ($st_rows < 1 && $p_rows < 1 && $i_rows < 1) {
                     if ($p_rows==1) { echo $p_rows.' podcast ';}
                     if ($p_rows>1) { echo $p_rows.' podcasts ';}
                     if ($i_rows>0) { echo $i_rows.' info';}
-                    echo ' for query: <b>'.e($search).'</b>
+                    echo ' for query: <b>'.escapeChars($search).'</b>
                 </p>
             </div>';
 
