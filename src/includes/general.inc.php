@@ -34,7 +34,7 @@ if (isset($_POST['change_name'])) {
         exit();
     } else {
 
-        R::getAll("UPDATE members 
+        R::getAll("UPDATE members
                     SET first = ?, last = ?, about = ?
                     WHERE username = ?",
                     array($firstName, $lastName, $aboutUser, $log_username));
@@ -60,7 +60,7 @@ if (isset($_POST['change_name'])) {
         }
 
         // Insert the user
-        R::getAll("UPDATE members 
+        R::getAll("UPDATE members
                     SET country = ?, gender = ?
                     WHERE username = ?",
                     array($country, $gender, $log_username));

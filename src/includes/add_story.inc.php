@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($_POST['subject']) && isset($_POST['intro'])) {
-    
+
     // Variables
     $subject = $_POST['subject'];
     $intro = $_POST['intro'];

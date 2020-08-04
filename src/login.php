@@ -29,28 +29,28 @@ if ($member_ok == true) {
                     $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
                     switch($message) {
                         case '/fill_in_the_form':
-                            echo '<h4 class="error">Fill in the form.</h4>'; 
+                            echo '<h4 class="error">Fill in the form.</h4>';
                             break;
                         case '/you_should_be_logged_in':
-                            echo '<h4 class="error">You need to be logged in to visit this page.</h4>'; 
+                            echo '<h4 class="error">You need to be logged in to visit this page.</h4>';
                             break;
                         case '/empty':
-                            echo '<h4 class="error">Fill in the form please. You have empty fields.</h4>'; 
+                            echo '<h4 class="error">Fill in the form please. You have empty fields.</h4>';
                             break;
                         case '/error_name_or_password':
-                            echo '<h4 class="error">Login or Password is incorrect.</h4>'; 
+                            echo '<h4 class="error">Login or Password is incorrect.</h4>';
                             break;
                         case '/your_account_has_been_activated':
-                            echo '<h4 class="success">Your account has been activated, now you can log in.</h4>'; 
+                            echo '<h4 class="success">Your account has been activated, now you can log in.</h4>';
                             break;
                         case '/error':
-                            echo '<h4 class="error">Something <b>went wrong</b>.</h4>'; 
+                            echo '<h4 class="error">Something <b>went wrong</b>.</h4>';
                             break;
                         case '/you_just_logged_out':
-                            echo '<h4 class="original">You just logged out.<br />Thank you for being with us.</h4>'; 
+                            echo '<h4 class="original">You just logged out.<br />Thank you for being with us.</h4>';
                             break;
                         case '/success':
-                            echo '<h4 class="success">Thank you for joining us. Now you can <b>log in</b>.</h4>'; 
+                            echo '<h4 class="success">Thank you for joining us. Now you can <b>log in</b>.</h4>';
                             break;
                     }
                 ?>
@@ -69,14 +69,14 @@ if ($member_ok == true) {
                             name="check-box-hidden"
                             id="check-box-hidden1"
                             value="1" />
-                    
+
                     <div
                         id="check-box"
-                        data-checked="1" 
+                        data-checked="1"
                         onclick="toggleRememberMe(this)">
                         Remember me
                     </div>
-                    
+
                     <button class="button" name="submit">Log in</button>
                 </form>
 

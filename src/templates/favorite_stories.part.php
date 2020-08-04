@@ -23,10 +23,10 @@ if ($find_all_favs) {
                     alt="'.$favs->subject.'"
                     class="favorites-pic">';
 
-        $list_st .= '<a href="story_page.php?id='.$favs->id.'" 
+        $list_st .= '<a href="story_page.php?id='.$favs->id.'"
                         title="'.$favs->subject.'">'.$img.'
                     </a>
-                        <a href="story_page.php?id='.$favs->id.'" 
+                        <a href="story_page.php?id='.$favs->id.'"
                             title="'.$favs->subject.'">
                             <div class="conversations">
 

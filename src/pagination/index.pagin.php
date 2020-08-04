@@ -16,7 +16,7 @@ if ($pod) {
                         <h2 class="headline1">'.$pod->subject.'</h2>
                         <h2 class="headline2">Podcast. Episode '.$pod->id.'</h2>
 
-                        <p>'.nl2br($pod->intro).'... 
+                        <p>'.nl2br($pod->intro).'...
                             <a href="podcast_page.php?id='.$pod->id.'." title="Open '.$pod->subject.' podcast">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>
@@ -35,7 +35,7 @@ if ($story) {
                         <h2 class="headline1">'.$story->subject.'</h2>
                         <h2 class="headline2">Story '.$story->id.'</h2>
 
-                        <p>'.nl2br($story->intro).'... 
+                        <p>'.nl2br($story->intro).'...
                             <a href="story_page.php?id='.$story->id.'" title="Open '.$story->subject.' story">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>

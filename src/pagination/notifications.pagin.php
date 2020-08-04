@@ -20,10 +20,10 @@ if (isset($_GET['page'])) {
     $page_num = preg_replace('#[^0-9]#','', $_GET['page']);
 }
 
-if ($page_num < 1) { 
-    $page_num = 1; 
-} elseif ($page_num > $last) { 
-    $page_num = $last; 
+if ($page_num < 1) {
+    $page_num = 1;
+} elseif ($page_num > $last) {
+    $page_num = $last;
 }
 
 $limit = 'LIMIT ' .($page_num - 1) * $page_rows .',' .$page_rows;
@@ -117,9 +117,9 @@ foreach ($friendship as $fr) {
                         <a href="profile.php?member=/'.$fr->user1.'" title="Profile page of '.$fr->user1.'">
                             '.$img.'
                         </a>
-                        
+
                         <p id="conversations-from"><b>'.ucfirst($fr->user1).'</b> sent a friend request</p>
-                        
+
                         <button onclick="friendReqHandler(\'accept\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')" id="friend-req-first-button">Accept</button>
                         <button onclick="friendReqHandler(\'reject\',\''.$fr->id.'\',\''.$fr->user1.'\',\'user_info_'.$fr->id.'\')">Ignore</button>
                     </div>

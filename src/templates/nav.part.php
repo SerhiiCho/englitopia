@@ -71,7 +71,7 @@ if (isset($_SESSION['username'])) {
         <li><a href="stories.php" title="Stories">STORIES</a></li>
         <li class="li-nav-last">
 
-            <!--Log in button form-->                 
+            <!--Log in button form-->
             <?php if (isset($_SESSION['username'])):?>
                     <form action="profile.php?member=/<?= $_SESSION['username'];?>"
                             method="POST" id="update_unread_nav">

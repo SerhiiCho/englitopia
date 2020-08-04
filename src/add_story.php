@@ -28,28 +28,28 @@ if ($writer_ok === false){
                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
                 switch($message) {
                     case '/there_is_an_unproved_story':
-                        echo '<h4 class="error">There is already one unpproved story, you can\'t add another one.</h4>'; 
+                        echo '<h4 class="error">There is already one unpproved story, you can\'t add another one.</h4>';
                         break;
                     case '/the_only_field_that_can_be_empty_is_tags':
-                        echo '<h4 class="error">The only field that can be empty is "tags".</h4>'; 
+                        echo '<h4 class="error">The only field that can be empty is "tags".</h4>';
                         break;
                     case '/subject_max_40_intro_max_207_author_max_128_charecters':
-                        echo '<h4 class="error">Subject should be maximum 40 charecters, intro 207 charecters and athor 128.</h4>'; 
+                        echo '<h4 class="error">Subject should be maximum 40 charecters, intro 207 charecters and athor 128.</h4>';
                         break;
                     case '/text_max_10000_charecters':
-                        echo '<h4 class="error">Text should be maximum 10000 charecters.</h4>'; 
+                        echo '<h4 class="error">Text should be maximum 10000 charecters.</h4>';
                         break;
                     case '/image_error':
-                        echo '<h4 class="error">There is an error with the image you uploaded.</h4>'; 
+                        echo '<h4 class="error">There is an error with the image you uploaded.</h4>';
                         break;
                     case '/only_jpg_allowed':
-                        echo '<h4 class="error">Only jpg allowed.</h4>'; 
+                        echo '<h4 class="error">Only jpg allowed.</h4>';
                         break;
                     case '/image_is_to_big':
-                        echo '<h4 class="error">Image is too big, 1 Mb maximum.</h4>'; 
+                        echo '<h4 class="error">Image is too big, 1 Mb maximum.</h4>';
                         break;
                     case '/success':
-                        echo '<h4 class="success">Thank you for adding story. Now go to stories and "approve" this if you don\'t see any mistakes, or "reject" if you want to cancel posting that. Anyway, in order to make it available for all users, it needs to be approved by 2 admins or writers.</h4>'; 
+                        echo '<h4 class="success">Thank you for adding story. Now go to stories and "approve" this if you don\'t see any mistakes, or "reject" if you want to cancel posting that. Anyway, in order to make it available for all users, it needs to be approved by 2 admins or writers.</h4>';
                         break;
                 }
             ?>
@@ -84,7 +84,7 @@ if ($writer_ok === false){
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
                     <input type='file' name='file' id="notif-upload-img" required>
-                    
+
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>
             </div>

@@ -28,7 +28,7 @@ if (!$user) {
                     '.$u_get.' doesn\'t exist or is not yet activated!
                 </h1>
             </div>';
-    exit();	
+    exit();
 }
 // Fetch the user row from the query above
 $user_id = $user->id;

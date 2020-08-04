@@ -29,16 +29,16 @@ check_member();
                     $message = isset($_REQUEST['message']) ? $_REQUEST['message']:null;
                     switch($message) {
                         case '/deleted_story':
-                            echo '<h4 class="success">Favorite story has been deleted from the list.</h4>'; 
+                            echo '<h4 class="success">Favorite story has been deleted from the list.</h4>';
                             break;
                         case '/deleted_pod':
-                            echo '<h4 class="success">Favorite podcast has been deleted from the list.</h4>'; 
+                            echo '<h4 class="success">Favorite podcast has been deleted from the list.</h4>';
                             break;
                         case '/error_pod':
-                            echo '<h4 class="error">Can\'t delete this podcast, unknown error occurred.</h4>'; 
+                            echo '<h4 class="error">Can\'t delete this podcast, unknown error occurred.</h4>';
                             break;
                         case '/error_story':
-                            echo '<h4 class="error">Can\'t delete this story, unknown error occurred.</h4>'; 
+                            echo '<h4 class="error">Can\'t delete this story, unknown error occurred.</h4>';
                             break;
                     }
             	?>
@@ -111,7 +111,7 @@ check_member();
                     tabcontent = document.getElementsByClassName("tabcontent"),
                     tablinks = document.getElementsByClassName("tablinks"),
                     name = document.getElementById(name);
-                
+
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none"
                 }

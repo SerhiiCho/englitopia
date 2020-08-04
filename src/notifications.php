@@ -23,7 +23,7 @@ check_member();
                 <div class="intro">
                     <h1>Notifications</h1>
                 </div>
-                
+
                 <div id="notif">
                     <?= $list;?>
                 </div>

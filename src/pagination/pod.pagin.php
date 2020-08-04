@@ -16,10 +16,10 @@ if (isset($_GET['page'])) {
     $page_num = preg_replace('#[^0-9]#','', $_GET['page']);
 }
 
-if ($page_num < 1) { 
-    $page_num = 1; 
-} elseif ($page_num > $last) { 
-    $page_num = $last; 
+if ($page_num < 1) {
+    $page_num = 1;
+} elseif ($page_num > $last) {
+    $page_num = $last;
 }
 
 $limit = 'LIMIT ' .($page_num - 1) * $page_rows .',' .$page_rows;
@@ -85,7 +85,7 @@ foreach ($pods as $pod) {
                         <h4 class="headline1">'.$pod->subject.'</h4>
                         <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
 
-                        <p>'.nl2br($pod->intro).'.. 
+                        <p>'.nl2br($pod->intro).'..
                             <a href="podcast_page.php?id='.$pod->id.'">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>
@@ -110,7 +110,7 @@ foreach ($pods as $pod) {
                         <h4 class="headline1">'.$pod->subject.'</h4>
                         <h3 class="headline2">Podcast. Episod '.$pod->id.'</h3>
 
-                        <p>'.nl2br($pod->intro).'.. 
+                        <p>'.nl2br($pod->intro).'..
                             <a href="podcast_page.php?id='.$pod->id.'">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>

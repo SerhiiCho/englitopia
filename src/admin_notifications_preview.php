@@ -83,12 +83,12 @@ if (isset($_POST['cancel'])) {
             <div class="intro">
                 <h1>Notification Preview</h1>
             </div>
-            
+
             <div class="header2">
                 <div>
                     <?= $list;?>
                 </div>
-                
+
                 <?php if ($buttons !== 0):?>
                     <form method="POST" action="admin_notifications_preview.php" class="form">
                         <input type="hidden" name="_token" value="<?= $_SESSION['_token'];?>">

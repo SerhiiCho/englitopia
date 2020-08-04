@@ -5,7 +5,7 @@ require_once("dbh.inc.php");
 $data = $_POST;
 
 if (!isset($data['submit'])) {
-    header("Location: ../signup.php?message=/fill_in_the_form"); 
+    header("Location: ../signup.php?message=/fill_in_the_form");
 	exit();
 }
 

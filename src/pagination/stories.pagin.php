@@ -16,10 +16,10 @@ if (isset($_GET['page'])) {
     $page_num = preg_replace('#[^0-9]#','', $_GET['page']);
 }
 
-if ($page_num < 1) { 
-    $page_num = 1; 
-} elseif ($page_num > $last) { 
-    $page_num = $last; 
+if ($page_num < 1) {
+    $page_num = 1;
+} elseif ($page_num > $last) {
+    $page_num = $last;
 }
 
 $limit = 'LIMIT ' .($page_num - 1) * $page_rows .',' .$page_rows;
@@ -85,7 +85,7 @@ foreach ($stories as $story) {
                         <h4 class="headline1">'.$story->subject.'</h4>
                         <h3 class="headline2">Story '.$story->id.'</h3>
 
-                        <p>'.nl2br($story->intro).'.. 
+                        <p>'.nl2br($story->intro).'..
                             <a href="story_page.php?id='.$story->id.'">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>
@@ -110,7 +110,7 @@ foreach ($stories as $story) {
                         <h4 class="headline1">'.$story->subject.'</h4>
                         <h3 class="headline2">Story '.$story->id.'</h3>
 
-                        <p>'.nl2br($story->intro).'.. 
+                        <p>'.nl2br($story->intro).'..
                             <a href="story_page.php?id='.$story->id.'">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>
@@ -122,5 +122,5 @@ foreach ($stories as $story) {
                         </div>
                     </div>';
     }
-    
+
 }

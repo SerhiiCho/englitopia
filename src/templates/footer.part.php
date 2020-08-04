@@ -96,7 +96,7 @@ switch($posts) {
         </nav>
             <div class="copyright">
                 <h4>
-                    Copyright &copy; 2017 - <?= date("Y");?> 
+                    Copyright &copy; 2017 - <?= date("Y");?>
                     Englitopia by Serhii Cho
                 </h4>
             </div>

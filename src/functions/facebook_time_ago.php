@@ -11,7 +11,7 @@ function facebook_time_ago($timestamp) {
     $weeks = round($seconds / 604800); // 7*24*60*60;
     $months = round($seconds / 2629440); //((365+365+365+365+366)/5/12)*24*60*60
     $years = round($seconds / 31553280); //(365+365+365+365+366)/5 * 24 * 60 * 60
-    
+
     if ($seconds <= 60) {
         return "Just Now";
     } elseif ($minutes <=60) {

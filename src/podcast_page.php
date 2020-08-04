@@ -83,7 +83,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
                 switch($message) {
                     case '/you_already_approved_this_podcast':
-                        echo '<h4 class="error">You already approved this podcast.</h4>'; 
+                        echo '<h4 class="error">You already approved this podcast.</h4>';
                         break;
                     case '/success':
                         echo '<h4 class="success">Podcast has has been posted. Now it\'s available for users.</h4>';
@@ -93,7 +93,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
             <div class="wrapper-stories">
                 <h2 class="headline1"><?= $pod->subject;?></h2>
                 <h2 class="headline2">Podcast <?= $pod->id;?></h2>
-                
+
                 <!-- Add to favorites -->
                 <div class="page-icons">
                     <!-- Favorites -->
@@ -109,7 +109,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                     <?php endif;?>
                 </div>
                 <div id="status"></div>
-                
+
                 <hr>
                 <img src="media/img/imgs/pod<?= $pod->id.'.jpg?'.$if_has_cookie;?>" alt="podcast <?= $pod->id;?>">
 
@@ -127,7 +127,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
                         <a href="media/audio/podcast<?= $pod->id;?>.mp3" type="audio/mp3" download>
                             <div class="button" >Download mp3</div>
                         </a>
-                    </div>   
+                    </div>
                 </div>
 
                 <br /><hr>
@@ -160,11 +160,11 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				    var status = document.getElementById("status");
 				    var ajax = ajaxObj("POST","php_parsers/delete_post.pars.php");
 				    var conf = confirm("Are you sure you want to delete this podcast?");
-				
+
 				    if (conf != true) {
 				        return false;
 				    }
-				
+
 				    elem.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';
 				    ajax.onreadystatechange = function() {
 				        if (ajaxReturn(ajax) == true) {
@@ -174,7 +174,7 @@ if ($pod->approved != 2 && $admin_ok == false && $host_ok == false) {
 				    }
 				    ajax.send("type=" + type + "&postId=" + postId);
 				}
-				
+
 				function addFavoritePod(type, podId, elem) {
 				    var elem = document.getElementById(elem);
 				    var ajax = ajaxObj("POST","php_parsers/favorites.pars.php");

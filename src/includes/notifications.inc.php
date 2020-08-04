@@ -100,7 +100,7 @@ exit();
 }
 
 if(isset($_POST['close'])) {
-    
+
     //Update last notif check
     R::getAll("UPDATE membersdata
                 SET note_close = now()

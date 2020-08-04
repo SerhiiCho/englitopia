@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($_POST['subject']) && isset($_POST['intro'])) {
-    
+
     // Variables
     $subject = $_POST['subject'];
     $intro = $_POST['intro'];
@@ -89,7 +89,7 @@ if (isset($_POST['subject']) && isset($_POST['intro'])) {
     if ($img_size > 1000000) {
         $errors[] = 'image_is_to_big';
     }
-    
+
     // 30 mb max
     if ($img_size > 30000000) {
         $errors[] = 'audio_is_to_big';

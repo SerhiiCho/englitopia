@@ -35,7 +35,7 @@ foreach ($all_rows as $row) {
         [$message_id_from]
     );
     $from_username = $sql_username->username;
-    
+
     // Chat messages
     if ($from_username == $log_username) {
         $list .= '  <div class="message-chat message-chat-my">

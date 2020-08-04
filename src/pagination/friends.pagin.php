@@ -19,10 +19,10 @@ if (isset($_GET['page'])) {
     $page_num = preg_replace('#[^0-9]#','', $_GET['page']);
 }
 
-if ($page_num < 1) { 
-    $page_num = 1; 
-} elseif ($page_num > $last) { 
-    $page_num = $last; 
+if ($page_num < 1) {
+    $page_num = 1;
+} elseif ($page_num > $last) {
+    $page_num = $last;
 }
 
 $limit = 'LIMIT ' .($page_num - 1) * $page_rows .',' .$page_rows;

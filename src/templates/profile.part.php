@@ -139,7 +139,7 @@ if ($u_get != $log_username && $member_ok == true) {
 // LOGIC FOR FRIEND BUTTON
 if ($is_friend == true) {
     $friend_button = '  <button onclick="sendFriendRequest(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
-                            <i class="fa fa-check" aria-hidden="true"></i> 
+                            <i class="fa fa-check" aria-hidden="true"></i>
                             FRIENDS
                         </button>';
 } elseif ($member_ok == true && $u_get !== $log_username && $he_is_blocker == false
@@ -152,7 +152,7 @@ if ($is_friend == true) {
         $not_is_friend_yet == true && $my_request == true ) {
 
     $friend_button = '  <button onclick="sendFriendRequest(\'unfriend\',\''.$u_get.'\',\'friend_btn\')">
-                            <i class="fa fa-ban" aria-hidden="true"></i> 
+                            <i class="fa fa-ban" aria-hidden="true"></i>
                             CANCEL
                         </button>';
 } elseif ($member_ok == true && $u_get !== $log_username && $he_is_blocker == false
@@ -166,12 +166,12 @@ if ($is_friend == true) {
 // LOGIC FOR BLOCK BUTTON
 if ($i_am_blocker == true) {
     $block_button = '   <button onclick="blockUser(\'unblock\',\''.$u_get.'\',\'block-btn\')">
-                            <i class="fa fa-unlock-alt" aria-hidden="true"></i> 
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                             Unblock
                         </button>';
 } elseif ($member_ok == true && $u_get != $log_username) {
     $block_button = '   <button onclick="blockUser(\'block\',\''.$u_get.'\',\'block-btn\')">
-                            <i class="fa fa-lock" aria-hidden="true"></i> 
+                            <i class="fa fa-lock" aria-hidden="true"></i>
                             Block
                         </button>';
 }
@@ -183,7 +183,7 @@ $friends_tab = '';
 $friends_count = R::count('friends', 'WHERE (user1 = ? AND accepted = ?) OR (user2 = ? AND accepted = ?)',
     [$m_username, 1, $m_username, 1]
 );
-                                
+
 $list_of_friends = 20;
 $show_more_friends = $friends_count - $list_of_friends;
 

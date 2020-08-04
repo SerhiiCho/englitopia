@@ -16,11 +16,11 @@ easy image resize function
 
 function smart_resize_image($file,
                             $string             = null,
-                            $width              = 0, 
-                            $height             = 0, 
-                            $proportional       = false, 
-                            $output             = 'file', 
-                            $delete_original    = true, 
+                            $width              = 0,
+                            $height             = 0,
+                            $proportional       = false,
+                            $output             = 'file',
+                            $delete_original    = true,
                             $use_linux_commands = false,
                             $quality = 100
 ){

@@ -14,7 +14,7 @@
 
     textarea[0].addEventListener('keydown', expandTextarea);
     textarea[1].addEventListener('keydown', expandTextarea);
-                    
+
     function expandTextarea() {
         let element = this;
         setTimeout(function(){

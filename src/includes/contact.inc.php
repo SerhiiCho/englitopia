@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+
     if (isset($_POST['email'])) {
 
         require "../functions/functions.php";
@@ -10,7 +10,7 @@
         $email_from = $_POST['email'];
         $message = preg_replace("/[^a-zA-Z0-9\/!?\':.,$;_ ]/", "", $_POST['message']);
         $subject = preg_replace("/[^a-zA-Z0-9\/!?\':.,$;_ ]/", "", $_POST['subject']);
-        
+
         //Validation
         if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message'])) {
             header("Location: ../contact.php?message=/FillInTheForm");

@@ -46,13 +46,13 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
                 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : null;
                 switch($message){
                     case '/message_is_too_long':
-                        echo '<h4 class="error">You can not send message more than 3000 characters.</h4>'; 
+                        echo '<h4 class="error">You can not send message more than 3000 characters.</h4>';
                         break;
                     case '/empty':
-                        echo '<h4 class="error">Message is empty.</h4>'; 
+                        echo '<h4 class="error">Message is empty.</h4>';
                         break;
                     case '/blocked':
-                        echo '<h4 class="error">You cannot send messages to that member.</h4>'; 
+                        echo '<h4 class="error">You cannot send messages to that member.</h4>';
                         break;
                 }
             ?>
@@ -108,7 +108,7 @@ if (R::count("chat", "WHERE (id = ? AND id_1 = ?) OR (id = ? AND id_2 = ?)",
         <script>
             // Submit form by enter
             $("textarea").keypress(function(e) {
-                if(e.which == 13 && !e.shiftKey) {        
+                if(e.which == 13 && !e.shiftKey) {
                 	jQuery(this).blur();
                     jQuery('#submit-chat-form').focus().click();
                 }

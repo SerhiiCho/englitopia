@@ -96,7 +96,7 @@ if ($host_ok === false){
                     <!-- Audio duration -->
                     <span class="span-form">Audio duration</span>
                     <input type="text" name="duration" value="00:00:00" required>
-                    
+
                     <!-- Audio -->
                     <span class="span-form">Choose mp3</span>
                     <input type='file' name='audio' id="notif-upload-img" accept=".mp3" required>
@@ -104,7 +104,7 @@ if ($host_ok === false){
                     <!-- Image -->
                     <span class="span-form">Choose an image</span>
                     <input type='file' name='img' id="notif-upload-img" accept=".jpg" required>
-                    
+
                     <button type="submit" name="publish" class="button">Publish</button>
                 </form>
             </div>

@@ -39,7 +39,7 @@ foreach($all_rows as $row) {
     // Select username of member message from
     $sql_username = R::findOne("members", "id = ?", array($message_id_from));
     $from_username = $sql_username->username;
-    
+
     // Chat messages
     if ($from_username == $log_username) {
         $list .= '  <div class="message-chat message-chat-my">

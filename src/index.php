@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <title>Englitopia</title>
-        <?php require_once('templates/head.part.php');?>        
+        <?php require_once('templates/head.part.php');?>
     </head>
         <?php require_once('templates/nav.part.php');?>
     <body>

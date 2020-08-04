@@ -23,7 +23,7 @@ function checkUserIsIogged($log_username, $cookie_password) {
 if (isset($_SESSION["username"]) && isset($_SESSION["_token"]) && isset($_SESSION["cookie_password"])) {
     $cookie_password = preg_replace('#[^a-z0-9$.\/%]#i','',$_SESSION['cookie_password']);
     $log_username = preg_replace('#[^a-z0-9]#i','',$_SESSION['username']);
-    
+
     $member_ok = checkUserIsIogged($log_username, $cookie_password);
 
     // Check username and password are matching

@@ -21,10 +21,10 @@ if (isset($_GET['page'])) {
     $page_num = preg_replace('#[^0-9]#', '', $_GET['page']);
 }
 
-if ($page_num < 1) { 
-    $page_num = 1; 
-} elseif ($page_num > $last) { 
-    $page_num = $last; 
+if ($page_num < 1) {
+    $page_num = 1;
+} elseif ($page_num > $last) {
+    $page_num = $last;
 }
 
 if ($rows == 0) {
@@ -101,7 +101,7 @@ if (!$talks) {
 		$last_message = R::findOne("messages",
 							"(id_from = ? AND id_to = ? AND delete_messages != ?)
 							OR (id_to = ? AND id_from = ? AND delete_messages != ?)
-							ORDER BY id DESC", 
+							ORDER BY id DESC",
 						array($id_1, $id_2, $user_id, $id_1, $id_2, $user_id));
 
 	    // If there are no messages between two users we should delete row in chat table that can exist
@@ -199,10 +199,10 @@ if (!$talks) {
 										</p>
 
 										<i class="unreaded-message-num">
-											'.$unreaded_messages.' 
+											'.$unreaded_messages.'
 											<i class="far fa-envelope"></i>
 										</i>
-										
+
 										<div class="delete-conversations">
 											<form method="POST" action="includes/delete_message.inc.php">
 												<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
@@ -230,7 +230,7 @@ if (!$talks) {
 										<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 											'.$message.'...
 										</p>
-										
+
 										<div class="delete-conversations">
 											<form method="POST" action="includes/delete_message.inc.php">
 												<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
@@ -260,7 +260,7 @@ if (!$talks) {
 											<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
-											
+
 											<div class="delete-conversations">
 												<form method="POST" action="includes/delete_message.inc.php">
 													<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">
@@ -288,7 +288,7 @@ if (!$talks) {
 											<p class="conversations-content" style="margin:.18rem 2.06rem 0 4.37rem;">
 												'.$message.'...
 											</p>
-											
+
 											<div class="delete-conversations">
 												<form method="POST" action="includes/delete_message.inc.php">
 													<input type="hidden" name="_token" value="'.$_SESSION['_token'].'">

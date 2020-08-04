@@ -28,7 +28,7 @@ if (isset($_POST['from']) && isset($_POST['to'])) {
                                 AND to_user = ?
                                 AND report_date = ?",
                                 array($from, $to, $report_date));
- 
+
     if ($if_sent > 0) {
         header("Location: ../report.php?message=/you_alredy_reported_today");
         exit();

@@ -35,7 +35,7 @@ if (empty($_COOKIE[$subject_for_cookie]) || $_COOKIE[$subject_for_cookie] != $id
                 <p><?= nl2br($info->content);?></p>
             </div>
             <br /><hr>
-            
+
             <div class="date">
                 <h4>Updated <?= facebook_time_ago($info->date);?></h4>
                 <h4><?= date('jS \of M Y, H:i', strtotime($info->date));?></h4>

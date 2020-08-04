@@ -28,7 +28,7 @@ check_member();
                     $message = isset($_REQUEST['message']) ? $_REQUEST['message']:null;
                     switch($message) {
                         case '/conversations_are_deleted':
-                            echo '<h4 class="success">Conversation has been deleted</h4>'; 
+                            echo '<h4 class="success">Conversation has been deleted</h4>';
                     }
             	?>
 
